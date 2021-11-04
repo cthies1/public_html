@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Project Proposal</title>
+        <meta name="description" content="This is our project proposal page" />
+        <meta name="author" content="Chloe, Bee, Anna, Diggy" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body>
+
+        <h1>Project Proposal</h1>
+
+        <h3>Section I: Introduction</h3>
+
+        <p>
+            &emsp; &emsp; SPOONS© is a match-making website designed to help its customers find connections based on their FINDMYSPOON© quiz results. Our site stores customer accounts and quiz data, using our matching algorithm to display their matches from most compatible to the least compatible. Users are able to unmatch, report, and receive the contact information for any of their matches. From the administrative perspective, SPOONS© collects data on the number of matches and quiz results--revealing the efficacy of our matching algorithm/quiz.
+            </br> &emsp; &emsp; We are trying to solve common dating/friend-finding app problems--in which, users judge each other on profile pictures and stereotypes without knowing their potential compatibility. A database solution is necessary in order to store  large amounts of data for users and quiz results. Further, a database solution helps to mediate both the administrative and user interactions with our site.
+        </p>
+
+        <h3>Section II: Product Features</h3>
+        <ol>
+            <ul><li><b>Feature 1:</b> Customers can login to our system with a username and password, which are both encrypted in the database. The username will be an email address, which will be unique. The login form has a checkbox option to “Remember me today.” If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period. </li></ul>
+            <ul><li><b>Feature 2:</b> To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the address stored in the database for the given username. If people forget their password, they can have an email sent to their account that will allow them to update the password. </li></ul>
+            <ul><li><b>Feature 3:</b> Customers are directed to take one or more matching quizzes. The quiz results are used to match them with the most compatible person in the database. Customers need to take at least one quiz before they can be matched. Upon matching, customers are given the email address of their match. </li></ul>
+            <ul><li><b>Feature 4:</b> Before matching with someone, a customer must approve the sharing of their email address. Upon matching, their email will be shared as well as the data from their quizzes. The information will be shared both ways. </li></ul>
+            <ul><li><b>Feature 5:</b> Customers will see a list of all matches on their screen when they login. This list will be ranked from highest match to lowest match. Customers have the option to filter out any matches below a certain percentage, or any matches that were matched before a certain date. </li></ul>
+            <ul><li><b>Feature 6:</b> Customers can select not to be matched with their previous matches a second time when retaking the quizzes. They can also click a “new match button” to get the next most compatible person. If there are no more people compatible in the database they will get a message saying there are no good matches at this time. </li></ul>
+            <ul><li><b>Feature 7:</b> Users also have the option to report users. Users who are reported three times have their accounts deleted. They are removed from the dating website and their email will be unable to recreate an account. </li></ul>
+            <ul><li><b>Feature 8:</b> A company rep can generate a data report on users. The report shows: user, user quality statistics, quizzes taken, number of matches, profiles of their matches, and possibly a satisfaction rating. </li></ul>
+            <ul><li><b>Feature 9:</b> A company rep can add new quizzes to be made available to the customers. When adding the quiz, they must input all the possible quiz results and the compatibility between these quiz results. </li></ul>
+        </ol>
+
+        <h3>Section III: Database Schema</h3>
+        <img style="width: 50%;" alt="Schema Diagram" src="./assets/images/schema.png" />
+        <ol>
+            <ul><li><b>User:</b> The User relation stores the login information for a user along with their first name, last name, and age. The email they use to log in will be unique to each user. This information will be used to build a secure login and to display user-specific results upon logging in. </li></ul>
+            <ul><li><b>Admin:</b> The Admin relation stores the login information for a member of the admin. The email they use to log in will be unique to each admin. The admin home page will display different information than the user home page. The information in this table will determine which home page to bring them to. </li></ul>
+            <ul><li><b>Question:</b> The Question relation stores a QuestionID and the question text. Each Question can be linked to multiple quizzes. </li></ul>
+            <ul><li><b>Questions to Quiz:</b> The QuestionsToQuiz relation stores a QuestionID and the QuizID. The QuizID is the quiz that contains the specific question. This relation is used to store which questions are on each quiz. </li></ul>
+            <ul><li><b>Results:</b> The Results relation stores the userID, the questionID, a quizID, and the user’s response to a specific question that is on a specific quiz. A user is only allowed to take each quiz one time; if they retake the quiz, their answers will be updated. </li></ul>
+            <ul><li><b>Quiz:</b> The Quiz relation stores the ID for a quiz, the title for the quiz, and whether or not it is a required quiz for a match. This information will be used to link questions to respective quizzes. </li></ul>
+            <ul><li><b>Match:</b> The Match relation stores the IDs for two users who have matched, the strength of the match, and the date they matched. Users will be able to keep track of their top match as well as previous matches. </li></ul>
+            <ul><li><b>Unmatch:</b> The Unmatch relation stores the IDs for two users who cannot be matched together. This feature will be used to prevent people from matching multiple times, or to prevent reported users from matching with a user that reported them. </li></ul>
+            <ul><li><b>Report:</b> The Report relation stores the ID for a user that has been reported along with the number of times they were reported. If a user is reported 3 times by different people, they will be removed from the database and not allowed to rejoin. </li></ul>
+
+        </ol>
+
+        <h3>Section IV: Project Management</h3>
+        <ol>
+            <lh>List of Tools:</lh>
+            <ul><li><b>Trello:</b> project organization </li></ul>
+            <ul><li><b>Slack:</b> communication </li></ul>
+            <ul><li><b>Git:</b> code sharing </li></ul>
+        </ol>
+        <img style="width: 50%;" alt="Gantt Chart" src="./assets/images/ganttChart.png" />
+
+    </body>
+</html>
