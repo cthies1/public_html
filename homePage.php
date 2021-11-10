@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HOME PAGE </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+    </head>
+    <body>
+        <!-- Home Page will take in the login information from a user and display all of the matches
+        in a table. The user will have the option to filter out matches from the table based on the date
+        they matched and based on the percentage of the match.
+
+        NOTE other features, such as links to take quizzes or update their information, will be added later
+         -->
+        
+        <?php
+        $homeID = $_POST['username'];
+        echo("hello {$homeID}! Welcome back.");
+        //path to the SQLite database file
+        $db_file = './myDB/spoons.db';
+        ?>
+        <!--
+        TODO:
+         - test all of this code (teehee)
+         - pass in the userID variable to this page from the login, save as homeID
+         - make the dropdown buttons assign the selected value to the filter variables
+         - instead of having to refresh page to show results, move the make table into its own
+           separate function and call it once at the beginning of the page, then call it again 
+           every time either of the filter buttons are clicked
+        -->
+        <label for="date-filter">Only show results from </label>
+        <select name="date-filter" id="date-filter">
+        <option value="today">today</option>
+        <option value="this week">this week</option>
+        <option value="this month">this month</option>
+        <option value="this year">this year</option>
+        <option value="show all" selected>show all</option>
+        </select>
+
+        <label for="match-filter">Only show matches greater than </label>
+        <select name="match-filter" id="match-filter">
+        <option value="90%">90%</option>
+        <option value="75%">75%</option>
+        <option value="50%">50%</option>
+        <option value="40%">40%</option>
+        <option value="show all" selected>show all</option>
+        </select>
+
+        <?php
+            /*
+                matchFilter returns the lower bound of the match percentage to 
+                filter the matches from.
+
+                $mfilt is a string containing the match percent to filter on of the format "[num]%".
+                return a number from 0 to 100
+            */
+            function matchFilter($mfilt){
+                if(strcmp($mfilt,"show all")==0){
+                    return 0;
+                }
+                else{
+                    //remove the percentage from the end and return the string as an int
+                    return intval(substr_replace($mfilt ,"",-1));
+                }
+            }
+
+            /*
+                get the current date:
+                getdate() function returns array with:
+                the month stored in index 5, day of month stores in index 3, year stored in index 6.
+                store these values in its own array
+
+            */
+            $arr = getdate();
+            $tDate = array($arr[5],$arr[3],$arr[6]);
+
+            /*
+                dateFilter returns the lower bound of the dates to filter the matches from.
+
+                $dfilt is a string containing the timeline of the dates
+                @return a string representation of the date filter in mm/d/yyyy format.
+            */    
+            function dateFilter($dfilt){
+                //filtDate will hold the filter date
+                $filtDate = $tDate;
+                //only show matches from the current day
+                if(strcmp($dfilt,"today")==0){
+                    return dateToString($tDate);
+                }
+
+                //only show matches from the past week
+                else if(strcmp($dfilt,"this week")==0){
+                    //more than 7 days in the current month, subtract 7
+                    if($tDate[1]>7){
+                        $filtDate[1] = $tDate[1]-7;
+                    }
+
+                    //if subtracting a week will take you into the prev. month
+                    else{
+                        //if subtracting a week will take you into the prev. year
+                        if($tDate[0]==1){
+                            //December has 31 days
+                            $filtDate[0] = 12;
+                            $filtDate[1] = ($tDate[1]-7)%31;
+                            $filtDate[2] = $tDate[2]-1;
+                        }
+                        else{
+                            //update the month and the correct num. days
+                            $daysInMonth = cal_days_in_month(CAL_GREGORIAN,$tDate[0],$tDate[2]);
+                            $filtDate[0] = $tDate[0]-1;
+                            $filtDate[1] = ($tDate[1]-7)%$daysInMonth;
+                        }
+                    }
+                }
+
+                //only show matches from the past month: updating the month takes you to
+                //the same day of the previous month. ex: feb 13th ->jan 13th
+                else if(strcmp($dfilt,"this month")==0){
+                    $filtDate[0] = $tDate[0]-1;
+                    //if subtracting a month takes you into the previous year
+                    if($filtDate[0]==0){
+                        $filtDate[0] = 12;
+                        $filtDate[2] = $tDate[2]-1;
+                    }
+                }
+
+                //only show matches from the past year
+                else if(strcmp($dfilt,"this year")==0){
+                    $filtDate[2] = $tDate[2]-1;
+                }
+
+                //no filter: show all matches
+                else{
+                    $filtDate[0] = 0;
+                    $filtDate[1] = 0;
+                    $filtDate[2] = 0;
+                }
+                return dateToString($filtDate);
+            }
+
+            /*
+                dateToString takes in a date in array format, where the month is stored in 
+                index 0, the day at index 1, the year at index 2 and returns a string
+                representation of the date.
+            */
+            function dateToString($arr){
+                if($arr[2]==0){
+                    return "00/00/0000";
+                }
+                return "{$arr[0]}/{$arr[1]}/{$arr[2]}";
+            }
+        ?>
+
+        <?php
+        try{
+            //open connection to the spoons database file
+            $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
+
+            //set errormode to use exceptions
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+           $dateFilt = dateFilter($dfilt); 
+           $matchFilt = matchFilter($mfilt);
+
+            //return all matches, and store the result set
+            $query_str = "with Matches as (select * from Match where User1 is $homeID or User2 is $homeID)
+                            select fName, lName, matchPercent, date 
+                            from Matches natural join User
+                            where userID is not $homeID and (date>$dateFilt) and matchPercent>$matchFilt
+                            order by matchPercent desc";  // <----- Line 19
+            $result_set = $db->query($query_str);
+
+            //store results in a table displaying the matches
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th>";
+            echo "</tr>";
+            foreach($result_set as $tuple) {          // <------ Line 24
+                echo "<tr>";
+                echo "<td>$tuple[fName]</td>";
+                echo "<td>$tuple[lName]</td>";
+                echo "<td>$tuple[matchPercent]</td>";
+                echo "<td> $tuple[date]</td>";
+                echo "</tr>"; 
+             } 
+             echo "</table>"; 
+
+        }
+        catch(PDOException $e) {
+            die('Exception : '.$e->getMessage());
+        }
+        ?>
+    </body>
+    
+
+</html>
