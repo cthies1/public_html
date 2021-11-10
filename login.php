@@ -10,7 +10,10 @@
         $result = $stmt->execute();
         //username is not associated with an account
         if(mysql_num_rows($result)<1){//does this work???????? TODO
-            $error += 100;
+           
+                $str = "Location: inputForm.php?error=username";
+                header($str);
+            
         }
         else{
         $stmt =$db->prepare("SELECT Password from User where Email is username;");
@@ -18,23 +21,20 @@
         $result = $stmt->execute();
         //if the password is incorrect
         if(strcmp($_POST['password'],$result) != 0){
-            $error += 20;
+           
+        
+            $str = "Location: inputForm.php?error=password";
+            header($str);
         }
+        
         }
+        
         //redirect user to another page
         //header("Location: showPassengers.php");
         //error if username is not in database: 
        
         
-        
-        if($error > 0) {
-            $str = "Location: inputForm.php?error=".$error;
-            header($str);
-        }
-        else {
-    
-            
-        }
+       
         //disconnect from database
         $db = null;
     }
