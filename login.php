@@ -28,7 +28,7 @@
         $result = $stmt->execute();
         
         echo "Print: ".$result;
-
+/*
         //is username associated with an account
         //if(mysql_num_rows($result) < 1) {//does this work???????? TODO
         if($result == null) {
@@ -51,7 +51,7 @@
                 header("Location: homePage.php");
             }
         } 
-             
+*/             
         //disconnect from database
         $db = null;
     }
