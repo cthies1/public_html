@@ -4,7 +4,7 @@ create table Quiz(
     Require integer check (0<= Require and Require<=1)
 );
 
-create table User(
+create table Users(
     Email text primary key check(Email like "%@%"),
     Password text,
     fName text,
@@ -42,10 +42,10 @@ create table Match(
     matchPercent integer check(0<=matchPercent and matchPercent<=100),
     date text check(date like "%/%/%"),
     primary key(User1,User2),
-    foreign key (User1) references User(email)
+    foreign key (User1) references Users(email)
         on update CASCADE
         on delete cascade,
-    foreign key(User2) references User(email)
+    foreign key(User2) references Users(email)
         on update cascade
         on delete cascade
 );
@@ -54,7 +54,7 @@ create table Report(
     UserID text primary key check(UserID like "%@%"),
     reason text,
     numReports integer,
-    foreign key(UserID) references User(email)
+    foreign key(UserID) references Users(email)
         on update cascade
         on delete cascade
 );
@@ -71,7 +71,7 @@ create table Results(
     foreign key (QuizID) references Quiz(QuizID)
         on update cascade
         on delete cascade,
-    foreign key (UserID) references User(email)
+    foreign key (UserID) references Users(email)
         on update cascade
         on delete cascade
 );
@@ -81,10 +81,10 @@ create table unMatch(
     User2 text check(User2 like "%@%"),
     date text check(date like "%/%/%"),
     primary key(User1,User2),
-    foreign key (User1) references User(email)
+    foreign key (User1) references Users(email)
         on update CASCADE
         on delete cascade,
-    foreign key(User2) references User(email)
+    foreign key(User2) references Users(email)
         on update cascade
         on delete cascade
 );
