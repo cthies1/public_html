@@ -18,10 +18,22 @@
     <?php
 
         
-        $homeID = $GET['username'];
+        $homeID = $_GET['username'];
         echo("hello {$homeID}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
+        if(null == $_GET['dfilt']){
+            $dfilt = "show all";
+        }
+        else{
+            $dfilt = $_GET['dfilt'];
+        }
+        if(null == $_GET['mfilt']){
+            $mfilt = "show all";
+        }
+        else{
+            $mfilt = $_GET['mfilt'];
+        }
     ?>
 
         <label for="date-filter">Only show results from </label>
@@ -44,17 +56,22 @@
 
         <?php
 
-            $dfilt = "show all";
-            $mfilt = "show all";
+           
 
             function changedate(){
                 global $dfilt;
                 $dfilt = document.getElementById("date-filter").value;
+                $str = ("Location: homePage.php?username={$homeID}&dfilt={$dfilt}");
+                header($str);
+                exit;
             }
 
             function changepercent(){
                 global $mfilt;
                 $mfilt = document.getElementById("match-filter").value;
+                $str = ("Location: homePage.php?username={$homeID}&mfilt={$mfilt}");
+                header($str);
+                exit;
             }
             /*
                 matchFilter returns the lower bound of the match percentage to 
