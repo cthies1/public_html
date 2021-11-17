@@ -1,6 +1,5 @@
 <?php
     try {
-        //$error = 0;
         //open the sqlite database file
         $db = new PDO('sqlite:./myDB/spoons.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -9,11 +8,11 @@
         $stmt->bindValue(':username',$_POST['username']);
         $result = $stmt->execute();
         
+        echo $result;
+
         //username is not associated with an account
         if(mysql_num_rows($result) < 1) {//does this work???????? TODO
-                //$str = "Location: inputForm.php?error=username";
-                //header($str);
-                header("Location: inputForm.php?error=username");
+                header("Location: login.html?error=username");
         }
 
         //username exists now check password
@@ -24,9 +23,7 @@
             
             //password is incorrect
             if(strcmp($_POST['password'],$result) != 0) {
-                //$str = "Location: inputForm.php?error=password";
-                //header($str);
-                header("Location: inputForm.php?error=password");
+                header("Location: login.html?error=password");
             }
 
             //password is correct
