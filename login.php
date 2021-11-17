@@ -1,7 +1,7 @@
 <?php
     try {
         //open the sqlite database file
-        $db = new PDO('sqlite:./myDB/spoons.db');
+        $db = new PDO('sqlite:./assets/databases/spoons.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // if($_POST['username'] != '' && $_POST['password'] != '') {
