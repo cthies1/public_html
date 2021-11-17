@@ -4,11 +4,39 @@
         $db = new PDO('sqlite:./myDB/spoons.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $stmt = $db->prepare("SELECT * from User where Email is username;");
-        $stmt->bindValue(':username',$_POST['username']);
-        $result = $stmt->execute();
+
+        if($_POST['username'] != '' && $_POST['password'] != '') {
+            $name = $_POST['username'];
+            $pass = md5($_POST['password']);
         
-        echo "Print: ".$result;
+            $check_email = Is_email($name);
+            if($check_email) {
+                // email & password combination
+                $query = mysql_query("SELECT * FROM `users` WHERE `email` = '$name' AND `password` = '$pass'");
+            } else {
+                // username & password combination
+                $query = mysql_query("SELECT * FROM `users` WHERE `username` = '$name' AND `password` = '$pass'");
+            }
+            
+            $rows = mysql_num_rows($query);
+            if($rows > 0) {
+                //successfull login
+                $_SESSION['username'] = $name;
+            } else {
+                $msg = "Invalid Login Credentials";
+            }
+
+                mysql_close($connection);
+        } else {
+            $msg = "Please Provide All Details";
+        }
+
+
+        // $stmt = $db->prepare("SELECT * from User where Email is username;");
+        // $stmt->bindValue(':username',$_POST['username']);
+        // $result = $stmt->execute();
+        
+        // echo "Print: ".$result;
 
         //username is not associated with an account
         //if(mysql_num_rows($result) < 1) {//does this work???????? TODO
