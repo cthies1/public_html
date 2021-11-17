@@ -23,8 +23,8 @@
         //     $msg = "Please Provide All Details";
         // }
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        if(isset($_GET['username'])) $username = $_GET['username'];
+        if(isset($_GET['password'])) $password = $_GET['password'];
         $stmt = $db->prepare("SELECT * from Users where Email is '$username';");
         //$stmt->bindValue(':username',$_POST['username']);
         $result = $stmt->execute();
