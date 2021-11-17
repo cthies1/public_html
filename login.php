@@ -9,14 +9,7 @@
             $name = $_POST['username'];
             $pass = md5($_POST['password']);
         
-            $check_email = Is_email($name);
-            if($check_email) {
-                // email & password combination
-                $query = mysql_query("SELECT * FROM `users` WHERE `email` = '$name' AND `password` = '$pass'");
-            } else {
-                // username & password combination
-                $query = mysql_query("SELECT * FROM `users` WHERE `username` = '$name' AND `password` = '$pass'");
-            }
+            $query = mysql_query("SELECT * FROM `users` WHERE `email` = '$name' AND `password` = '$pass'");
             
             $rows = mysql_num_rows($query);
             if($rows > 0) {
