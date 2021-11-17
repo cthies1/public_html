@@ -4,7 +4,7 @@
         $db = new PDO('sqlite:./myDB/spoons.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $stmt = $db->prepare("SELECT * from User where email is :username;");
+        $stmt = $db->prepare("SELECT * from User where Email is username;");
         $stmt->bindValue(':username',$_POST['username']);
         $result = $stmt->execute();
         
