@@ -31,8 +31,8 @@
 
         //is username associated with an account
         //if(mysql_num_rows($result) < 1) {//does this work???????? TODO
-       /*  if($result == null) {
-                header("Location: login.html?error=username");
+        if($result == null) {
+            header("Location: login.html?error=username");
         }
 
         //username exists now check password
@@ -50,7 +50,7 @@
             else {
                 header("Location: homePage.php");
             }
-        } */
+        } 
              
         //disconnect from database
         $db = null;
