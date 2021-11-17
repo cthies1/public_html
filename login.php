@@ -37,7 +37,7 @@
 
         //username exists now check password
         else {
-            $stmt =$db->prepare("SELECT Password from User where Email is username;");
+            $stmt =$db->prepare("SELECT Password from Users where Email is username;");
             $stmt->bindValue(':username',$_POST['username']);
             $result = $stmt->execute();
             
