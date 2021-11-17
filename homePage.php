@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> HOME PAGE </title>
+    <head>  
+        <title> Home Page </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
     </head>
+
     <body>
-        <!-- Home Page will take in the login information from a user and display all of the matches
+
+    <!-- Home Page will take in the login information from a user and display all of the matches
         in a table. The user will have the option to filter out matches from the table based on the date
         they matched and based on the percentage of the match.
 
         NOTE other features, such as links to take quizzes or update their information, will be added later
-         -->
+    -->
+
+    <?php
+
         
-        <?php
-        $homeID = $_POST['username'];
+        $homeID = $GET['username'];
         echo("hello {$homeID}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
-        ?>
-        <!--
-        TODO:
-         - test all of this code (teehee)
-         - pass in the userID variable to this page from the login, save as homeID
-         - make the dropdown buttons assign the selected value to the filter variables
-         - instead of having to refresh page to show results, move the make table into its own
-           separate function and call it once at the beginning of the page, then call it again 
-           every time either of the filter buttons are clicked
-        -->
+    ?>
+
         <label for="date-filter">Only show results from </label>
-        <select name="date-filter" id="date-filter">
+        <select name="date-filter" onchange="changedate()" id="date-filter" >
         <option value="today">today</option>
         <option value="this week">this week</option>
         <option value="this month">this month</option>
@@ -38,7 +34,7 @@
         </select>
 
         <label for="match-filter">Only show matches greater than </label>
-        <select name="match-filter" id="match-filter">
+        <select name="match-filter" onchange="changepercent()" id="match-filter">
         <option value="90%">90%</option>
         <option value="75%">75%</option>
         <option value="50%">50%</option>
@@ -47,6 +43,19 @@
         </select>
 
         <?php
+
+            $dfilt = "show all";
+            $mfilt = "show all";
+
+            function changedate(){
+                global $dfilt;
+                $dfilt = document.getElementById("date-filter").value;
+            }
+
+            function changepercent(){
+                global $mfilt;
+                $mfilt = document.getElementById("match-filter").value;
+            }
             /*
                 matchFilter returns the lower bound of the match percentage to 
                 filter the matches from.
@@ -163,11 +172,11 @@
            $matchFilt = matchFilter($mfilt);
 
             //return all matches, and store the result set
-            $query_str = "with Matches as (select * from Match where User1 is $homeID or User2 is $homeID)
-                            select fName, lName, matchPercent, date 
-                            from Matches natural join User
-                            where userID is not $homeID and (date>$dateFilt) and matchPercent>$matchFilt
-                            order by matchPercent desc";  // <----- Line 19
+            $query_str = "with Matches as (select * from Match where User1 is "$homeID" or User2 is "$homeID")
+            select fname, lname, date, matchpercent 
+             from Matches , User
+             where (user.email is matches.user1 and matches.user1 is not "$homeID")or (user.email is matches.user2 and matches.user2 is not "$homeID")and (date>"00/00/0000") and matchPercent>0
+             order by matchPercent desc;";  // <----- Line 19
             $result_set = $db->query($query_str);
 
             //store results in a table displaying the matches
@@ -191,6 +200,5 @@
         }
         ?>
     </body>
-    
 
 </html>

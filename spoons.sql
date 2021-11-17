@@ -1,5 +1,5 @@
 create table Quiz(
-    QuizID text primary key,
+    QuizID integer primary key,
     Title text,
     Require integer check (0<= Require and Require<=1)
 );
@@ -19,7 +19,7 @@ create table Question(
 
 create table QuizQuestions(
     QuestionID integer,
-    QuizID text,
+    QuizID integer,
     primary key(QuestionID, QuizID),
     foreign key (QuestionID) references Question(QuestionID)
         on update CASCADE
@@ -60,8 +60,8 @@ create table Report(
 );
 
 create table Results(
+    QuizID integer,
     QuestionID integer,
-    QuizID text,
     UserID text check(userID like "%@%"),
     response text,
     primary key(QuestionID, QuizID, UserID),
@@ -74,7 +74,7 @@ create table Results(
     foreign key (UserID) references User(email)
         on update cascade
         on delete cascade
-),
+);
 
 create table unMatch(
     User1 text check(User1 like "%@%"),
@@ -87,13 +87,14 @@ create table unMatch(
     foreign key(User2) references User(email)
         on update cascade
         on delete cascade
-)
+);
 
 create table Compatible(
-    QuestionID integer primary key,
+    QuestionID integer,
     r1 text,
     r2 text,
+    primary key(QuestionID, r1,r2),
     foreign key(QuestionID) references Question(QuestionID)
         on update cascade
         on delete cascade
-)
+);
