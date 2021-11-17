@@ -23,7 +23,9 @@
         //     $msg = "Please Provide All Details";
         // }
 
-        $stmt = $db->prepare("SELECT * from Users where Email is 'johnsmith2@test.com'");
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $stmt = $db->prepare("SELECT * from Users where Email is '$username';");
         //$stmt->bindValue(':username',$_POST['username']);
         $result = $stmt->execute();
         
