@@ -1,8 +1,8 @@
 <?php
     try {
         //open the sqlite database file
-        $dbname = './assets/databases/spoons.db'
-        $db = new PDO('sqlite:' . $dbname);
+        $db_file = './assets/databases/spoons.db';
+        $db = new PDO('sqlite:' . $db_file);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         echo "Starting checks";
