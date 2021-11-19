@@ -1,36 +1,45 @@
 <?php
     try {
         //open the sqlite database file
-        $db = new PDO('sqlite:./assets/databases/spoons.db');
+        $db = new PDO('sqlite: ./assets/databases/spoons.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        // if($_POST['username'] != '' && $_POST['password'] != '') {
-        //     $name = $_POST['username'];
-        //     $pass = md5($_POST['password']);
-        
-        //     $query = mysql_query("SELECT * FROM `users` WHERE `email` = '$name' AND `password` = '$pass'");
-            
-        //     $rows = mysql_num_rows($query);
-        //     if($rows > 0) {
-        //         //successfull login
-        //         $_SESSION['username'] = $name;
-        //     } else {
-        //         $msg = "Invalid Login Credentials";
-        //     }
 
-        //         mysql_close($connection);
-        // } else {
-        //     $msg = "Please Provide All Details";
-        // }
+        if(isset($_GET['username'])) {
+            $username = $_GET['username'];
+                echo "Username: ".$username;
+            $stmt = $db->prepare("SELECT * from Users where Email is '$username';");
+            $result = $stmt->execute();
+            if($result == null) {   //is username associated with an account
+                header("Location: login.html?error=username");
+            } else {    //username exists now check password
+                if(isset($_GET['password'])) {
+                    $password = $_GET['password'];
+                        echo "Password: ".$password;
+                    $stmt = $db->prepare("SELECT * from Users where Password is '$password';");
+                    $result = $stmt->execute();
+                } else {
+                    if($result == null) {   //password is incorrect
+                        header("Location: login.html?error=password");
+                    } else {    //password is correct
+                        header("Location: homePage.php");
+                    }
+                }
+            }
+        }
+        //disconnect from database
+        $db = null;
+    } catch(PDOException $e) {
+        die('Exception : '.$e->getMessage());
+    }
 
-        if(isset($_GET['username'])) $username = $_GET['username'];
+/*        
         if(isset($_GET['password'])) $password = $_GET['password'];
-        $stmt = $db->prepare("SELECT * from Users where Email is '$username';");
+        
         //$stmt->bindValue(':username',$_POST['username']);
         $result = $stmt->execute();
         
         echo "Print: ".$result;
-/*
+
         //is username associated with an account
         //if(mysql_num_rows($result) < 1) {//does this work???????? TODO
         if($result == null) {
@@ -53,12 +62,5 @@
                 header("Location: homePage.php");
             }
         } 
-*/             
-        //disconnect from database
-        $db = null;
-    }
-    catch(PDOException $e) {
-        die('Exception : '.$e->getMessage());
-    }
-
-?>
+*/ 
+?>       
