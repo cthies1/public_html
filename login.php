@@ -16,22 +16,24 @@
         }
         else {
 
-            //open the sqlite database file
-            $db_file = './assets/databases/spoons.db';
-            $db = new PDO('sqlite:' . $db_file);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Time to check credentials";
 
-            //check email and passsword
-            $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
-            $stmt->bindValue(':email',$_POST['email']);
-            $stmt->bindValue(':pass',$_POST['pass']);
-            $result = $stmt->execute();
+            // //open the sqlite database file
+            // $db_file = './assets/databases/spoons.db';
+            // $db = new PDO('sqlite:' . $db_file);
+            // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            if ($result == null) {  //incorrect email or password
-                header("Location: login.php?credentials=false");
-            } else {    //correct credentials, login
-                header("Location: homePage.php");
-            }
+            // //check email and passsword
+            // $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
+            // $stmt->bindValue(':email',$_POST['email']);
+            // $stmt->bindValue(':pass',$_POST['pass']);
+            // $result = $stmt->execute();
+
+            // if ($result == null) {  //incorrect email or password
+            //     header("Location: login.php?credentials=false");
+            // } else {    //correct credentials, login
+            //     header("Location: homePage.php");
+            // }
             
         }
         //disconnect from database
