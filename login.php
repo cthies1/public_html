@@ -6,7 +6,7 @@
             $error += 10;
         }
         
-        if(null == ($_POST['password'])){//password
+        if(null == ($_POST['pass'])){//password
             $error += 2;
         }
 
@@ -16,46 +16,23 @@
         }
         else {
 
-            try {
-                //open the sqlite database file
-                $db_file = './assets/databases/spoons.db';
-                $db = new PDO('sqlite:' . $db_file);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-                echo "Starting checks";
+            //open the sqlite database file
+            $db_file = './assets/databases/spoons.db';
+            $db = new PDO('sqlite:' . $db_file);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $stmt->bindValue(':email',$_POST['email']);
-                $stmt->bindValue(':password',$_POST['password']);
-                $result = $stmt->execute();
-        
-                if(isset($_GET['email'])) {
-                    $email = $_GET['email'];
-                        echo "Username: ".$username;
-                    $stmt = $db->prepare("SELECT * from Users where Email is $email;");
-                    $result = $stmt->execute();
-                    if($result == null) {   //is username associated with an account
-                        header("Location: login.html?error=username");
-                    } else {    //username exists now check password
-                        if(isset($_GET['password'])) {
-                            $password = $_GET['password'];
-                                echo "Password: ".$password;
-                            $stmt = $db->prepare("SELECT * from Users where Password is $password;");
-                            $result = $stmt->execute();
-                        } else {
-                            if($result == null) {   //password is incorrect
-                                header("Location: login.html?error=password");
-                            } else {    //password is correct
-                                header("Location: homePage.php");
-                            }
-                        }
-                    }
-                }
-                //disconnect from database
-                $db = null;
-        
-            } catch(PDOException $e) {
-                die('Exception : '.$e->getMessage());
+            //check email and passsword
+            $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+            $result = $stmt->execute();
+
+            if ($result == null) {  //incorrect email or password
+                header("Location: login.php?credentials=false");
+            } else {    //correct credentials, login
+                header("Location: homePage.php");
             }
+            
         }
         //disconnect from database
         $db = null;

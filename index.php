@@ -23,17 +23,20 @@
                     $err = $err-2;
                 }
             }
+            if(isset($_GET["credentials"])){
+                echo "<font color='red'>*Incorrect email or password</br>";
+            }
             
             if(isset($_GET["email"])) $email = $_GET["email"];
             else $email = "";
-            if(isset($_GET["password"])) $password = $_GET["password"];
-            else $password = "";
+            if(isset($_GET["pass"])) $pass = $_GET["pass"];
+            else $pass = "";
 
             echo "<font color='black'>";
             ?>
             <form action="login.php?" method="post">
                 Email: <input type="email" name="email" /></br></br>
-                Password: <input type="text" name="password" /></br></br>
+                Password: <input type="text" name="pass" /></br></br>
                 <input type="submit" value="Login" />
             </form>
         </p>
