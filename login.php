@@ -1,13 +1,16 @@
 <?php
     try {
         //open the sqlite database file
-        $db = new PDO('sqlite: ./assets/databases/spoons.db');
+        $dbname = './assets/databases/spoons.db'
+        $db = new PDO('sqlite:' . $dbname);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        echo "Starting checks";
 
         if(isset($_GET['username'])) {
             $username = $_GET['username'];
                 echo "Username: ".$username;
-            $stmt = $db->prepare("SELECT * from Users where Email is '$username';");
+            $stmt = $db->prepare("SELECT * from Users where Email is $username;");
             $result = $stmt->execute();
             if($result == null) {   //is username associated with an account
                 header("Location: login.html?error=username");
@@ -15,7 +18,7 @@
                 if(isset($_GET['password'])) {
                     $password = $_GET['password'];
                         echo "Password: ".$password;
-                    $stmt = $db->prepare("SELECT * from Users where Password is '$password';");
+                    $stmt = $db->prepare("SELECT * from Users where Password is $password;");
                     $result = $stmt->execute();
                 } else {
                     if($result == null) {   //password is incorrect
@@ -28,6 +31,7 @@
         }
         //disconnect from database
         $db = null;
+
     } catch(PDOException $e) {
         die('Exception : '.$e->getMessage());
     }
