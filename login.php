@@ -27,10 +27,14 @@
 
             // //check email and passsword
             // $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
-            $stmt = $db->prepare("SELECT * from Users;");
+            $stmt = "SELECT * from Users;";
             // $stmt->bindValue(':email',$_POST['email']);
             // $stmt->bindValue(':pass',$_POST['pass']);
-             $result = $stmt->execute();
+             $result = $db->query($stmt);
+             echo "<table>";
+             echo "<tr>";
+                 echo "<th>fName</th><th>lName</th><th>email</th>";
+             echo "</tr>";
              foreach($result as $tuple) {          // <------ Line 24
                 echo "<tr>";
                 echo "<td>$tuple[fName]</td>";
