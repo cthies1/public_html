@@ -27,21 +27,22 @@
 
             // //check email and passsword
             // $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
-            $stmt = "SELECT * from Users;";
-            // $stmt->bindValue(':email',$_POST['email']);
-            // $stmt->bindValue(':pass',$_POST['pass']);
-             $result = $db->query($stmt);
-             echo "<table>";
-             echo "<tr>";
-                 echo "<th>fName</th><th>lName</th><th>email</th>";
-             echo "</tr>";
-             foreach($result as $tuple) {          // <------ Line 24
-                echo "<tr>";
-                echo "<td>$tuple[fName]</td>";
-                echo "<td>$tuple[lName]</td>";
-                echo "<td>$tuple[Email]</td>";
-                echo "</tr>"; 
-             } 
+            $stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
+            //$stmt = "SELECT * from Users;";
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+            $result = $db->query($stmt);
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>fName</th><th>lName</th><th>email</th>";
+            echo "</tr>";
+            foreach($result as $tuple) {
+            echo "<tr>";
+            echo "<td>$tuple[fName]</td>";
+            echo "<td>$tuple[lName]</td>";
+            echo "<td>$tuple[Email]</td>";
+            echo "</tr>"; 
+            } 
             // if ($result == null) {  //incorrect email or password
             //     header("Location: login.php?credentials=false");
             // } else {    //correct credentials, login
