@@ -39,7 +39,7 @@
                 echo "<tr>";
                 echo "<td>$tuple[fName]</td>";
                 echo "<td>$tuple[lName]</td>";
-                echo "<td>$tuple[email]</td>";
+                echo "<td>$tuple[Email]</td>";
                 echo "</tr>"; 
              } 
             // if ($result == null) {  //incorrect email or password
