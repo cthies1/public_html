@@ -18,10 +18,12 @@
 
             echo "Time to check credentials";
 
-            // //open the sqlite database file
-            // $db_file = './assets/databases/spoons.db';
-            // $db = new PDO('sqlite:' . $db_file);
-            // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //open the sqlite database file
+            $db_file = './assets/databases/spoons.db';
+            $db = new PDO('sqlite:' . $db_file);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            echo "database open";
 
             // //check email and passsword
             // $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
