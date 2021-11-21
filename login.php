@@ -33,13 +33,13 @@
             $password = $_POST['pass'];
             $stmt->bindValue(':email',$email);
             $stmt->bindValue(':pass',$password);
-            //$result = $db->query($stmt);
-            $result = $stmt->execute();
+            $result = $db->query($stmt);
+            //$result = $stmt->execute();
             echo "<table>";
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th>";
             echo "</tr>";
-            foreach($result_set as $tuple) {
+            foreach($result as $tuple) {
             echo "<tr>";
             echo "<td>$tuple[fName]</td>";
             echo "<td>$tuple[lName]</td>";
