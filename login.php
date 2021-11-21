@@ -29,9 +29,12 @@
             $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass)");
             //$stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
             //$stmt = "SELECT * from Users;";
-            $stmt->bindValue(':email',$_POST['email']);
-            $stmt->bindValue(':pass',$_POST['pass']);
-            $result = $db->query($stmt);
+            $email = $_POST['email'];
+            $password = $_POST['pass'];
+            $stmt->bindValue(':email',$email);
+            $stmt->bindValue(':pass',$password);
+            //$result = $db->query($stmt);
+            $result = $stmt->execute();
             echo "<table>";
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th>";
