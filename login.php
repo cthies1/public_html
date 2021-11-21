@@ -27,10 +27,17 @@
 
             // //check email and passsword
             // $stmt = $db->prepare("SELECT * from Users where (Email is :email) and (Password is :pass) ;");
+            $stmt = $db->prepare("SELECT * from Users;");
             // $stmt->bindValue(':email',$_POST['email']);
             // $stmt->bindValue(':pass',$_POST['pass']);
-            // $result = $stmt->execute();
-
+             $result = $stmt->execute();
+             foreach($result as $tuple) {          // <------ Line 24
+                echo "<tr>";
+                echo "<td>$tuple[fName]</td>";
+                echo "<td>$tuple[lName]</td>";
+                echo "<td>$tuple[email]</td>";
+                echo "</tr>"; 
+             } 
             // if ($result == null) {  //incorrect email or password
             //     header("Location: login.php?credentials=false");
             // } else {    //correct credentials, login
