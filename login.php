@@ -2,11 +2,11 @@
     try {
         $error = 0;
         
-        if(null == ($_POST['email'])){//email
+        if(null == ($_POST['email'])){  //email
             $error += 10;
         }
         
-        if(null == ($_POST['pass'])){//password
+        if(null == ($_POST['pass'])){   //password
             $error += 2;
         }
 
