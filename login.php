@@ -25,16 +25,16 @@
 
             echo "database open";
 
-            // //check email and passsword
+            // //check email and password
             $stmt = $db->prepare("SELECT * from Users where (Email = :email) and (Password = :pass)");
             //$stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
             //$stmt = "SELECT * from Users;";
             $email = $_POST['email'];
             $password = $_POST['pass'];
-            $stmt->bindValue(':email',$email);
-            $stmt->bindValue(':pass',$password);
-            $result = $db->query($stmt);
-            //$result = $stmt->execute();
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+            //$result = $db->query($stmt);
+            $result = $stmt->execute();
             echo "<table>";
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th>";
