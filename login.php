@@ -16,14 +16,14 @@
         }
         else {
 
-            echo "Time to check credentials \n";
+            echo "Time to check credentials ";
 
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            echo "database open \n";
+            echo "database open     ";
 
             // //check email and password
             $stmt = $db->prepare('SELECT * from Users where (Email = \":email\") and (Password = \":pass\")');
@@ -33,7 +33,7 @@
             $password = $_POST['pass'];
             $stmt->bindValue(':email',$_POST['email']);
             $stmt->bindValue(':pass',$_POST['pass']);
-            echo $stmt . "\n";
+            echo $stmt;
             //$result = $db->query($stmt);
             $result = $stmt->execute();
             if($result){
