@@ -26,7 +26,7 @@
             echo "database open";
 
             // //check email and password
-            $stmt = $db->prepare("SELECT * from Users where (Email = :email) and (Password = :pass)");
+            $stmt = $db->prepare("SELECT * from Users where (Email = \":email\") and (Password = \":pass\")");
             //$stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
             //$stmt = "SELECT * from Users;";
             $email = $_POST['email'];
@@ -35,17 +35,23 @@
             $stmt->bindValue(':pass',$_POST['pass']);
             //$result = $db->query($stmt);
             $result = $stmt->execute();
-            echo "<table>";
-            echo "<tr>";
-                echo "<th>fName</th><th>lName</th><th>email</th>";
-            echo "</tr>";
-            echo $result;
-            //foreach($result as $tuple) {
-            echo "<tr>";
-            echo "<td>$result[fName]</td>";
-            echo "<td>$result[lName]</td>";
-            echo "<td>$result[Email]</td>";
-            echo "</tr>"; 
+            if($result){
+                echo "<table>";
+                echo "<tr>";
+                    echo "<th>fName</th><th>lName</th><th>email</th>";
+                echo "</tr>";
+                echo $result;
+                //foreach($result as $tuple) {
+                echo "<tr>";
+                echo "<td>$result[fName]</td>";
+                echo "<td>$result[lName]</td>";
+                echo "<td>$result[Email]</td>";
+                echo "</tr>"; 
+            }
+            else{
+                echo "Invalid username or password.";
+            }
+            
             //} 
             // if ($result == null) {  //incorrect email or password
             //     header("Location: login.php?credentials=false");
