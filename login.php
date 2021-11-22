@@ -50,8 +50,8 @@
                     //foreach($result as $tuple) {
                     echo "<tr>";
                     echo "<td>".$result[0]['fName']."</td>";
-                    echo "<td>$result[0]['lName']</td>";
-                    echo "<td>$result[0]['Email']</td>";
+                    echo "<td>"$result[0]['lName']"</td>";
+                    echo "<td>"$result[0]['Email']"</td>";
                     echo "</tr>"; 
                 //}
             }
