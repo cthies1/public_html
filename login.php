@@ -39,13 +39,13 @@
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th>";
             echo "</tr>";
-            foreach($result as $tuple) {
+            //foreach($result as $tuple) {
             echo "<tr>";
-            echo "<td>$tuple[fName]</td>";
-            echo "<td>$tuple[lName]</td>";
-            echo "<td>$tuple[Email]</td>";
+            echo "<td>$result[fName]</td>";
+            echo "<td>$result[lName]</td>";
+            echo "<td>$result[Email]</td>";
             echo "</tr>"; 
-            } 
+            //} 
             // if ($result == null) {  //incorrect email or password
             //     header("Location: login.php?credentials=false");
             // } else {    //correct credentials, login
