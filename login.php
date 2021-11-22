@@ -37,7 +37,7 @@
             //echo $stmt;
             //$result = $db->query($stmt);
             $result = $stmt->execute();
-            print_r($result);
+            var_dump($result);
 
             if($result){
                 echo "<table>";
@@ -49,9 +49,9 @@
                 while($arr = $result->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
-                    echo "<td>".$result['fName']."</td>";
-                    echo "<td>$result[lName]</td>";
-                    echo "<td>$result[Email]</td>";
+                    echo "<td>".$arr['fName']."</td>";
+                    echo "<td>$arr[lName]</td>";
+                    echo "<td>$arr[Email]</td>";
                     echo "</tr>"; 
                 }
             }
