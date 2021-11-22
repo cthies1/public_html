@@ -33,6 +33,7 @@
             $password = $_POST['pass'];
             $stmt->bindValue(':email',$_POST['email']);
             $stmt->bindValue(':pass',$_POST['pass']);
+            echo $stmt . "\n";
             //$result = $db->query($stmt);
             $result = $stmt->execute();
             if($result){
