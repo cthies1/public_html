@@ -36,7 +36,7 @@
             
             //$result = $db->query($stmt);
             $result = $stmt->execute();
-            echo $result;
+            print_r($result);
 
             if($result){
                 echo "<table>";
@@ -46,7 +46,7 @@
                 echo $result;
                 //foreach($result as $tuple) {
                 echo "<tr>";
-                echo "<td>$result[fName]</td>";
+                echo "<td>".$result['fName']."</td>";
                 echo "<td>$result[lName]</td>";
                 echo "<td>$result[Email]</td>";
                 echo "</tr>"; 
