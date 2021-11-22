@@ -36,7 +36,9 @@
             
             //$result = $db->query($stmt);
             $stmt->execute();
-            //var_dump($result);
+
+            $result = $stmt->fetchAll();
+            var_dump($stmt);
 
             if(true){
                 echo "<table>";
