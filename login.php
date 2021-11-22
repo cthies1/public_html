@@ -39,6 +39,7 @@
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th>";
             echo "</tr>";
+            echo $result;
             //foreach($result as $tuple) {
             echo "<tr>";
             echo "<td>$result[fName]</td>";
