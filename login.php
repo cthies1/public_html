@@ -44,14 +44,14 @@
                     echo "<th>fName</th><th>lName</th><th>email</th>";
                 echo "</tr>";
 
-                while($arr = $stmt->fetchArray()) {
+                //while($arr = $stmt->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
-                    echo "<td>".$arr['fName']."</td>";
-                    echo "<td>$arr[lName]</td>";
-                    echo "<td>$arr[Email]</td>";
+                    echo "<td>".$stmt['fName']."</td>";
+                    echo "<td>$stmt[lName]</td>";
+                    echo "<td>$stmt[Email]</td>";
                     echo "</tr>"; 
-                }
+                //}
             }
             else{
                 echo "Invalid username or password.";
