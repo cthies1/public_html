@@ -36,24 +36,25 @@
             
             //echo $stmt;
             //$result = $db->query($stmt);
-            $result = $stmt->execute();
-            var_dump($result);
+            $stmt->execute();
 
-            if($result){
+            $result = $stmt->fetchAll();
+            var_dump($stmt);
+
+            if(true){
                 echo "<table>";
                 echo "<tr>";
                     echo "<th>fName</th><th>lName</th><th>email</th>";
                 echo "</tr>";
-                echo $result;
-                $arr = array();
-                while($arr = $result->fetchArray()) {
+
+                //while($arr = $stmt->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
-                    echo "<td>".$arr['fName']."</td>";
-                    echo "<td>$arr[lName]</td>";
-                    echo "<td>$arr[Email]</td>";
+                    echo "<td>".$stmt['fName']."</td>";
+                    echo "<td>$stmt[lName]</td>";
+                    echo "<td>$stmt[Email]</td>";
                     echo "</tr>"; 
-                }
+                //}
             }
             else{
                 echo "Invalid username or password.";
