@@ -44,7 +44,7 @@
                     echo "<th>fName</th><th>lName</th><th>email</th>";
                 echo "</tr>";
                 echo $result;
-                $arr = ();
+                $arr = array();
                 while($arr = $result->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
