@@ -35,17 +35,16 @@
             $stmt->bindValue(':pass',$_POST['pass']);
             
             //$result = $db->query($stmt);
-            $result = $stmt->execute();
-            var_dump($result);
+            $stmt->execute();
+            //var_dump($result);
 
-            if($result){
+            if(true){
                 echo "<table>";
                 echo "<tr>";
                     echo "<th>fName</th><th>lName</th><th>email</th>";
                 echo "</tr>";
-                echo $result;
-                $arr = array();
-                while($arr = $result->fetchArray()) {
+
+                while($arr = $stmt->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
                     echo "<td>".$arr['fName']."</td>";
