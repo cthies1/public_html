@@ -38,7 +38,7 @@
             $stmt->execute();
 
             $result = $stmt->fetchAll();
-            var_dump($stmt);
+            var_dump($result);
 
             if(true){
                 echo "<table>";
