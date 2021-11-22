@@ -23,8 +23,8 @@
             $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            echo "database open     ";
-
+            echo "database open ...    ";
+            echo "printing statement:   ";
             // //check email and password
             $stmt = $db->prepare('SELECT * from Users where (Email = \":email\") and (Password = \":pass\")');
             //$stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
@@ -33,7 +33,7 @@
             $password = $_POST['pass'];
             $stmt->bindValue(':email',$_POST['email']);
             $stmt->bindValue(':pass',$_POST['pass']);
-            echo "printing statement:   ";
+            
             echo $stmt;
             //$result = $db->query($stmt);
             $result = $stmt->execute();
