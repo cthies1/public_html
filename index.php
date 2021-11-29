@@ -47,6 +47,7 @@
                     <input class="button" type="submit" value="Create Account" /></br></br>
                 </form>
             </div>
+            <img src = './assets/images/logo.php'></img>
         </p>
         
     </body>
