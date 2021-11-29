@@ -40,7 +40,7 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if(is_Null($result[0]['fName'])){
+            if(is_Null($result[0])){
                 echo "Invalid username or password.";
                 
             }
