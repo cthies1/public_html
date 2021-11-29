@@ -36,8 +36,10 @@ li{
     border: 20px solid salmon;
     padding: 30px;
     margin: auto;
-  }
-  .button {
+    list-style-type: none;
+}
+
+.button {
     border: none;
     color: darkslategray;
     padding: 16px 32px;
@@ -52,9 +54,9 @@ li{
     left: 50%;
     /* top: 50%; */
     transform: translate(-50%, -50%);
-  }
+}
   
-  .button1 {
+.button1 {
     width: 300px;
     background-color: darkslategray; 
     color: white; 
@@ -63,9 +65,9 @@ li{
     margin: auto;
     border: 20px solid salmon;
     padding: 30px;
-  }
+}
   
-  .button1:hover {
+.button1:hover {
     background-color: salmon;
     color: white;
-  }
+}
