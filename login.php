@@ -40,9 +40,9 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if(isset($result)){
-                echo "Invalid username or password.";
-                echo ("error");
+            if(is_Null($result[0]['fName'])){
+                //echo "Invalid username or password.";
+                header("Location: index.php?credentials=false");
                 
             }
             else{
