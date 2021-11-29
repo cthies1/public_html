@@ -26,7 +26,7 @@
             echo "database open ...    ";
             echo "printing statement:   ";
             // //check email and password
-            $stmt = $db->prepare('SELECT * from Users where (Email = ":email") and (Password = ":pass")');
+            $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
             //$stmt = "SELECT * from Users where (Email is :email) and (Password is :pass) ;";
             //$stmt = "SELECT * from Users;";
             $email = $_POST['email'];
