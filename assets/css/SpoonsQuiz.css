@@ -51,11 +51,12 @@ li{
   
   .button1 {
     background-color: darkslategray; 
-    color: black; 
-    border: 2px solid lemonchiffon;
+    color: white; 
+    align-self: center;
+    border: 2px solid salmon;
   }
   
   .button1:hover {
-    background-color: lemonchiffon;
+    background-color: salmon;
     color: white;
   }
