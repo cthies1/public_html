@@ -46,6 +46,7 @@
                 
             }
             else {
+                echo "moving to home page...";
                 $str = "Location: homePage.php?username=".$username;
                 header($str);
                 // echo "<table>";
