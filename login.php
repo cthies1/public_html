@@ -43,7 +43,7 @@
 
             if(is_Null($result[0]['fName'])){
                 //echo "Invalid username or password.";
-                header("Location: login.php?credentials=false");
+                header("Location: index.php?credentials=false");
                 
             }
             else{
