@@ -48,7 +48,7 @@
                 <form action="SpoonsQuiz.php" method = "post">
                     <input type="submit" value="Spoon's quiz" /></br></br>
                 </form>
-                <img src = "./assets/images/logo.php"></img>
+                <img src="./assets/images/logo.php" />
         </p>
         
         
