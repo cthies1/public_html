@@ -40,7 +40,11 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if($result){
+            if(is_Null($result[0]['fName'])){
+                echo "Invalid username or password.";
+                
+            }
+            else{
                 echo "<table>";
                 echo "<tr>";
                     echo "<th>fName</th><th>lName</th><th>email</th>";
@@ -53,11 +57,11 @@
                     echo "<td>".$result[0]['lName']."</td>";
                     echo "<td>".$result[0]['Email']."</td>";
                     echo "</tr>"; 
+               
+            }
+            
+             
                 //}
-            }
-            else{
-                echo "Invalid username or password.";
-            }
             
             //} 
             // if ($result == null) {  //incorrect email or password
