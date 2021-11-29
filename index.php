@@ -5,7 +5,7 @@
         <title>User Login Form</title>
         <meta name="description" content="This is a user login page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
-        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
         <h1>Login Page:</h1>
