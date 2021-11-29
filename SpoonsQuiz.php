@@ -377,7 +377,6 @@
             </div>
         </li>
         <button class = "button button1">Submit</button>
-        <input type="submit" value="Submit Quiz" />
     </body1>
 </body>
 </html>
