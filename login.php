@@ -41,9 +41,9 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if(mysqli_num_rows($result)==0){
-                echo "Invalid username or password.";
-                console.log("error");
+            if(is_Null($result[0]['fName'])){
+                //echo "Invalid username or password.";
+                header("Location: login.php?credentials=false");
                 
             }
             else{
