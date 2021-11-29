@@ -45,19 +45,20 @@
                 header("Location: index.php?credentials=false");
                 
             }
-            else{
-                echo "<table>";
-                echo "<tr>";
-                    echo "<th>fName</th><th>lName</th><th>email</th>";
-                echo "</tr>";
+            else {
+                header("Location: homePage.php");
+                // echo "<table>";
+                // echo "<tr>";
+                //     echo "<th>fName</th><th>lName</th><th>email</th>";
+                // echo "</tr>";
 
-                //while($arr = $stmt->fetchArray()) {
-                    //foreach($result as $tuple) {
-                    echo "<tr>";
-                    echo "<td>".$result[0]['fName']."</td>";
-                    echo "<td>".$result[0]['lName']."</td>";
-                    echo "<td>".$result[0]['Email']."</td>";
-                    echo "</tr>"; 
+                // //while($arr = $stmt->fetchArray()) {
+                //     //foreach($result as $tuple) {
+                //     echo "<tr>";
+                //     echo "<td>".$result[0]['fName']."</td>";
+                //     echo "<td>".$result[0]['lName']."</td>";
+                //     echo "<td>".$result[0]['Email']."</td>";
+                //     echo "</tr>"; 
                
             }
             
