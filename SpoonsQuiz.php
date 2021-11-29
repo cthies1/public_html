@@ -380,7 +380,7 @@
         <br>
         <br>
         <br>
-        <form action="homepage.php" method = "POST">
+        <form action="homePage.php" method = "POST">
             <input class="button button1" type="submit" value="Submit" /></br></br>
          </form>
     </body1>
