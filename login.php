@@ -40,7 +40,7 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if(true){
+            if($result){
                 echo "<table>";
                 echo "<tr>";
                     echo "<th>fName</th><th>lName</th><th>email</th>";
