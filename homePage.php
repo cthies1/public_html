@@ -192,10 +192,10 @@
            $matchFilt = matchFilter($mfilt);
 
             //return all matches, and store the result set
-            $query_str = $db->prepare('with Matches as (select * from Match where User1 is ":username" or User2 is ":username")
+            $query_str = $db->prepare('with Matches as (select * from Match where User1 is :username or User2 is :username)
             select fname, lname, date, matchpercent 
              from Matches , Users
-             where (users.email is matches.user1 and matches.user1 is not ":username")or (users.email is matches.user2 and matches.user2 is not ":username")and (date>"00/00/0000") and matchPercent>0
+             where (users.email is matches.user1 and matches.user1 is not :username)or (users.email is matches.user2 and matches.user2 is not :username)and (date>"00/00/0000") and matchPercent>0
              order by matchPercent desc;');  // <----- Line 19
              $query_str->bindValue(':username',$homeID);
              $query_str->execute();
