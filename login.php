@@ -42,6 +42,7 @@
 
             if(mysqli_num_rows($result)==0){
                 echo "Invalid username or password.";
+                console.log("error");
                 
             }
             else{
