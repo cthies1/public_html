@@ -39,9 +39,14 @@
             $stmt->execute();
 
             $result = $stmt->fetchAll();
-            var_dump($stmt);
+            //var_dump($result);
 
-            if(true){
+            if(mysqli_num_rows($result)==0){
+                echo "Invalid username or password.";
+                console.log("error");
+                
+            }
+            else{
                 echo "<table>";
                 echo "<tr>";
                     echo "<th>fName</th><th>lName</th><th>email</th>";
@@ -50,15 +55,15 @@
                 //while($arr = $stmt->fetchArray()) {
                     //foreach($result as $tuple) {
                     echo "<tr>";
-                    echo "<td>".$stmt['fName']."</td>";
-                    echo "<td>$stmt[lName]</td>";
-                    echo "<td>$stmt[Email]</td>";
+                    echo "<td>".$result[0]['fName']."</td>";
+                    echo "<td>".$result[0]['lName']."</td>";
+                    echo "<td>".$result[0]['Email']."</td>";
                     echo "</tr>"; 
+               
+            }
+            
+             
                 //}
-            }
-            else{
-                echo "Invalid username or password.";
-            }
             
             //} 
             // if ($result == null) {  //incorrect email or password

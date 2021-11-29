@@ -1,0 +1,38 @@
+body {
+    background-color: darkslategray
+}
+
+body1{
+    background-color: lemonchiffon;
+    padding-top: 10px;
+}
+
+h1{
+    color: mediumslateblue; 
+    text-align: center;
+    font-size: 60px;
+}
+
+h2{
+    color: beige;
+    text-align: center;
+    font-size: 30px;
+
+}
+h3{
+    color: white; 
+    text-align: center;
+    font-size: 25px;
+}
+
+div{
+    color: white; 
+    font-size: 20px;
+}
+
+li{
+    width: 300px;
+    border: 20px solid salmon;
+    padding: 30px;
+    margin: auto;
+  }
