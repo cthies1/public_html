@@ -2,6 +2,7 @@ body {
   background-color: darkslategray;
   margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  align-content: center;
+  /* top: 50%; */
+  /* left: 50%; */
 }
