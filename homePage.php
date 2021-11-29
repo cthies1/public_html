@@ -8,7 +8,8 @@
 
     <body>
 
-    <!-- Home Page is the page that the user will be directed to once logging in.
+    <!-- 
+        Home Page is the page that the user will be directed to once logging in.
         Home page will take in the login information from a user and display all of the matches
         in a table. The user will have the option to filter out matches from the table based on the date
         they matched and based on the percentage of the match.
@@ -190,12 +191,14 @@
            $matchFilt = matchFilter($mfilt);
 
             //return all matches, and store the result set
-            $query_str = "with Matches as (select * from Match where User1 is "$homeID" or User2 is "$homeID")
+            $query_str = $db->prepare('with Matches as (select * from Match where User1 is ":username" or User2 is ":username")
             select fname, lname, date, matchpercent 
              from Matches , Users
-             where (users.email is matches.user1 and matches.user1 is not "$homeID")or (users.email is matches.user2 and matches.user2 is not "$homeID")and (date>"00/00/0000") and matchPercent>0
-             order by matchPercent desc;";  // <----- Line 19
-            $result_set = $db->query($query_str);
+             where (users.email is matches.user1 and matches.user1 is not ":username")or (users.email is matches.user2 and matches.user2 is not ""username")and (date>"00/00/0000") and matchPercent>0
+             order by matchPercent desc;');  // <----- Line 19
+             $query_str->bindValue(':username',$homeID);
+             $query_str->execute();
+            $result_set = $query_str->fetchAll();
 
             //store results in a table displaying the matches
             echo "<table>";
