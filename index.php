@@ -38,7 +38,10 @@
                 Email: <input type="email" name="email" /></br></br>
                 Password: <input type="text" name="pass" /></br></br>
                 <input type="submit" value="Login" />
+                <input type="submit" value="Create Account" />
+                <input type="submit" value="Spoon's quiz" />
             </form>
+
         </p>
         
     </body>
