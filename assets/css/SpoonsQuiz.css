@@ -5,6 +5,7 @@ body {
 body1{
     background-color: lemonchiffon;
     padding-top: 10px;
+    text-align: centers;
 }
 
 h1{
@@ -47,6 +48,10 @@ li{
     margin: auto;
     transition-duration: 0.4s;
     cursor: pointer;
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
   }
   
   .button1 {
