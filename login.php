@@ -42,7 +42,7 @@
 
             if(is_Null($result[0])){
                 echo "Invalid username or password.";
-                console.log("error");
+                echo ("error");
                 
             }
             else{
