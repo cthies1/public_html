@@ -38,11 +38,12 @@
                 Email: <input type="email" name="email" /></br></br>
                 Password: <input type="text" name="pass" /></br></br>
                 <input type="submit" value="Login" />
-                <input type="create" value="Create Account" />
-                <input type="quiz" value="Spoon's quiz" />
             </form>
-            <form action="SpoonsQuiz.php" method = "POST">
+            <form action="SpoonsQuiz.php" method = "post">
                 <input type="submit" value="Spoon's quiz" />
+            </form>
+            <form action="createAccount.php" method = "post">
+                <input type="submit" value="Create Account" />
             </form>
         </p>
         
