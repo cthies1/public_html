@@ -44,17 +44,20 @@ li{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: auto;
     transition-duration: 0.4s;
     cursor: pointer;
   }
   
   .button1 {
+    width: 300px;
     background-color: darkslategray; 
     color: white; 
     align-self: center;
     text-align: center;
-    border: 2px solid salmon;
+    margin: auto;
+    border: 20px solid salmon;
+    padding: 30px;
   }
   
   .button1:hover {

@@ -1,7 +1,20 @@
 body {
   background-color: darkslategray;
-  margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    color: mediumslateblue; 
+    text-align: center;
+    font-size: 60px;
+}
+
+.forms {
+    color: white;
+    font-size: 20px;
+    border: 20px solid salmon;
+    padding: 30px;
 }
