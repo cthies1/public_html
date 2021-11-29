@@ -99,8 +99,8 @@
                 store these values in its own array
 
             */
-            $arr = getdate();
-            $tDate = array($arr[5],$arr[3],$arr[6]);
+            $arr = $dfilt;
+            //$tDate = array($arr[5],$arr[3],$arr[6]);
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
@@ -182,6 +182,7 @@
         <?php
         try{
             //open connection to the spoons database file
+            $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
 
             //set errormode to use exceptions
