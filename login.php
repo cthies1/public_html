@@ -34,7 +34,6 @@
             $stmt->bindValue(':email',$_POST['email']);
             $stmt->bindValue(':pass',$_POST['pass']);
             
-            //echo $stmt;
             //$result = $db->query($stmt);
             $stmt->execute();
 
@@ -63,7 +62,6 @@
                 //     echo "</tr>"; 
                
             }
-            
              
                 //}
             
