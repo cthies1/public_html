@@ -37,7 +37,7 @@
             <div class="forms">
                 <form action="login.php?" method="post">
                     Email: <input type="email" name="email" /></br></br>
-                    Password: <input type="text" name="pass" /></br></br>
+                    Password: <input type="text" name="pass" /></br></br></br>
                     <input class="button" type="submit" value="Login" /></br></br>
                 </form>
                 <form action="createAccount.php" method = "post">
