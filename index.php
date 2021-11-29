@@ -41,7 +41,9 @@
                 <input type="submit" value="Create Account" />
                 <input type="submit" value="Spoon's quiz" />
             </form>
-
+            <form action="SpoonsQuiz.php" method = "POST">
+                <input type="submit" value="Spoon's quiz" />
+            </form>
         </p>
         
     </body>
