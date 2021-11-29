@@ -24,13 +24,13 @@
         echo("hello {$homeID}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
-        if(null == $_GET['dfilt']){
+        if(isset($_GET['dfilt'])){
             $dfilt = "show all";
         }
         else{
             $dfilt = $_GET['dfilt'];
         }
-        if(null == $_GET['mfilt']){
+        if(isset($_GET['mfilt'])){
             $mfilt = "show all";
         }
         else{
