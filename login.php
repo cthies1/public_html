@@ -33,12 +33,13 @@
             $password = $_POST['pass'];
             $stmt->bindValue(':email',$_POST['email']);
             $stmt->bindValue(':pass',$_POST['pass']);
-            echo "statement prepared";
+            //echo "statement prepared";
             
             //$result = $db->query($stmt);
             $stmt->execute();
 
             $result = $stmt->fetchAll();
+            echo "result"
             //var_dump($result);
 
             if(is_Null($result[0]['fName'])){
