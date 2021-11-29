@@ -40,7 +40,7 @@
             $result = $stmt->fetchAll();
             //var_dump($result);
 
-            if(mysqli_num_rows($result)==0){
+            if(is_Null($result)){
                 echo "Invalid username or password.";
                 console.log("error");
                 
