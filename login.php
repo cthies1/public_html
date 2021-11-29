@@ -46,7 +46,7 @@
                 
             }
             else {
-                header("Location: homePage.php");
+                header("Location: homePage.php?username=".$username);
                 // echo "<table>";
                 // echo "<tr>";
                 //     echo "<th>fName</th><th>lName</th><th>email</th>";
