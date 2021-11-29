@@ -38,13 +38,13 @@
                 <form action="login.php?" method="post">
                     Email: <input type="email" name="email" /></br></br>
                     Password: <input type="text" name="pass" /></br></br>
-                    <input type="submit" value="Login" /></br></br>
+                    <input class="button" type="submit" value="Login" /></br></br>
                 </form>
                 <form action="SpoonsQuiz.php" method = "post">
-                    <input type="submit" value="Spoon's quiz" /></br></br>
+                    <input class="button" type="submit" value="Spoon's quiz" /></br></br>
                 </form>
                 <form action="createAccount.php" method = "post">
-                    <input type="submit" value="Create Account" /></br></br>
+                    <input class="button" type="submit" value="Create Account" /></br></br>
                 </form>
             </div>
         </p>

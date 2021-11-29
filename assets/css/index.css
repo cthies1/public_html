@@ -1,6 +1,6 @@
 body {
-  background-color: darkslategray;
-  position: absolute;
+    background-color: darkslategray;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -17,4 +17,11 @@ h1{
     font-size: 20px;
     border: 20px solid salmon;
     padding: 30px;
+}
+
+.button {
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
 }
