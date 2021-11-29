@@ -39,7 +39,7 @@
             $stmt->execute();
 
             $result = $stmt->fetchAll();
-            echo "result"
+            echo "result";
             //var_dump($result);
 
             if(is_Null($result[0]['fName'])){
