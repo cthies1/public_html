@@ -44,11 +44,12 @@
                     <input class="button" type="submit" value="Create Account" />
                 </form>
             </div>
-            <img src = './assets/images/logo.php'></img>
+            
                 <form action="SpoonsQuiz.php" method = "post">
                     <input type="submit" value="Spoon's quiz" /></br></br>
                 </form>
         </p>
+        <img src = "./assets/images/logo.php"></img>
         
     </body>
 
