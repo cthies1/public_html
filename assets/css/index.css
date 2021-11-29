@@ -25,9 +25,10 @@ h1{
     /* top: 50%; */
     transform: translate(-50%, -50%);
     color: white; 
+    background-color: darkslategray; 
     /* align-self: center; */
     /* text-align: center; */
     margin: auto;
-    border: 2px solid salmon;
+    border: 5px solid salmon;
     /* padding: 30px; */
 }
