@@ -53,6 +53,7 @@ li{
     background-color: darkslategray; 
     color: white; 
     align-self: center;
+    text-align: center;
     border: 2px solid salmon;
   }
   
