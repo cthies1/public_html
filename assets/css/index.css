@@ -21,12 +21,16 @@ h1 {
 
 .button {
   position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  transform: translate(-50%, -50%);
   color: white;
-  align-self: center;
-  text-align: center;
+  background-color: darkslategray;
+  /* align-self: center; */
+  /* text-align: center; */
   margin: auto;
-  border: 20px solid salmon;
-  padding: 30px;
+  border: 5px solid salmon;
+  /* padding: 30px; */
 }
 
 img {
