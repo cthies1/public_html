@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="./assets/SpoonsQuiz.css">
+    <link rel="stylesheet" href="./assets/css/SpoonsQuiz.css">
 <head>
     <title>Welcome! </title>
 </head>
