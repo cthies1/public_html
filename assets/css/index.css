@@ -4,12 +4,15 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: white;
 }
 
 h1{
     color: mediumslateblue; 
     text-align: center;
     font-size: 60px;
+}
+
+div {
+    color: white;
+    font-size: 20px;
 }
