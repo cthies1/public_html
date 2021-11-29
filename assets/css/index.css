@@ -1,8 +1,7 @@
 body {
   background-color: darkslategray;
-  margin: 0;
   position: absolute;
-  align-content: center;
-  /* top: 50%; */
-  /* left: 50%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
