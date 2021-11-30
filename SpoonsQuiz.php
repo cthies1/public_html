@@ -5,6 +5,7 @@
     <title>Welcome! </title>
 </head>
 <body>
+    <img class="logo" src="./assets/images/logo.png" />
     <body1>
         <h1>Welcome to Spoons!</h1>
         <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>

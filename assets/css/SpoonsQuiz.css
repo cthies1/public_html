@@ -73,3 +73,11 @@ h3{
     background-color: #8973D2;
     color: #FAF7FF;
 }
+
+.logo {
+    width: 5%;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
