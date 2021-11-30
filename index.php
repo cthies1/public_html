@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <h1>Login Page:</h1>
+        <img src="./assets/images/logo.png" />
+        <h1>Login:</h1>
         <p>
             <?php
             if(isset($_GET["error"])){
@@ -35,7 +36,6 @@
             echo "<font color='black'>";
             ?>
             <div class="forms">
-                <img src="./assets/images/logo.png" />
                 <form action="login.php?" method="post">
                     Email: <input type="email" name="email" /></br></br>
                     Password: <input type="text" name="pass" /></br></br></br>
