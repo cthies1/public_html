@@ -28,7 +28,7 @@ div{
 
 li{
     width: 300px;
-    border: 2px solid #4969D0;
+    border: 5px solid #4969D0;
     padding: 30px;
     margin: auto;
     list-style-type: none;
@@ -65,7 +65,7 @@ h3{
     align-self: center;
     text-align: center;
     margin: auto;
-    border: 2px solid #8973D2;
+    border: 5px solid #8973D2;
     /* padding: 30px; */
 }
   
