@@ -25,16 +25,16 @@
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
         if(isset($_GET['dfilt'])){
-            $dfilt = "show all";
-        }
-        else{
             $dfilt = $_GET['dfilt'];
         }
+        else{
+            $dfilt = "show all";
+        }
         if(isset($_GET['mfilt'])){
-            $mfilt = "show all";
+            $mfilt = $_GET['mfilt'];
         }
         else{
-            $mfilt = $_GET['mfilt'];
+            $mfilt = "show all";
         }
     ?>
 
@@ -100,7 +100,7 @@
 
             */
             $arr = $dfilt;
-            //$tDate = array($arr[5],$arr[3],$arr[6]);
+            $tDate = array($arr[5],$arr[3],$arr[6]);
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
