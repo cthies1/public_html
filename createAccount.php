@@ -11,17 +11,33 @@
         <div class="page">
             <h1>Create Account:</h1>
             <p>
-                <?php
+            <?php
+                if(isset($_GET["error"])){
+                    $err = $_GET["error"];
+                    
+                    if($err >= 10){
+                        echo "<font color='red'>*Email already in use </br>";
+                        $err = $err-10;
+                    }
+                    if($err >= 2){
+                        echo "<font color='red'>*Must be 18 or older to use Spoons </br>";
+                        $err = $err-2;
+                    }
+                }
                 
                 if(isset($_GET["email"])) $email = $_GET["email"];
                 else $email = "";
                 if(isset($_GET["pass"])) $pass = $_GET["pass"];
                 else $pass = "";
 
+                $link = "addAccount.php?";
+                if (isset($_GET['email'])) $link .= "&email=".$_GET['email'];
+                if (isset($_GET['pass'])) $link .= "&pass=".$_GET['pass'];
+
                 echo "<font color='black'>";
                 ?>
                 <div class="forms">
-                    <form action="addAccount.php?" method="post">
+                    <form action="<?php echo $link ?>" method="post">
                         <div class="text-box">Email: </div><input type="email" name="email" value="<?php echo $email ?>" /></br></br>
                         <div class="text-box">Password: </div><input type="text" name="pass" value="<?php echo $pass ?>" /></br></br>
                         <div class="text-box">First Name: </div><input type="text" name="fName" /></br></br>
