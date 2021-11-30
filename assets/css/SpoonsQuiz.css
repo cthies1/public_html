@@ -15,19 +15,14 @@ h1{
 }
 
 h2{
-    color: #8973D2;
+    color: #58488D;
     text-align: center;
     font-size: 30px;
 
 }
-h3{
-    color: #8973D2; 
-    text-align: center;
-    font-size: 25px;
-}
 
 div{
-    color: #8973D2; 
+    color: black; 
     font-size: 20px;
 }
 
@@ -37,6 +32,13 @@ li{
     padding: 30px;
     margin: auto;
     list-style-type: none;
+    color: black;
+}
+
+h3{
+    color: #58488D; 
+    text-align: center;
+    font-size: 25px;
 }
 
 .button {
