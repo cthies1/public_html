@@ -1,39 +1,42 @@
 body {
-  background-color: darkslategray;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    background-color: darkslategray;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
-  color: mediumslateblue;
-  text-align: center;
-  font-size: 60px;
+    color: mediumslateblue;
+    text-align: center;
+    font-size: 60px;
 }
 
 .forms {
-  color: white;
-  font-size: 20px;
-  border: 20px solid salmon;
-  padding: 30px;
+    border: 20px solid salmon;
+    padding: 30px;
 }
 
 .button {
-  position: absolute;
-  left: 50%;
-  /* top: 50%; */
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: darkslategray;
-  /* align-self: center; */
-  /* text-align: center; */
-  margin: auto;
-  border: 5px solid salmon;
-  /* padding: 30px; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: darkslategray;
+    margin: auto;
+    border: 5px solid salmon;
+}
+
+.button:hover {
+    background-color: salmon;
 }
 
 img {
-  width: 250px;
-  height: auto;
+    width: 250px;
+    height: auto;
+}
+
+.label {
+    color: white;
+    font-size: 20px;
 }
