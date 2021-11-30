@@ -1,5 +1,5 @@
 body {
-    background-color: darkslategray;
+    background-color: #477979;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -22,7 +22,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    background-color: darkslategray;
+    background-color: #477979;
     margin: auto;
     border: 5px solid salmon;
 }

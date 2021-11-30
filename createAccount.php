@@ -30,16 +30,12 @@
                 if(isset($_GET["pass"])) $pass = $_GET["pass"];
                 else $pass = "";
 
-                $link = "addAccount.php?";
-                if (isset($_GET['email'])) $link .= "&email=".$_GET['email'];
-                if (isset($_GET['pass'])) $link .= "&pass=".$_GET['pass'];
-
                 echo "<font color='black'>";
                 ?>
                 <div class="forms">
-                    <form action="<?php echo $link ?>" method="post">
-                        <div class="text-box">Email: </div><input type="email" name="email" value="<?php echo $email ?>" /></br></br>
-                        <div class="text-box">Password: </div><input type="text" name="pass" value="<?php echo $pass ?>" /></br></br>
+                    <form action="addAccount.php" method="post">
+                        <div class="text-box">Email: </div><input type="email" name="email" /></br></br>
+                        <div class="text-box">Password: </div><input type="text" name="pass" /></br></br>
                         <div class="text-box">First Name: </div><input type="text" name="fName" /></br></br>
                         <div class="text-box">Last Name: </div><input type="text" name="lName" /></br></br>
                         <div class="text-box">Age: </div><input type="number" name="age" /></br></br></br>

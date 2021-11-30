@@ -1,5 +1,5 @@
 body {
-    background-color: darkslategray
+    background-color: #477979;
 }
 
 body1{
@@ -41,7 +41,7 @@ li{
 
 .button {
     border: none;
-    color: darkslategray;
+    color: #477979;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -58,7 +58,7 @@ li{
   
 .button1 {
     width: 300px;
-    background-color: darkslategray; 
+    background-color: #477979; 
     color: white; 
     align-self: center;
     text-align: center;
