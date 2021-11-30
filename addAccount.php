@@ -33,15 +33,22 @@
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //insert the passenger (UNSAFE!)
+            //order matters (look at your schema)
+            $stmt =$db->prepare("INSERT INTO Users VALUES
+                (:email, :pass, :fName, :lName, :age);");
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+            $stmt->bindValue(':fName',$_POST['fName']);
+            $stmt->bindValue(':lName',$_POST['lName']);
+            $stmt->bindValue(':age',$_POST['age']);
+            $result = $stmt->execute();
+            //$db->exec($stmt);
 
-            echo "database open ...    ";
-
-            //enter info into db
-
-            echo "entered info into db...";
-
+            //redirect user to another page
             $str = "Location: homePage.php?username=".$_POST['email'];
-            header($str);            
+            header($str);   
+
         }
         //disconnect from database
         $db = null;
