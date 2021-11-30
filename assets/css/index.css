@@ -13,7 +13,7 @@ h3 {
     color: white; 
     text-align: center;
     font-size: 25px;
-    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .forms {
@@ -38,6 +38,7 @@ h3 {
 img {
   width: 200px;
   height: auto;
+  position: absolute;
   left: 50%;
     /* position: absolute;
     top: 10px;
