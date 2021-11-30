@@ -38,8 +38,8 @@
                 <div class="forms">
                     <h3>Login:</h3>
                     <form action="login.php?" method="post">
-                        <div class="text-box">Email: </div><input type="email" name="email" /></br></br>
-                        <div class="text-box">Password: </div><input type="text" name="pass" /></br></br></br>
+                        <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
+                        <span class="text-box">Password: </span><input type="text" name="pass" /></br></br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">
