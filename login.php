@@ -52,6 +52,7 @@
             
                 if(!is_Null($result1[0]['fName'])){
                     echo "if 2";
+                    echo $_GET["numAttempts"];
                     if(isset($_GET["numAttempts"])){
                         echo "if 3";
                         $numAttempts = ++$_GET["numAttempts"];
