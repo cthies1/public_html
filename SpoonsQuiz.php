@@ -106,11 +106,11 @@
             <h3>Are you religious?</h3>
             <div>
                 <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A" />
-                <label for="question-4-answers-A">Yes, I am not religious</label>
+                <label for="question-4-answers-A">Yes, I am religious</label>
             </div>
             <div>
                 <input type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
-                <label for="question-4-answers-B">No, I am religious</label>
+                <label for="question-4-answers-B">No, I am not religious</label>
             </div>
         </li>
         <br>
@@ -155,6 +155,10 @@
             <div>
                 <input type="radio" name="question-5-answers" id="question-5-answers-J" value="J" />
                 <label for="question-5-answers-J">Classical</label>
+            </div>
+            <div>
+                <input type="radio" name="question-5-answers" id="question-5-answers-K" value="K" />
+                <label for="question-5-answers-K">Oldies</label>
             </div>
         </li>
         <br>
