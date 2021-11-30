@@ -25,6 +25,14 @@
 
             echo "database open ...    ";
             echo "printing statement:   ";
+            //check that email exists ONLY
+            $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
+            $email = $_POST['email'];
+            $stmt1->bindValue(':email',$_POST['email']);
+            
+            $stmt1->execute();
+
+            $result1 = $stmt1->fetchAll();
             // //check email and password
             $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
             $email = $_POST['email'];
@@ -36,12 +44,24 @@
 
             $result = $stmt->fetchAll();
             echo "result";
-
+            //if email exists, but password is wrong
+            
             if(is_Null($result[0]['fName'])){
-                $numAttempts = 
+                //if email exists, but password is wrong
+            
+                if(is_Null($result1[0]['fName'])){
+                    $numAttempts = $
+                    //echo "Invalid username or password.";
+                    $str = "Location: index.php?credentials=".$numAttempts;
+                    header($str);
+
+                }
+                else{
+               
                 //echo "Invalid username or password.";
-                $str = "Location: index.php?credentials=".$numAttempts;
+                $str = "Location: index.php?credentials=false";
                 header($str);
+                }
                 
             }
             else {
