@@ -48,28 +48,25 @@
             
             if(is_Null($result[0]['fName'])){
                 //if email exists, but password is wrong
+                echo "if 1";
             
                 if(is_Null($result1[0]['fName'])){
+                    echo "if 2";
                     if(isset($GET["numAttempts"])){
+                        echo "if 3";
                         $numAttempts = $GET["numAttempts"] +1;
-                    }
-                    else{
+                    } else {
+                        echo "else 1";
                         $numAttempts = 1;
                     }
-                    //echo "Invalid username or password.";
-                    $str = "Location: index.php?numAttempts=".$numAttempts;
+                    $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
                     header($str);
-
-                }
-                else{
-               
-                //echo "Invalid username or password.";
-                $str = "Location: index.php?credentials=false";
-                header($str);
-                }
-                
-            }
-            else {
+                } else {
+                    echo "else 2";
+                    $str = "Location: index.php?credentials=false";
+                    header($str);
+                }  
+            } else {
                 echo "moving to home page...";
                 $str = "Location: homePage.php?username=".$_POST['email'];
                 header($str);
