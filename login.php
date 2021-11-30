@@ -49,7 +49,7 @@
             }
             else {
                 echo "moving to home page...";
-                $str = "Location: homePage.php?username=".$username;
+                $str = "Location: homePage.php?username=".$_POST['email'];
                 header($str);
                 // echo "<table>";
                 // echo "<tr>";

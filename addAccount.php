@@ -40,7 +40,7 @@
 
             echo "entered info into db...";
 
-            $str = "Location: homePage.php?username=".$username;
+            $str = "Location: homePage.php?username=".$_POST['email'];
             header($str);            
         }
         //disconnect from database
