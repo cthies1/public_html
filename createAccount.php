@@ -15,20 +15,47 @@
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
                     
-                    if($err >= 10){
+                    if($err >= 1000000){
+                        echo "<font color='red'>*Must enter email </br>";
+                        $err = $err-1000000;
+                    }
+                    if($err >= 200000){
                         echo "<font color='red'>*Email already in use </br>";
-                        $err = $err-10;
+                        $err = $err-200000;
                     }
-                    if($err >= 2){
+                    if($err >= 30000){
+                        echo "<font color='red'>*Must enter passsword </br>";
+                        $err = $err-30000;
+                    }
+                    if($err >= 4000){
+                        echo "<font color='red'>*Must enter first name </br>";
+                        $err = $err-4000;
+                    }
+                    if($err >= 500){
+                        echo "<font color='red'>*Must enter last name </br>";
+                        $err = $err-500;
+                    }
+                    if($err >= 60){
+                        echo "<font color='red'>*Must enter age </br>";
+                        $err = $err-60;
+                    }
+                    if($err >= 7){
                         echo "<font color='red'>*Must be 18 or older to use Spoons </br>";
-                        $err = $err-2;
+                        $err = $err-7;
                     }
+                    
                 }
                 
-                if(isset($_GET["email"])) $email = $_GET["email"];
-                else $email = "";
-                if(isset($_GET["pass"])) $pass = $_GET["pass"];
-                else $pass = "";
+                // if(isset($_GET["email"])) $email = $_GET["email"];
+                // else $email = "";
+                // if(isset($_GET["pass"])) $pass = $_GET["pass"];
+                // else $pass = "";
+                // if(isset($_GET["fName"])) $fName = $_GET["fName"];
+                // else $fName = "";
+                // if(isset($_GET["lName"])) $pass = $_GET["lName"];
+                // else $lName = "";
+                // if(isset($_GET["age"])) $age = $_GET["age"];
+                // else $age = "";
 
                 echo "<font color='black'>";
                 ?>

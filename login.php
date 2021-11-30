@@ -11,7 +11,7 @@
         }
 
         if($error > 0) {
-            $str = "Location: login.php?error=".$error;
+            $str = "Location: index.php?error=".$error;
             header($str);
         }
         else {

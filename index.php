@@ -16,11 +16,11 @@
                     $err = $_GET["error"];
                     
                     if($err >= 10){
-                        echo "<font color='red'>*Invalid email </br>";
+                        echo "<font color='red'>*Must enter email </br>";
                         $err = $err-10;
                     }
                     if($err >= 2){
-                        echo "<font color='red'>*Invalid password </br>";
+                        echo "<font color='red'>*Must enter password </br>";
                         $err = $err-2;
                     }
                 }
@@ -28,10 +28,10 @@
                     echo "<font color='red'>*Incorrect email or password</br>";
                 }
                 
-                if(isset($_GET["email"])) $email = $_GET["email"];
-                else $email = "";
-                if(isset($_GET["pass"])) $pass = $_GET["pass"];
-                else $pass = "";
+                // if(isset($_GET["email"])) $email = $_GET["email"];
+                // else $email = "";
+                // if(isset($_GET["pass"])) $pass = $_GET["pass"];
+                // else $pass = "";
 
                 echo "<font color='black'>";
                 ?>
