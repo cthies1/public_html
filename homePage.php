@@ -100,7 +100,8 @@
 
             */
             $arr = getdate();
-            $tDate = array($arr[mon],$arr[mday],$arr[year]);
+            $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
+            echo "tdate: ".$tDate[0];
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
@@ -110,6 +111,7 @@
             */    
             function dateFilter($dfilt){
                 //filtDate will hold the filter date
+                global $tDate;
                 $filtDate = $tDate;
                 //only show matches from the current day
                 if(strcmp($dfilt,"today")==0){
