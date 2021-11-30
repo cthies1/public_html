@@ -9,10 +9,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-h1 {
-  color: mediumslateblue;
-  text-align: center;
-  font-size: 60px;
+h3 {
+    color: white; 
+    text-align: center;
+    font-size: 25px;
 }
 
 .forms {
@@ -35,7 +35,7 @@ h1 {
 }
 
 img {
-  width: 250px;
+  width: 200px;
   height: auto;
     position: absolute;
     top: 10px;

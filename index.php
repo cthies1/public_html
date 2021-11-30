@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <img src="./assets/images/logo.png" />
+        <!-- <img src="./assets/images/logo.png" /> -->
         <div class="page">
-            <h1>Login:</h1>
+            <!-- <h1>Login:</h1> -->
+            <img src="./assets/images/logo.png" />
             <p>
                 <?php
                 if(isset($_GET["error"])){
@@ -37,6 +38,7 @@
                 echo "<font color='black'>";
                 ?>
                 <div class="forms">
+                    <h3>Login:</h3>
                     <form action="login.php?" method="post">
                         <div class="text-box">Email: </div><input type="email" name="email" /></br></br>
                         <div class="text-box">Password: </div><input type="text" name="pass" /></br></br></br>
