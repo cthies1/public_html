@@ -50,7 +50,7 @@
                 //if email exists, but password is wrong
                 echo "if 1";
             
-                if(is_Null($result1[0]['fName'])){
+                if(!is_Null($result1[0]['fName'])){
                     echo "if 2";
                     if(isset($GET["numAttempts"])){
                         echo "if 3";
