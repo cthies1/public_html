@@ -100,7 +100,7 @@
 
             */
             $arr = getdate();
-            $tDate = array($arr[5],$arr[3],$arr[6]);
+            $tDate = array($arr[mon],$arr[mday],$arr[year]);
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
