@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
+        <img src="./assets/images/logo.png" />
         <div class="page">
             <h1>Create Account:</h1>
             <p>
