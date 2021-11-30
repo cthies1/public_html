@@ -1,12 +1,13 @@
 body {
     background-color: darkslategray;
-}
-
-.box {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.box {
+    float: right;
 }
 
 
@@ -41,5 +42,4 @@ img {
     width: 250px;
     height: auto;
     float: left;
-    padding-right: 10px;
 }

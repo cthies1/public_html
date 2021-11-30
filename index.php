@@ -46,12 +46,12 @@
                         <input class="button" type="submit" value="Create Account" />
                     </form>
                 </div>
-                
-                    <form action="SpoonsQuiz.php" method = "post">
-                        <input type="submit" value="Spoon's quiz" /></br></br>
-                    </form>
             </p>
         </div>
+
+        <form action="SpoonsQuiz.php" method = "post">
+            <input type="submit" value="Spoon's quiz" /></br></br>
+        </form>
         
     </body>
 
