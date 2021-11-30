@@ -35,6 +35,7 @@
             echo "<font color='black'>";
             ?>
             <div class="forms">
+                <img src="./assets/images/logo.png" />
                 <form action="login.php?" method="post">
                     Email: <input type="email" name="email" /></br></br>
                     Password: <input type="text" name="pass" /></br></br></br>
@@ -48,7 +49,6 @@
                 <form action="SpoonsQuiz.php" method = "post">
                     <input type="submit" value="Spoon's quiz" /></br></br>
                 </form>
-                <img src="./assets/images/logo.png" />
         </p>
         
         
