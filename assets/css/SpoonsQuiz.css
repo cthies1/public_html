@@ -61,7 +61,7 @@ h3{
 .button1 {
     /* width: 300px; */
     background-color: #F8DFFF; 
-    color: black; 
+    color: #8973D2; 
     align-self: center;
     text-align: center;
     margin: auto;
@@ -71,5 +71,5 @@ h3{
   
 .button1:hover {
     background-color: #8973D2;
-    color: black;
+    color: #F8DFFF;
 }
