@@ -1,5 +1,5 @@
 body {
-  background-color: #F8DFFF;
+  background-color: #FAF7FF;
 }
 
 .page {
@@ -17,7 +17,7 @@ h3 {
 }
 
 .forms {
-  border: 20px solid #8973D2;
+  border: 2px solid #8973D2;
   padding: 30px 80px;
 }
 
@@ -26,14 +26,14 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #8973D2;
-  background-color: #F8DFFF;
+  background-color: #FAF7FF;
   margin: auto;
-  border: 5px solid #8973D2;
+  border: 2px solid #8973D2;
 }
 
 .button:hover {
   background-color: #8973D2;
-  color: #F8DFFF;
+  color: #FAF7FF;
 }
 
 img {
