@@ -50,9 +50,14 @@
                 //if email exists, but password is wrong
             
                 if(is_Null($result1[0]['fName'])){
-                    $numAttempts = $
+                    if(isset($GET["numAttempts"])){
+                        $numAttempts = $GET["numAttempts"] +1;
+                    }
+                    else{
+                        $numAttempts = 1;
+                    }
                     //echo "Invalid username or password.";
-                    $str = "Location: index.php?credentials=".$numAttempts;
+                    $str = "Location: index.php?numAttempts=".$numAttempts;
                     header($str);
 
                 }
