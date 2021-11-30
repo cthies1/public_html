@@ -1,5 +1,5 @@
 body {
-  background-color: darkslategray;
+  background-color: #164A41;
 }
 
 .page {
@@ -26,7 +26,7 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: darkslategray;
+  background-color: #164A41;
   margin: auto;
   border: 5px solid salmon;
 }

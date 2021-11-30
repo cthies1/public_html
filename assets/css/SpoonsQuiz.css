@@ -1,21 +1,21 @@
 body {
-    background-color: darkslategray;
+    background-color: #164A41;
 }
 
 body1{
-    background-color: lemonchiffon;
+    background-color: white;
     padding-top: 10px;
     text-align: centers;
 }
 
 h1{
-    color: mediumslateblue; 
+    color: #f1b24a; 
     text-align: center;
     font-size: 60px;
 }
 
 h2{
-    color: beige;
+    color: white;
     text-align: center;
     font-size: 30px;
 
@@ -33,7 +33,7 @@ div{
 
 li{
     width: 300px;
-    border: 20px solid salmon;
+    border: 2px solid #f1b24a;
     padding: 30px;
     margin: auto;
     list-style-type: none;
@@ -41,7 +41,7 @@ li{
 
 .button {
     border: none;
-    color: darkslategray;
+    color: #164A41;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -57,17 +57,17 @@ li{
 }
   
 .button1 {
-    width: 300px;
-    background-color: darkslategray; 
+    /* width: 300px; */
+    background-color: #164A41; 
     color: white; 
     align-self: center;
     text-align: center;
     margin: auto;
-    border: 20px solid salmon;
-    padding: 30px;
+    border: 2px solid #f1b24a;
+    /* padding: 30px; */
 }
   
 .button1:hover {
-    background-color: salmon;
+    background-color: #f1b24a;
     color: white;
 }
