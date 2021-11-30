@@ -37,9 +37,10 @@ h3 {
 img {
   width: 200px;
   height: auto;
-    position: absolute;
+  align-self: center;
+    /* position: absolute;
     top: 10px;
-    left: 10px;
+    left: 10px; */
 }
 
 .text-box {
