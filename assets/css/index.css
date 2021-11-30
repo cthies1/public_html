@@ -13,8 +13,6 @@ h1 {
 }
 
 .forms {
-    color: white;
-    font-size: 20px;
     border: 20px solid salmon;
     padding: 30px;
 }
@@ -38,6 +36,7 @@ img {
     height: auto;
 }
 
-.label {
+.text-box {
     color: white;
+    font-size: 20px;
 }
