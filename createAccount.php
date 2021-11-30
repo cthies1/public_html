@@ -62,11 +62,11 @@
                 <div class="forms">
                     <h3>Create Account:</h3>
                     <form action="addAccount.php" method="post">
-                        <div class="text-box">Email: </div><input type="email" name="email" /></br></br>
-                        <div class="text-box">Password: </div><input type="text" name="pass" /></br></br>
-                        <div class="text-box">First Name: </div><input type="text" name="fName" /></br></br>
-                        <div class="text-box">Last Name: </div><input type="text" name="lName" /></br></br>
-                        <div class="text-box">Age: </div><input type="number" name="age" /></br></br></br>
+                        <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
+                        <span class="text-box">Password: </span><input type="text" name="pass" /></br></br>
+                        <span class="text-box">First Name: </span><input type="text" name="fName" /></br></br>
+                        <span class="text-box">Last Name: </span><input type="text" name="lName" /></br></br>
+                        <span class="text-box">Age: </span><input type="number" name="age" /></br></br></br>
                         <input class="button" type="submit" value="Create Account" /></br></br>
                     </form>
                     <form action="index.php" method = "post">
