@@ -99,7 +99,7 @@
                 store these values in its own array
 
             */
-            $arr = $dfilt;
+            $arr = getdate();
             $tDate = array($arr[5],$arr[3],$arr[6]);
 
             /*
