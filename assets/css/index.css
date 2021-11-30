@@ -19,6 +19,7 @@ h3 {
 .forms {
   border: 20px solid salmon;
   padding: 30px;
+  width: 50%;
 }
 
 .button {
