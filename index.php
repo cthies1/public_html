@@ -9,48 +9,49 @@
     </head>
     <body>
         <img src="./assets/images/logo.png" />
-        <h1>Login:</h1>
-        <p>
-            <?php
-            if(isset($_GET["error"])){
-                $err = $_GET["error"];
+        <div class="box">
+            <h1>Login:</h1>
+            <p>
+                <?php
+                if(isset($_GET["error"])){
+                    $err = $_GET["error"];
+                    
+                    if($err >= 10){
+                        echo "<font color='red'>*Invalid email </br>";
+                        $err = $err-10;
+                    }
+                    if($err >= 2){
+                        echo "<font color='red'>*Invalid password </br>";
+                        $err = $err-2;
+                    }
+                }
+                if(isset($_GET["credentials"])){
+                    echo "<font color='red'>*Incorrect email or password</br>";
+                }
                 
-                if($err >= 10){
-                    echo "<font color='red'>*Invalid email </br>";
-                    $err = $err-10;
-                }
-                if($err >= 2){
-                    echo "<font color='red'>*Invalid password </br>";
-                    $err = $err-2;
-                }
-            }
-            if(isset($_GET["credentials"])){
-                echo "<font color='red'>*Incorrect email or password</br>";
-            }
-            
-            if(isset($_GET["email"])) $email = $_GET["email"];
-            else $email = "";
-            if(isset($_GET["pass"])) $pass = $_GET["pass"];
-            else $pass = "";
+                if(isset($_GET["email"])) $email = $_GET["email"];
+                else $email = "";
+                if(isset($_GET["pass"])) $pass = $_GET["pass"];
+                else $pass = "";
 
-            echo "<font color='black'>";
-            ?>
-            <div class="forms">
-                <form action="login.php?" method="post">
-                    Email: <input type="email" name="email" /></br></br>
-                    Password: <input type="text" name="pass" /></br></br></br>
-                    <input class="button" type="submit" value="Login" /></br></br>
-                </form>
-                <form action="createAccount.php" method = "post">
-                    <input class="button" type="submit" value="Create Account" />
-                </form>
-            </div>
-            
-                <form action="SpoonsQuiz.php" method = "post">
-                    <input type="submit" value="Spoon's quiz" /></br></br>
-                </form>
-        </p>
-        
+                echo "<font color='black'>";
+                ?>
+                <div class="forms">
+                    <form action="login.php?" method="post">
+                        Email: <input type="email" name="email" /></br></br>
+                        Password: <input type="text" name="pass" /></br></br></br>
+                        <input class="button" type="submit" value="Login" /></br></br>
+                    </form>
+                    <form action="createAccount.php" method = "post">
+                        <input class="button" type="submit" value="Create Account" />
+                    </form>
+                </div>
+                
+                    <form action="SpoonsQuiz.php" method = "post">
+                        <input type="submit" value="Spoon's quiz" /></br></br>
+                    </form>
+            </p>
+        </div>
         
     </body>
 
