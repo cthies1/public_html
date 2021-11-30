@@ -378,8 +378,6 @@
         </li>
         <br>
         <br>
-        <br>
-        <br>
         <form action="homePage.php" method = "POST">
             <input class="button button1" type="submit" value="Submit" /></br></br>
          </form>
