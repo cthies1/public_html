@@ -46,16 +46,17 @@
             echo "result";
             //if email exists, but password is wrong
             
-            if(is_Null($result[0]['fName'])){
+            if(!isset($result[0])){
                 //if email exists, but password is wrong
                 echo "if 1";
             
-                if(!is_Null($result1[0]['fName'])){
+                if(isset($result1[0])){
                     echo "if 2";
-                    echo $_GET["numAttempts"];
+                    $numAttempts = 0;
                     if(isset($_GET["numAttempts"])){
                         echo "if 3";
-                        $numAttempts = ++$_GET["numAttempts"];
+                        $numAttempts = $_GET["numAttempts"];
+                        $numAttempts = $numAttempts+1;
                     } else {
                         echo "else 1";
                         $numAttempts = 1;
