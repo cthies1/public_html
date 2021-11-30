@@ -1,0 +1,26 @@
+body {
+    background-color: #FAF7FF;
+}
+
+.logo {
+    width: 15%;
+    height: auto;
+    position: sticky;
+    top: 10px;
+    left: 10px;
+}
+
+h3 {
+    color: #58488D; 
+    /* text-align: center; */
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+  /* 
+  colors:
+  #FAF7FF - background
+  #58488D - dark purple
+  #8973D2 - light purple
+  #992F78 - dark pink
+   */
