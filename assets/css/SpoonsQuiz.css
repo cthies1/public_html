@@ -1,5 +1,5 @@
 body {
-    background-color: #164A41;
+    background-color: #F8DFFF;
 }
 
 body1{
@@ -9,31 +9,31 @@ body1{
 }
 
 h1{
-    color: #f1b24a; 
+    color: black; 
     text-align: center;
     font-size: 60px;
 }
 
 h2{
-    color: white;
+    color: black;
     text-align: center;
     font-size: 30px;
 
 }
 h3{
-    color: white; 
+    color: black; 
     text-align: center;
     font-size: 25px;
 }
 
 div{
-    color: white; 
+    color: black; 
     font-size: 20px;
 }
 
 li{
     width: 300px;
-    border: 2px solid #f1b24a;
+    border: 2px solid #8973D2;
     padding: 30px;
     margin: auto;
     list-style-type: none;
@@ -41,7 +41,7 @@ li{
 
 .button {
     border: none;
-    color: #164A41;
+    color: #F8DFFF;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -58,16 +58,16 @@ li{
   
 .button1 {
     /* width: 300px; */
-    background-color: #164A41; 
-    color: white; 
+    background-color: #F8DFFF; 
+    color: black; 
     align-self: center;
     text-align: center;
     margin: auto;
-    border: 2px solid lightgoldenrodyellow;
+    border: 2px solid #8973D2;
     /* padding: 30px; */
 }
   
 .button1:hover {
-    background-color: #f1b24a;
-    color: white;
+    background-color: #8973D2;
+    color: black;
 }
