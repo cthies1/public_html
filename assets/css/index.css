@@ -6,11 +6,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.box {
-    float: right;
-}
-
-
 h1 {
     color: mediumslateblue;
     text-align: center;
@@ -22,6 +17,7 @@ h1 {
     font-size: 20px;
     border: 20px solid salmon;
     padding: 30px;
+    float: right;
 }
 
 .button {
@@ -41,5 +37,4 @@ h1 {
 img {
     width: 250px;
     height: auto;
-    float: left;
 }

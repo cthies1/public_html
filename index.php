@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <img src="./assets/images/logo.png" />
-        <div class="box">
+        <div class="page">
+            <img src="./assets/images/logo.png" />
             <h1>Login:</h1>
             <p>
                 <?php
