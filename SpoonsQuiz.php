@@ -287,6 +287,10 @@
                 <input type="radio" name="question-10-answers" id="question-10-answers-B" value="B" />
                 <label for="question-10-answers-B">No</label>
             </div>
+            <div>
+                <input type="radio" name="question-11-answers" id="question-11-answers-C" value="C" />
+                <label for="question-11-answers-C">Sometimes</label>
+            </div>
         </li>
         <br>
         <li>
@@ -376,6 +380,7 @@
                 <label for="question-14-answers-J">105-115</label>
             </div>
         </li>
+        <br>
         <br>
         <br>
         <form action="homePage.php" method = "POST">
