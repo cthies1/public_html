@@ -1,5 +1,5 @@
 body {
-    background-color: #477979;
+    background-color: darkslategray;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -22,7 +22,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    background-color: #477979;
+    background-color: darkslategray;
     margin: auto;
     border: 5px solid salmon;
 }
@@ -36,7 +36,7 @@ img {
     height: auto;
 }
 
-.text-box {
+.label {
     color: white;
     font-size: 20px;
 }
