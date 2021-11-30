@@ -69,9 +69,9 @@
                         <span class="text-box">Age: </span><input type="number" name="age" /></br></br></br>
                         <input class="button" type="submit" value="Create Account" /></br></br>
                     </form>
-                    <form action="index.php" method = "post">
+                    <span><form action="index.php" method = "post">
                         <input class="button" type="submit" value="Login" />
-                    </form>
+                    </form></span>
                 </div>
             </p>
         </div>
