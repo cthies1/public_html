@@ -1,5 +1,5 @@
 body {
-  background-color: #164A41;
+  background-color: #F8DFFF;
 }
 
 .page {
@@ -10,14 +10,14 @@ body {
 }
 
 h3 {
-    color: white; 
+    color: #58488D; 
     text-align: center;
     font-size: 25px;
     margin-top: 0px;
 }
 
 .forms {
-  border: 20px solid salmon;
+  border: 20px solid #8973D2;
   padding: 30px 80px;
 }
 
@@ -25,14 +25,15 @@ h3 {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  background-color: #164A41;
+  color: #8973D2;
+  background-color: #F8DFFF;
   margin: auto;
-  border: 5px solid salmon;
+  border: 5px solid #8973D2;
 }
 
 .button:hover {
-  background-color: salmon;
+  background-color: #8973D2;
+  color: #F8DFFF;
 }
 
 img {
@@ -44,6 +45,6 @@ img {
 }
 
 .text-box {
-  color: white;
+  color: #8973D2;
   font-size: 20px;
 }
