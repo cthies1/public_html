@@ -4,8 +4,7 @@
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;
-        }
-        if(null == ($_POST['email'])){  //email already in use      STILL NEEDS TO BE FIXED
+        } else if(null == ($_POST['email'])){  //email already in use      STILL NEEDS TO BE FIXED
             $error += 200000;
         }
         if(null == ($_POST['pass'])){   //password
@@ -19,8 +18,7 @@
         }
         if(null == ($_POST['age'])){   //age
             $error += 60;
-        }
-        if(18 > ($_POST['age'])){   //age over 18
+        } else if(18 > ($_POST['age'])){   //age over 18
             $error += 7;
         }
 
