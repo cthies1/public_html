@@ -103,14 +103,14 @@
         </li>
         <br>
         <li>
-            <h3>How much does relisgion matter to you?</h3>
+            <h3>Are you religious?</h3>
             <div>
                 <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A" />
-                <label for="question-4-answers-A">I am not religious</label>
+                <label for="question-4-answers-A">Yes, I am not religious</label>
             </div>
             <div>
                 <input type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
-                <label for="question-4-answers-B">I am religious</label>
+                <label for="question-4-answers-B">No, I am religious</label>
             </div>
         </li>
         <br>
