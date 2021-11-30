@@ -38,7 +38,7 @@
                 ?>
                 <div class="forms">
                     <form action="login.php?" method="post">
-                        <p class="text-box">Email: </p><input type="email" name="email" /></br></br>
+                        <div class="text-box">Email: </div><input type="email" name="email" /></br></br>
                         <div class="text-box">Password: </div><input type="text" name="pass" /></br></br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
