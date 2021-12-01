@@ -36,11 +36,16 @@
                 // if(isset($_GET["pass"])) $pass = $_GET["pass"];
                 // else $pass = "";
 
+                $link = "login.php"
+                if(isset($_GET["numAttempts"])){
+                    $link = "login.php?".$_GET["numAttempts"];
+                }
+
                 echo "<font color='black'>";
                 ?>
                 <div class="forms">
                     <h3>Login:</h3>
-                    <form action="login.php?" method="post">
+                    <form action=<?php $link ?> method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
                         <span class="text-box">Password: </span><input type="text" name="pass" /></br>
                         <div>Keep me logged in?<input type="checkbox" id="rememberMe"></div></br></br></br>
