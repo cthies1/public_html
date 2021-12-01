@@ -15,7 +15,7 @@
         <body1>
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
-            <?php
+            <div class="page"><?php
                 if(isset($_GET["error"])){
                         $err = $_GET["error"];
                         
@@ -359,5 +359,6 @@
             <input class="button button1" type="submit" value="Submit" /></br></br>
         </form>
     </body1>
+    </div>
 </body>
 </html>
