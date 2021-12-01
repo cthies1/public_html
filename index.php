@@ -48,8 +48,8 @@
                     <form action="<?php echo $link ?>" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
                         <span class="text-box">Password: </span><input type="text" name="pass" /></br></br>
-                        <div>Keep me logged in?<input type="checkbox" id="rememberMe"></div></br></br></br>
-                        <input class="button" type="submit" value="Login" /></br></br></br></br>
+                        <div><input type="checkbox" id="rememberMe"> Keep me logged in</div></br></br>
+                        <input class="button" type="submit" value="Login" /></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">
                         <input class="button" type="submit" value="Create Account" />
