@@ -61,15 +61,16 @@
                         
                     } else {
                         echo "else 1";
+                        
                         $numAttempts = $_GET["numAttempts"];
                         $numAttempts = $numAttempts+1;
                     }
                     $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
-                    header($str);
+                    //header($str);
                 } else {
                     echo "else 2";
                     $str = "Location: index.php?credentials=false";
-                    header($str);
+                    //header($str);
                 }  
             } else {
                 echo "moving to home page...";
