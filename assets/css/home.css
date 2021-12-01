@@ -12,9 +12,89 @@ body {
 
 h3 {
     color: #58488D; 
-    /* text-align: center; */
     font-size: 25px;
     margin-top: 0px;
+}
+
+h4 {
+    color: #992F78; 
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #8973D2;
+    background-color: #FAF7FF;
+    margin: auto;
+    border: 2px solid #8973D2;
+}
+  
+.button:hover {
+    background-color: #8973D2;
+    color: #FAF7FF;
+}
+
+.match {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+}
+
+.match_card {
+    border: 2px solid #8973D2;
+    padding: 30px;
+    margin: 0px 20px;
+    height: 70%;
+}
+
+.profile_info {
+    /* border: 2px solid #8973D2; */
+    /* float: right; */
+    position: absolute;
+    left: 325px;
+    top: 70px;
+}
+
+.last {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #8973D2;
+    background-color: #FAF7FF;
+    margin: auto;
+    border: 2px solid #8973D2;
+    border-radius: 100px;
+    font-size: large;
+}
+
+.last:hover {
+    background-color: #8973D2;
+    color: #FAF7FF;
+}
+
+.next {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #8973D2;
+    background-color: #FAF7FF;
+    margin: auto;
+    border: 2px solid #8973D2;
+    border-radius: 100px;
+    font-size: large;
+}
+
+.next:hover {
+    background-color: #8973D2;
+    color: #FAF7FF;
 }
 
   /* 
