@@ -35,7 +35,7 @@
             print_r($topmatch); 
             echo '</pre>';
 
-            $matchID = $topmatch[0]['email'];
+            $matchID = $topmatch[0]['Email'];
             echo " home id ".$homeID;
             echo " match id ".$matchID;
             $matchNum = ($topmatch[0]['matched']/14)*100;
