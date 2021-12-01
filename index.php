@@ -45,7 +45,7 @@
                 ?>
                 <div class="forms">
                     <h3>Login:</h3>
-                    <form action=<?php $link ?> method="post">
+                    <form action="<?php echo $link ?>" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
                         <span class="text-box">Password: </span><input type="text" name="pass" /></br>
                         <div>Keep me logged in?<input type="checkbox" id="rememberMe"></div></br></br></br>
