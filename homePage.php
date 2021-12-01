@@ -40,7 +40,7 @@
         $link = "homePage.php?username=".$homeID;
     ?>
 
-        <form action = <?php $link?> method = "post">
+        <form action=<?php $link?> method ="post">
          Show only results from
         <select name="dfilt">
         <option value="today">today</option>
