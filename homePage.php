@@ -26,6 +26,7 @@
         $db_file = './myDB/spoons.db';
         if(isset($_POST['dfilt'])){
             $dfilt = $_POST['dfilt'];
+            echo $dfilt;
         }
         else{
             $dfilt = "show all";
@@ -236,8 +237,9 @@
         catch(PDOException $e) {
             die('Exception : '.$e->getMessage());
         }
+        $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
         ?>
-        <form action="SpoonsQuiz.php" method = "post">
+        <form action=<?php echo $spoonsLink;?> method = "post">
             <input type="submit" value="Spoon's quiz" /></br></br>
         </form>
     </body>
