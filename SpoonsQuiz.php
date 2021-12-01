@@ -390,6 +390,7 @@
         <br>
 
         <?php
+        $homeID = $_GET['username'];
         $link = "homePage.php?username=".$homeID;
         ?>
 

@@ -33,6 +33,7 @@
         }
         if(isset($GET['mfilt'])){
             $mfilt = $_GET['mfilt'];
+            echo $mfilt;
         }
         else{
             $mfilt = "show all";
@@ -53,23 +54,17 @@
         <input type="submit" value="Submit" />
         </form>
 
-        <label for="date-filter">Only show results from </label>
-        <select name="date-filter" onchange="changedate()" id="date-filter" >
-        <option value="today">today</option>
-        <option value="this week">this week</option>
-        <option value="this month">this month</option>
-        <option value="this year">this year</option>
-        <option value="show all" selected>show all</option>
-        </select>
-
-        <label for="match-filter">Only show matches greater than </label>
-        <select name="match-filter" onchange="changepercent()" id="match-filter">
+        <form action=<?php echo $link;?> method ="post">
+        Only show matches greater than 
+        <select name="match-filter">
         <option value="90%">90%</option>
         <option value="75%">75%</option>
         <option value="50%">50%</option>
         <option value="40%">40%</option>
         <option value="show all" selected>show all</option>
         </select>
+        <input type="submit" value="Submit" />
+        </form>
 
         <?php
 
