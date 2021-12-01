@@ -43,6 +43,7 @@
                     <form action="login.php?" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
                         <span class="text-box">Password: </span><input type="text" name="pass" /></br></br></br>
+                        <input type="checkbox" id="rememberMe" name="vehicle1" value="Bike">
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">
