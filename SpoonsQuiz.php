@@ -15,17 +15,17 @@
         <body1>
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
-            <li>
-                <?php
-                    if(isset($_GET["error"])){
-                            $err = $_GET["error"];
+            <?php
+                if(isset($_GET["error"])){
+                        $err = $_GET["error"];
                         
-                        if($err >= 10){
-                            echo "<font color='red'>*Hi, Sorry, you Must answer all Questions</br>";
-                            $err = $err-1;
-                        }
+                    if($err >= 10){
+                        echo "<font color='red'>*Hi, Sorry, you Must answer all Questions</br>";
+                        $err = $err-1;
                     }
-                ?>
+                }
+            ?>
+            <li>
                 <h3>What is your Sign?</h3>
                 <div>
                     <input type="radio" name="question-1-answers" id="question-1-answers-A" value="Aries" />
