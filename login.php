@@ -54,8 +54,9 @@
                     echo "if 2";
                     // $numAttempts = 0;
                     //echo $_GET["numAttempts"];
+                    debug_to_console($_GET["numAttempts"]);
                     if(empty($_GET["numAttempts"])){
-                        echo "if 3";
+                        debug_to_console("inside if");
                         $numAttempts = $_GET["numAttempts"];
                         $numAttempts++;
                     } else {
@@ -94,5 +95,12 @@
     catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
+    }
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 ?>       
