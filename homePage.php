@@ -60,7 +60,7 @@
         <option value="90%">90%</option>
         <option value="75%">75%</option>
         <option value="50%">50%</option>
-        <option value="40%">40%</option>
+        <option value="30%">30%</option>
         <option value="show all" selected>show all</option>
         </select>
         <input type="submit" value="Submit" />
@@ -77,13 +77,13 @@
                 return a number from 0 to 100
             */
             function matchFilter($mfilt){
-                echo " matchFilter = ".$mfilt;
+                //echo " matchFilter = ".$mfilt;
                 if(strcmp($mfilt,"show all")==0){
                     return 0;
                 }
                 else{
                     //remove the percentage from the end and return the string as an int
-                    echo " result = ".intval(substr_replace($mfilt ,"",-1));
+                    //echo " result = ".intval(substr_replace($mfilt ,"",-1));
                     return intval(substr_replace($mfilt ,"",-1));
                 }
             }
