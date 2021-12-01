@@ -36,7 +36,7 @@
                 // if(isset($_GET["pass"])) $pass = $_GET["pass"];
                 // else $pass = "";
 
-                $link = "login.php"
+                $link = "login.php";
                 if(isset($_GET["numAttempts"])){
                     $link = "login.php?".$_GET["numAttempts"];
                 }
