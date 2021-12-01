@@ -35,10 +35,10 @@
             print_r($topmatch); 
             echo '</pre>';
 
-            $matchID = $topmatch['email'];
+            $matchID = $topmatch[0]['email'];
             echo " home id ".$homeID;
             echo " match id ".$matchID;
-            $matchNum = ($topmatch['matched']/14)*100;
+            $matchNum = ($topmatch[0]['matched']/14)*100;
 
             //the following query gives a table containing the questions the two users are compatible with
             //in the format (question text, user response, match response)
