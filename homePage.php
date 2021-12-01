@@ -77,11 +77,13 @@
                 return a number from 0 to 100
             */
             function matchFilter($mfilt){
+                echo " matchFilter = ".$mfilt;
                 if(strcmp($mfilt,"show all")==0){
                     return 0;
                 }
                 else{
                     //remove the percentage from the end and return the string as an int
+                    echo " result = ".intval(substr_replace($mfilt ,"",-1));
                     return intval(substr_replace($mfilt ,"",-1));
                 }
             }
@@ -104,14 +106,12 @@
                 @return a string representation of the date filter in mm/d/yyyy format.
             */    
             function dateFilter($dfilt){
-                echo "date filter. dfilt = ".$dfilt;
                 //filtDate will hold the filter date
                 global $tDate;
                 $filtDate = $tDate;
                 //only show matches from the current day
                 if(strcmp($dfilt,"today")==0){
 
-                echo "date to string = ".dateToString($tDate);
                     return dateToString($tDate);
                 }
 
@@ -162,7 +162,6 @@
                     $filtDate[1] = 0;
                     $filtDate[2] = 0;
                 }
-                echo "date to string = ".dateToString($filtDate);
                 return dateToString($filtDate);
             }
 
