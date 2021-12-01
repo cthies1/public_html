@@ -26,7 +26,7 @@
             compatibleUsers as (select userID from Results natural join compatibleAnswers where QuestionID is compatibleAnswers.QuestionID and results.response is compatibleAnswers.r2 and userID is not :username),
             topCompat as (select count(*) as countMax,userID from compatibleUsers group by userID),
             matchID as (select userID, matched from (select max(countMax) as matched, userID from topCompat))
-            select fname, lname,email matched from Users natural join matchID where users.email is  matchID.userID;');
+            select fname, lname,email, matched from Users natural join matchID where users.email is  matchID.userID;');
             $query_str->bindValue(':username',$homeID);
             $query_str->execute();
             $topmatch = $query_str->fetchAll();
