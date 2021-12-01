@@ -31,8 +31,8 @@
         else{
             $dfilt = "show all";
         }
-        if(isset($GET['mfilt'])){
-            $mfilt = $_GET['mfilt'];
+        if(isset($_POST['mfilt'])){
+            $mfilt = $_POST['mfilt'];
             echo $mfilt;
         }
         else{
