@@ -24,19 +24,33 @@
         echo("hello {$homeID}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
-        if(isset($_GET['dfilt'])){
-            $dfilt = $_GET['dfilt'];
+        if(isset($_POST['dfilt'])){
+            $dfilt = $_POST['dfilt'];
         }
         else{
             $dfilt = "show all";
         }
-        if(isset($_GET['mfilt'])){
+        if(isset($GET['mfilt'])){
             $mfilt = $_GET['mfilt'];
         }
         else{
             $mfilt = "show all";
         }
+
+        $link = "homePage.php?username=".$homeID;
     ?>
+
+        <form action = <?php $link?> method = "post">
+         Show only results from
+        <select name="date-filter" >
+        <option value="today">today</option>
+        <option value="this week">this week</option>
+        <option value="this month">this month</option>
+        <option value="this year">this year</option>
+        <option value="show all" selected>show all</option>
+        </select>
+        <input type="submit" name="formSubmit" value="Submit" />
+        </form>
 
         <label for="date-filter">Only show results from </label>
         <select name="date-filter" onchange="changedate()" id="date-filter" >
@@ -101,7 +115,7 @@
             */
             $arr = getdate();
             $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
-            echo "tdate: ".$tDate[0];
+            //echo "tdate: ".$tDate[0];
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
