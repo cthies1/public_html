@@ -56,7 +56,7 @@
 
         <form action=<?php echo $link;?> method ="post">
         Only show matches greater than 
-        <select name="match-filter">
+        <select name="mfilt">
         <option value="90%">90%</option>
         <option value="75%">75%</option>
         <option value="50%">50%</option>
