@@ -220,9 +220,14 @@
             die('Exception : '.$e->getMessage());
         }
         $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
+        $matchLink = "calculateMatch.php?username=".$homeID;
         ?>
         <form action=<?php echo $spoonsLink;?> method = "post">
             <input type="submit" value="Spoon's quiz" /></br></br>
+        </form>
+
+        <form action=<?php echo $matchLink;?> method = "post">
+            <input type="submit" value="Calculate match" /></br></br>
         </form>
     </body>
 
