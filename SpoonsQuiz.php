@@ -12,6 +12,36 @@
 
     <form action= <?php echo $link; ?> method = "POST">
         <img class="logo" src="./assets/images/logo.png" />
+        <?php
+            if(isset($_GET["error"])){
+                    $err = $_GET["error"];
+                 
+                if($err >= 1){
+                    echo "<font color='red'>*Must Answer All Questions</br>";
+                    $err = $err-1;
+                }
+                if($err >= 10){
+                    echo "<font color='red'>*Must enter password </br>";
+                    $err = $err-10;
+                }
+                if($err >= 100){
+                    echo "<font color='red'>*Must enter password </br>";
+                    $err = $err-100;
+                }
+                if($err >= 1000){
+                    echo "<font color='red'>*Must enter password </br>";
+                    $err = $err-1000;
+                }
+                if($err >= 10000){
+                    echo "<font color='red'>*Must enter password </br>";
+                    $err = $err-10000;
+                }
+                if($err >= 10000){
+                    echo "<font color='red'>*Must enter password </br>";
+                    $err = $err-10;
+                }
+            }
+        ?>
         <body1>
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
