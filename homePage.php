@@ -42,14 +42,14 @@
 
         <form action = <?php $link?> method = "post">
          Show only results from
-        <select name="date-filter" >
+        <select name="dfilt">
         <option value="today">today</option>
         <option value="this week">this week</option>
         <option value="this month">this month</option>
         <option value="this year">this year</option>
         <option value="show all" selected>show all</option>
         </select>
-        <input type="submit" name="formSubmit" value="Submit" />
+        <!---<input type="submit" name="formSubmit" value="Submit" />--->
         </form>
 
         <label for="date-filter">Only show results from </label>
