@@ -51,6 +51,7 @@
             $query2_str->bindValue(':match',$matchID);
             $query2_str->execute();
             $matchQuestions = $query_str->fetchAll();
+            echo "size ".sizeof($matchQuestions);
 
             echo "<table>";
             echo "<tr>";
