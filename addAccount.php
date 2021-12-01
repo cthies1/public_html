@@ -1,10 +1,20 @@
 <?php
     try {
         $error = 0;
+        //open the sqlite database file
+        $db_file = './assets/databases/spoons.db';
+        $db = new PDO('sqlite:' . $db_file);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //check if email already in use
+        $stmt = $db->prepare('SELECT * from Users where (Email = :email)');
+        $email = $_POST['email'];
+        $stmt->bindValue(':email',$_POST['email']);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;
-        } else if(null == ($_POST['email'])){  //email already in use      STILL NEEDS TO BE FIXED
+        } else if(isset($result[0])){  //email already in use
             $error += 200000;
         }
         if(null == ($_POST['pass'])){   //password
@@ -21,7 +31,6 @@
         } else if(18 > ($_POST['age'])){   //age over 18
             $error += 7;
         }
-
 
         if($error > 0) {
             $str = "Location: createAccount.php?error=".$error;

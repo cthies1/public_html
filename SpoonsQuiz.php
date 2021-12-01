@@ -7,7 +7,7 @@
 <body>
     <?php
         $homeID = $_GET['username'];
-        $link = "homePage.php?username=".$homeID;
+        $link = "inputQuizAnswers.php?username=".$homeID;
     ?>
 
     <form action= <?php echo $link; ?> method = "POST">
