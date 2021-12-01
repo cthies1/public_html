@@ -8,55 +8,55 @@
         }
          // Check if question 2 was answered
         if(null == ($_POST['question-2-answers'])){  
-            $error += 10;
+            $error += 1;
         }
         // Check if question 3 was answered
         if(null == ($_POST['question-3-answers'])){  
-            $error += 100;
+            $error += 1;
         }
         // Check if question 4 was answered
         if(null == ($_POST['question-4-answers'])){ 
-            $error += 1000;
+            $error += 1;
         }
         // Check if question 5 was answered
         if(null == ($_POST['question-5-answers'])){  
-            $error += 10000;
+            $error += 1;
         }
         // Check if question 6 was answered
         if(null == ($_POST['question-6-answers'])){ 
-            $error += 100000;
+            $error += 1;
         }
         // Check if question 7 was answered
         if(null == ($_POST['question-7-answers'])){  
-            $error += 1000000;
+            $error += 1;
         }
         // Check if question 8 was answered
         if(null == ($_POST['question-8-answers'])){ 
-            $error += 10000000;
+            $error += 1;
         }
         // Check if question 9 was answered
         if(null == ($_POST['question-9-answers'])){ 
-            $error += 100000000;
+            $error += 1;
         }
         // Check if question 10 was answered
         if(null == ($_POST['question-10-answers'])){ 
-            $error += 1000000000;
+            $error += 1;
         }
         // Check if question 11 was answered
         if(null == ($_POST['question-11-answers'])){ 
-            $error += 10000000000;
+            $error += 1;
         }
         // Check if question 12 was answered
         if(null == ($_POST['question-12-answers'])){ 
-            $error += 100000000000;
+            $error += 1;
         }
         // Check if question 13 was answered
         if(null == ($_POST['question-13-answers'])){  
-            $error += 1000000000000;
+            $error += 1;
         }
-
+        // if error return to quiz with username and error
         if($error > 0) {
-            $str = "Location: SpoonsQuiz.php?error=".$error;
+            $str = "Location: SpoonsQuiz.php?username=".$_GET[username]."&error=".$error;
             header($str);
         }
 
@@ -74,6 +74,7 @@
         $q11 = $_POST['question-11-answers'];
         $q12 = $_POST['question-12-answers'];
         $q13 = $_POST['question-13-answers'];
+
         //open the sqlite database file
         $db_file = './assets/databases/spoons.db';
         $db = new PDO('sqlite:' . $db_file);
@@ -81,6 +82,14 @@
 
         echo "database open ...    ";
         echo "printing statement:   ";
+
+        $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
+            $email = $_POST['email'];
+            $password = $_POST['pass'];
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+
+        $st1;
 
     }
     catch(PDOException $e)

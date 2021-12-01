@@ -23,8 +23,6 @@
             $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            echo "database open ...    ";
-            echo "printing statement:   ";
             //check that email exists ONLY
             $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
             $email = $_POST['email'];
@@ -43,25 +41,17 @@
             $stmt->execute();
 
             $result = $stmt->fetchAll();
-            echo "result";
             //if email exists, but password is wrong
             
             if(!isset($result[0])){
                 //if email exists, but password is wrong
-                echo "if 1";
             
                 if(isset($result1[0])){
-                    echo "if 2";
-                    // $numAttempts = 0;
-                    //echo $_GET["numAttempts"];
-                    //debug_to_console($_GET["numAttempts"]);
                     if(!isset($_GET["numAttempts"])){
                         debug_to_console("inside if");
                         $numAttempts = 1;
                         
                     } else {
-                        echo "else 1";
-
                         $numAttempts = $_GET["numAttempts"];
                         $numAttempts = $numAttempts+1;
                     }
