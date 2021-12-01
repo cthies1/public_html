@@ -49,7 +49,7 @@
         <option value="this year">this year</option>
         <option value="show all" selected>show all</option>
         </select>
-        <!---<input type="submit" name="formSubmit" value="Submit" />--->
+        <input type="submit" value="Submit" />
         </form>
 
         <label for="date-filter">Only show results from </label>
