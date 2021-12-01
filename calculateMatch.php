@@ -30,7 +30,10 @@
             $query_str->bindValue(':username',$homeID);
             $query_str->execute();
             $topmatch = $query_str->fetchAll();
-            echo "total match ".$topmatch;
+            echo "total match \n";
+            echo '<pre>'; 
+            print_r($topmatch); 
+            echo '</pre>';
 
             $matchID = $topmatch['email'];
             echo " home id ".$homeID;
