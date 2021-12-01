@@ -57,7 +57,7 @@
                     if(isset($_GET["numAttempts"])){
                         echo "if 3";
                         $numAttempts = $_GET["numAttempts"];
-                        $numAttempts = $numAttempts+1;
+                        $numAttempts++;
                     } else {
                         echo "else 1";
                         $numAttempts = 1;
