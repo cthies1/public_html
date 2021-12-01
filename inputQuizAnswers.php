@@ -56,7 +56,7 @@
         }
 
         if($error > 0) {
-            $str = "Location: SpoonsQuiz.php?error=".$error;
+            $str = "Location: SpoonsQuiz.php?username=".$_GET[username]."&error=".$error;
             header($str);
         }
 
@@ -74,6 +74,7 @@
         $q11 = $_POST['question-11-answers'];
         $q12 = $_POST['question-12-answers'];
         $q13 = $_POST['question-13-answers'];
+
         //open the sqlite database file
         $db_file = './assets/databases/spoons.db';
         $db = new PDO('sqlite:' . $db_file);
@@ -81,6 +82,14 @@
 
         echo "database open ...    ";
         echo "printing statement:   ";
+
+        $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
+            $email = $_POST['email'];
+            $password = $_POST['pass'];
+            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':pass',$_POST['pass']);
+
+        $st1;
 
     }
     catch(PDOException $e)
