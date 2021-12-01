@@ -24,57 +24,51 @@
         echo("hello {$homeID}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
-        if(isset($_GET['dfilt'])){
-            $dfilt = $_GET['dfilt'];
+        if(isset($_POST['dfilt'])){
+            $dfilt = $_POST['dfilt'];
+            echo $dfilt;
         }
         else{
             $dfilt = "show all";
         }
-        if(isset($_GET['mfilt'])){
-            $mfilt = $_GET['mfilt'];
+        if(isset($_POST['mfilt'])){
+            $mfilt = $_POST['mfilt'];
+            echo $mfilt;
         }
         else{
             $mfilt = "show all";
         }
+
+        $link = "homePage.php?username=".$homeID;
     ?>
 
-        <label for="date-filter">Only show results from </label>
-        <select name="date-filter" onchange="changedate()" id="date-filter" >
+        <form action=<?php echo $link;?> method ="post">
+         Show only results from
+        <select name="dfilt">
         <option value="today">today</option>
         <option value="this week">this week</option>
         <option value="this month">this month</option>
         <option value="this year">this year</option>
         <option value="show all" selected>show all</option>
         </select>
+        <input type="submit" value="Submit" />
+        </form>
 
-        <label for="match-filter">Only show matches greater than </label>
-        <select name="match-filter" onchange="changepercent()" id="match-filter">
+        <form action=<?php echo $link;?> method ="post">
+        Only show matches greater than 
+        <select name="mfilt">
         <option value="90%">90%</option>
         <option value="75%">75%</option>
         <option value="50%">50%</option>
-        <option value="40%">40%</option>
+        <option value="30%">30%</option>
         <option value="show all" selected>show all</option>
         </select>
+        <input type="submit" value="Submit" />
+        </form>
 
         <?php
 
-           
 
-            function changedate(){
-                global $dfilt;
-                $dfilt = document.getElementById("date-filter").value;
-                $str = ("Location: homePage.php?username={$homeID}&dfilt={$dfilt}");
-                header($str);
-                exit;
-            }
-
-            function changepercent(){
-                global $mfilt;
-                $mfilt = document.getElementById("match-filter").value;
-                $str = ("Location: homePage.php?username={$homeID}&mfilt={$mfilt}");
-                header($str);
-                exit;
-            }
             /*
                 matchFilter returns the lower bound of the match percentage to 
                 filter the matches from.
@@ -83,11 +77,13 @@
                 return a number from 0 to 100
             */
             function matchFilter($mfilt){
+                //echo " matchFilter = ".$mfilt;
                 if(strcmp($mfilt,"show all")==0){
                     return 0;
                 }
                 else{
                     //remove the percentage from the end and return the string as an int
+                    //echo " result = ".intval(substr_replace($mfilt ,"",-1));
                     return intval(substr_replace($mfilt ,"",-1));
                 }
             }
@@ -101,7 +97,7 @@
             */
             $arr = getdate();
             $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
-            echo "tdate: ".$tDate[0];
+            //echo "tdate: ".$tDate[0];
 
             /*
                 dateFilter returns the lower bound of the dates to filter the matches from.
@@ -115,6 +111,7 @@
                 $filtDate = $tDate;
                 //only show matches from the current day
                 if(strcmp($dfilt,"today")==0){
+
                     return dateToString($tDate);
                 }
 
@@ -222,7 +219,16 @@
         catch(PDOException $e) {
             die('Exception : '.$e->getMessage());
         }
+        $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
+        $matchLink = "calculateMatch.php?username=".$homeID;
         ?>
+        <form action=<?php echo $spoonsLink;?> method = "post">
+            <input type="submit" value="Spoon's quiz" /></br></br>
+        </form>
+
+        <form action=<?php echo $matchLink;?> method = "post">
+            <input type="submit" value="Calculate match" /></br></br>
+        </form>
     </body>
 
 </html>

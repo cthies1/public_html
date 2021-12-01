@@ -388,7 +388,13 @@
         <br>
         <br>
         <br>
-        <form action="homePage.php" method = "POST">
+
+        <?php
+        $homeID = $_GET['username'];
+        $link = "homePage.php?username=".$homeID;
+        ?>
+
+        <form action= <?php echo $link; ?> method = "POST">
             <input class="button button1" type="submit" value="Submit" /></br></br>
          </form>
     </body1>
