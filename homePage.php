@@ -237,6 +237,9 @@
             die('Exception : '.$e->getMessage());
         }
         ?>
+        <form action="SpoonsQuiz.php" method = "post">
+            <input type="submit" value="Spoon's quiz" /></br></br>
+        </form>
     </body>
 
 </html>
