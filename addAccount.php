@@ -1,6 +1,11 @@
 <?php
     try {
         $error = 0;
+        //open the sqlite database file
+        $db_file = './assets/databases/spoons.db';
+        $db = new PDO('sqlite:' . $db_file);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //check if email already in use
         $stmt = $db->prepare('SELECT * from Users where (Email = :email)');
         $email = $_POST['email'];
         $stmt->bindValue(':email',$_POST['email']);
@@ -26,7 +31,6 @@
         } else if(18 > ($_POST['age'])){   //age over 18
             $error += 7;
         }
-
 
         if($error > 0) {
             $str = "Location: createAccount.php?error=".$error;
