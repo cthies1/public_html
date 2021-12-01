@@ -52,7 +52,7 @@
         }
         echo "your top match is ".$matchID;
 
-        $matchLink = "inputMatch.php?user1=".$homeID."&user2="$matchID."&percent=".$matchNum;
+        $matchLink = "inputMatch.php?user1=".$homeID."&user2=".$matchID."&percent=".$matchNum;
 
 
         ?>
