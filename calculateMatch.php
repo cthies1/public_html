@@ -43,11 +43,12 @@
             //the following query gives a table containing the questions the two users are compatible with
             //in the format (question text, user response, match response)
             $query2_str = $db->prepare('with u1 as (select response, QuestionID from results where userID is :username),
-            u2 as (select response ,QuestionID from results where userID is "$matchID"),
+            u2 as (select response ,QuestionID from results where userID is :match),
             matchQuestions as (
             select compatible.questionID,compatible.r1,compatible.r2 from compatible, u1,u2 where compatible.QuestionID is u1.QuestionID and compatible.QuestionID is u2.questionID and compatible.r1 is u1.response)
             select Quest, r1, r2 from question natural join matchQuestions;');
             $query2_str->bindValue(':username',$homeID);
+            $query2_str->bindValue(':match',$matchID);
             $query2_str->execute();
             $matchQuestions = $query_str->fetchAll();
 
