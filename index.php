@@ -38,7 +38,7 @@
 
                 $link = "login.php";
                 if(isset($_GET["numAttempts"])){
-                    $link = "login.php?".$_GET["numAttempts"];
+                    $link = "login.php?numAttempts=".$_GET["numAttempts"];
                 }
 
                 echo "<font color='black'>";
