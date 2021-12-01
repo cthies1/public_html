@@ -27,6 +27,9 @@
                 if(isset($_GET["credentials"])){
                     echo "<font color='red'>*Incorrect email or password</br>";
                 }
+                if(isset($_GET["numAttempts"]) AND $_GET["numAttempts"] >= 2){
+                    echo "<font color='red'>*2 failed login attempts</br>";
+                }
                 
                 // if(isset($_GET["email"])) $email = $_GET["email"];
                 // else $email = "";
