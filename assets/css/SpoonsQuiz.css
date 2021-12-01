@@ -26,6 +26,13 @@ div{
     font-size: 20px;
 }
 
+.page {
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 li{
     width: 300px;
     border: 2px solid #8973D2 ;
