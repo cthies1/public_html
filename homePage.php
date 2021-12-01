@@ -68,23 +68,7 @@
 
         <?php
 
-           
 
-            function changedate(){
-                global $dfilt;
-                $dfilt = document.getElementById("date-filter").value;
-                $str = ("Location: homePage.php?username={$homeID}&dfilt={$dfilt}");
-                header($str);
-                exit;
-            }
-
-            function changepercent(){
-                global $mfilt;
-                $mfilt = document.getElementById("match-filter").value;
-                $str = ("Location: homePage.php?username={$homeID}&mfilt={$mfilt}");
-                header($str);
-                exit;
-            }
             /*
                 matchFilter returns the lower bound of the match percentage to 
                 filter the matches from.
@@ -120,6 +104,7 @@
                 @return a string representation of the date filter in mm/d/yyyy format.
             */    
             function dateFilter($dfilt){
+                echo "date filter. dfilt = ".$dfilt;
                 //filtDate will hold the filter date
                 global $tDate;
                 $filtDate = $tDate;
@@ -175,6 +160,7 @@
                     $filtDate[1] = 0;
                     $filtDate[2] = 0;
                 }
+                echo "date to string = ".dateToString($filtDate);
                 return dateToString($filtDate);
             }
 
