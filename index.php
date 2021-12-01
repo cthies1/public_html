@@ -27,8 +27,8 @@
                 if(isset($_GET["credentials"])){
                     echo "<font color='red'>*Incorrect email or password</br>";
                 }
-                if(isset($_GET["numAttempts"]) AND $_GET["numAttempts"] >= 2){
-                    echo "<font color='red'>*2 failed login attempts</br>";
+                if(isset($_GET["numAttempts"]) AND $_GET["numAttempts"] >= 5){
+                    echo "<font color='red'>*5 failed login attempts</br>";
                 }
                 
                 // if(isset($_GET["email"])) $email = $_GET["email"];
@@ -47,9 +47,9 @@
                     <h3>Login:</h3>
                     <form action="<?php echo $link ?>" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
-                        <span class="text-box">Password: </span><input type="text" name="pass" /></br>
+                        <span class="text-box">Password: </span><input type="text" name="pass" /></br></br>
                         <div>Keep me logged in?<input type="checkbox" id="rememberMe"></div></br></br></br>
-                        <input class="button" type="submit" value="Login" /></br></br>
+                        <input class="button" type="submit" value="Login" /></br></br></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">
                         <input class="button" type="submit" value="Create Account" />
