@@ -110,9 +110,8 @@
                 $filtDate = $tDate;
                 //only show matches from the current day
                 if(strcmp($dfilt,"today")==0){
-                    echo "tDate[0] = ".$tDate[0];
-                    echo "tDate[1] = ".$tDate[1];
-                    echo "tDate[2] = ".$tDate[2];
+
+                echo "date to string = ".dateToString($tDate);
                     return dateToString($tDate);
                 }
 
