@@ -66,7 +66,7 @@
                         $numAttempts = $numAttempts+1;
                     }
                     $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
-                    header($str);
+                    // header($str);
                 } else {
                     echo "else 2";
                     $str = "Location: index.php?credentials=false";
