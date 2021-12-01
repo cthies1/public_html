@@ -32,7 +32,6 @@
             $error += 7;
         }
 
-
         if($error > 0) {
             $str = "Location: createAccount.php?error=".$error;
             header($str);
