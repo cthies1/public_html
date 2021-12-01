@@ -8,8 +8,11 @@
 
     <body>
         <?php
-        try{
+
             $homeID = $_GET['username'];
+            $matchID;
+            $matchNum;
+        try{
             //open connection to the spoons database file
             $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
 
@@ -28,6 +31,7 @@
             $topmatch = $query_str->fetchAll();
 
             $matchID = $topmatch[0][email];
+            echo "match id ".$matchID;
             $matchNum = ($topmatch[0][matched]/14)*100;
 
             //the following query gives a table containing the questions the two users are compatible with
@@ -43,6 +47,7 @@
 
         }
         catch(PDOException $e) {
+            echo "error";
             die('Exception : '.$e->getMessage());
         }
         echo "your top match is ".$matchID;
