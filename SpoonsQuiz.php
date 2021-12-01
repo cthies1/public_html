@@ -5,6 +5,7 @@
     <title>Welcome! </title>
 </head>
 <body>
+<div class="page">
     <?php
         $homeID = $_GET['username'];
         $link = "inputQuizAnswers.php?username=".$homeID;
@@ -15,7 +16,7 @@
         <body1>
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
-            <div class="page"><?php
+            <?php
                 if(isset($_GET["error"])){
                         $err = $_GET["error"];
                         
