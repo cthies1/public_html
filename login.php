@@ -53,17 +53,20 @@
                 if(isset($result1[0])){
                     echo "if 2";
                     // $numAttempts = 0;
-                    echo $_GET["numAttempts"];
-                    if(isset($_GET["numAttempts"])){
-                        echo "if 3";
-                        $numAttempts = $_GET["numAttempts"];
-                        $numAttempts++;
+                    //echo $_GET["numAttempts"];
+                    //debug_to_console($_GET["numAttempts"]);
+                    if(!isset($_GET["numAttempts"])){
+                        debug_to_console("inside if");
+                        $numAttempts = 1;
+                        
                     } else {
                         echo "else 1";
-                        $numAttempts = 1;
+
+                        $numAttempts = $_GET["numAttempts"];
+                        $numAttempts = $numAttempts+1;
                     }
                     $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
-                    header($str);
+                    //header($str);
                 } else {
                     echo "else 2";
                     $str = "Location: index.php?credentials=false";
@@ -72,7 +75,7 @@
             } else {
                 echo "moving to home page...";
                 $str = "Location: homePage.php?username=".$_POST['email'];
-                header($str);
+                //header($str);
                 // echo "<table>";
                 // echo "<tr>";
                 //     echo "<th>fName</th><th>lName</th><th>email</th>";
@@ -94,5 +97,12 @@
     catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
+    }
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 ?>       
