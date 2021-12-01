@@ -42,7 +42,7 @@
                     <h3>Login:</h3>
                     <form action="login.php?" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
-                        <span class="text-box">Password: </span><input type="text" name="pass" /></br></br></br>
+                        <span class="text-box">Password: </span><input type="text" name="pass" /></br>
                         <div>Keep me logged in?<input type="checkbox" id="rememberMe"></div></br></br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
