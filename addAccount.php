@@ -1,10 +1,15 @@
 <?php
     try {
         $error = 0;
+        $stmt = $db->prepare('SELECT * from Users where (Email = :email)');
+        $email = $_POST['email'];
+        $stmt->bindValue(':email',$_POST['email']);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;
-        } else if(null == ($_POST['email'])){  //email already in use      STILL NEEDS TO BE FIXED
+        } else if(isset($result[0])){  //email already in use
             $error += 200000;
         }
         if(null == ($_POST['pass'])){   //password
