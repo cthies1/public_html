@@ -55,13 +55,13 @@
                     // $numAttempts = 0;
                     //echo $_GET["numAttempts"];
                     //debug_to_console($_GET["numAttempts"]);
-                    if(empty($_GET["numAttempts"])){
+                    if(!isset($_GET["numAttempts"])){
                         debug_to_console("inside if");
                         $numAttempts = 1;
                         
                     } else {
                         echo "else 1";
-                        
+
                         $numAttempts = $_GET["numAttempts"];
                         $numAttempts = $numAttempts+1;
                     }
