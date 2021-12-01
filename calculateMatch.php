@@ -26,7 +26,7 @@
             compatibleUsers as (select userID from Results natural join compatibleAnswers where QuestionID is compatibleAnswers.QuestionID and results.response is compatibleAnswers.r2 and userID is not :username),
             topCompat as (select count(*) as countMax,userID from compatibleUsers group by userID),
             matchID as (select userID, matched from (select max(countMax) as matched, userID from topCompat))
-            select fname, lname,email, matched from Users natural join matchID where users.email is  matchID.userID;');
+            select fname, lname,email,age matched from Users natural join matchID where users.email is  matchID.userID;');
             $query_str->bindValue(':username',$homeID);
             $query_str->execute();
             $topmatch = $query_str->fetchAll();
@@ -51,6 +51,19 @@
             $query2_str->execute();
             $matchQuestions = $query_str->fetchAll();
 
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>Question</th><th>Your Response</th><th>Their Response</th>";
+            echo "</tr>";
+            foreach($matchQuestions as $tuple) {          // <------ Line 24
+                echo "<tr>";
+                echo "<td>$tuple[Quest]</td>";
+                echo "<td>$tuple[r1]</td>";
+                echo "<td>$tuple[r2]</td>";
+                echo "</tr>"; 
+             } 
+             echo "</table>"; 
+
         }
         catch(PDOException $e) {
             echo "error";
@@ -63,7 +76,7 @@
 
         ?>
         <form action=<?php echo $matchLink;?> method = "post">
-            <input type="submit" value="input match" /></br></br>
+            <input type="submit" value="input match?" /></br></br>
         </form>
         
 
