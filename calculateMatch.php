@@ -35,6 +35,10 @@
             print_r($topmatch); 
             echo '</pre>';
 
+            if(sizeof($topmatch)==0){
+                throw new Exception("no compatible matches");
+            }
+
             $matchID = $topmatch[0]['Email'];
             echo " home id ".$homeID;
             echo " match id ".$matchID;
@@ -64,9 +68,7 @@
             $matchQuestions = $query2_str->fetchAll();
             echo "size ".sizeof($matchQuestions);
 
-            if(sizeof($topmatch)==0){
-                throw new Exception("no compatible matches");
-            }
+           
 
             echo "<table>";
             echo "<tr>";
