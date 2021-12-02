@@ -5,7 +5,6 @@
     <title>Welcome! </title>
 </head>
 <body>
-<div class="page">
     <?php
         $homeID = $_GET['username'];
         $link = "inputQuizAnswers.php?username=".$homeID;
@@ -13,7 +12,7 @@
 
     <form action= <?php echo $link; ?> method = "POST">
         <img class="logo" src="./assets/images/logo.png" />
-        <body1>
+        <body1 class="page">
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
             <?php
@@ -360,6 +359,5 @@
             <input class="button button1" type="submit" value="Submit" /></br></br>
         </form>
     </body1>
-    </div>
 </body>
 </html>
