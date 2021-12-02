@@ -11,16 +11,18 @@ $user2 = $_GET['user2'];
 $percent = $_GET['percent'];
 
 try{
-    $arr = getdate();
-    $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
-    $tDate = dateToString($tDate);
-
     function dateToString($arr){
         if($arr[2]==0){
             return "00/00/0000";
         }
         return "{$arr[0]}/{$arr[1]}/{$arr[2]}";
     }
+    
+    $arr = getdate();
+    $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
+    $tDate = dateToString($tDate);
+
+
     //open connection to the spoons database file
     $db_file = './assets/databases/spoons.db';
     $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
