@@ -38,6 +38,7 @@
             $matchID = $topmatch[0]['Email'];
             echo " home id ".$homeID;
             echo " match id ".$matchID;
+            echo " top match = ".$topmatch[0]['matched'];
             $matchNum = ($topmatch[0]['matched']/14)*100;
 
             //the following query gives a table containing the questions the two users are compatible with
