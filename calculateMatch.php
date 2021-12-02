@@ -91,6 +91,7 @@
         catch(Exception $e){
             $errorLink = "homePage.php&username=".$homeID;
             header($errorLink);
+            exit;
         }
 
         $matchLink = "inputMatch.php?user1=".$homeID."&user2=".$matchID."&percent=".$matchNum;
