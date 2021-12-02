@@ -5,13 +5,13 @@
     <title>Welcome! </title>
 </head>
 <body>
+    <img class="logo" src="./assets/images/logo.png" />
     <?php
         $homeID = $_GET['username'];
         $link = "inputQuizAnswers.php?username=".$homeID;
     ?>
 
     <form action= <?php echo $link; ?> method = "POST">
-        <img class="logo" src="./assets/images/logo.png" />
         <div class="page">
             <h1>Welcome to Spoons!</h1>
             <h2> To get some matches, we need to know about you first! <br> Take this quiz to tell us about yourself!</h2>
