@@ -194,7 +194,7 @@
             $query_str = $db->prepare('with Matches as (select * from Match where User1 is :username)
             select fname, lname, date, matchpercent 
              from Matches , Users
-             where (users.email is matches.user1 and matches.user1 is not :username)or (users.email is matches.user2 and matches.user2 is not :username) and (date > :date) and matchPercent > :percent
+             where (users.email is matches.user1 and matches.user1 is not :username)or (users.email is matches.user2 and matches.user2 is not :username) and (date >= :date) and matchPercent > :percent
              order by matchPercent desc;');  // <----- Line 19
              $query_str->bindValue(':username',$homeID);
              $query_str->bindValue(':date',$dateFilt);
