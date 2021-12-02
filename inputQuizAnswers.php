@@ -60,8 +60,31 @@
             header($str);
         }
 
-        // get all answers from the quiz
+        $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
+        //$email = $_POST['email'];
+        //$password = $_POST['pass'];
+        //$stmt->bindValue(':email',$_POST['email']);
+        //$stmt->bindValue(':pass',$_POST['pass']);
+
+        $username = $_GET[username];
+        // insert Question 1 answer
+        $st1 = $db->prepare('INSERT INTO results VALUES (1, 1, Username = :username, Q1A = : q1a)');
         $q1 = $_POST['question-1-answers'];
+        $st1->bindValue(':username', $username);
+        $st1->bindValue(':q1a', $q1);
+       
+        // insert Question 2 answer
+        $st2 = $db->prepare('INSERT INTO results VALUES (1, 2, Username = :username, Q2A = : q2a)');
+        $q2 = $_POST['question-2-answers'];
+        $st2->bindValue(':username', $username);
+        $st2->bindValue(':q2a', $q2);
+
+        // insert Question 3 answer
+        $st3 = $db->prepare('INSERT INTO results VALUES (1, 3, Username = :username, Q3A = : q3a)');
+        $q3 = $_POST['question-3-answers'];
+        $st3->bindValue(':username', $username);
+        $st3->bindValue(':q3a', $q3);
+        
         $q2 = $_POST['question-2-answers'];
         $q3 = $_POST['question-3-answers'];
         $q4 = $_POST['question-4-answers'];
@@ -83,14 +106,6 @@
         echo "database open ...    ";
         echo "printing statement:   ";
 
-        $stmt = $db->prepare('SELECT * from Users where (Email = :email) and (Password = :pass)');
-            $email = $_POST['email'];
-            $password = $_POST['pass'];
-            $stmt->bindValue(':email',$_POST['email']);
-            $stmt->bindValue(':pass',$_POST['pass']);
-
-        $st1;
-
     }
     catch(PDOException $e)
     {
@@ -103,6 +118,5 @@
     
         echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
-
 
 ?>
