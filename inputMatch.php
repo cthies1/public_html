@@ -17,7 +17,7 @@ try{
         }
         return "{$arr[0]}/{$arr[1]}/{$arr[2]}";
     }
-    
+
     $arr = getdate();
     $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
     $tDate = dateToString($tDate);
@@ -26,6 +26,11 @@ try{
     //open connection to the spoons database file
     $db_file = './assets/databases/spoons.db';
     $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
+    echo "user 1 = ".$user1."\n";
+    echo "user 2 = ".$user2."\n";
+    echo "percent = ".$percent."\n";
+    echo "date = ".$tDate."\n";
+
     
     //set errormode to use exceptions
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
