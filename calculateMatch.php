@@ -24,7 +24,7 @@
             //the first name, last name, and number of questions they were compatible on.
             $query_str = $db->prepare('with compatibleAnswers as (select QuestionID,r2 from Results  natural join Compatible where userID is :username  and compatible.r1 is results.response),
             compatibleUsers as (select userID from Results natural join compatibleAnswers where QuestionID is compatibleAnswers.QuestionID and results.response is compatibleAnswers.r2 and userID is not :username),
-            topCompat as (select count(*) as countMax,userID from compatibleUsers where userID not in (select email from user natural join match where user.email is match.user2) and userID not in (select email from user natural join unmatch where user.email is unmatch.user2) group by userID),
+            topCompat as (select count(*) as countMax,userID from compatibleUsers where userID not in (select email from users natural join match where users.email is match.user2) and userID not in (select email from users natural join unmatch where users.email is unmatch.user2) group by userID),
             matchID as (select userID, matched from (select max(countMax) as matched, userID from topCompat))
             select fname, lname,email,age, matched from Users natural join matchID where users.email is  matchID.userID;');
             $query_str->bindValue(':username',$homeID);
