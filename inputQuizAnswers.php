@@ -165,7 +165,7 @@
         $db = null;
 
         // send back to home page
-        $str = "Location: SpoonsQuiz.php?username=".$_GET[username];
+        $str = "Location: homePage.php?username=".$_GET[username];
         header($str);
 
     }
