@@ -76,7 +76,7 @@ h3{
 
 .logo {
     width: 15%;
-    height: auto;
+    /* height: auto; */
     position: sticky;
     top: 10px;
     left: 10px;
