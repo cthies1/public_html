@@ -41,6 +41,13 @@ try{
     $query_str->bindValue(':date',$tDate);
     $query_str->execute();
 
+    $query2_str = $db->prepare('insert into match values (:user2, :user1, :percent, :date);');
+    $query2_str->bindValue(':user1',$user1);
+    $query2_str->bindValue(':user2',$user2);
+    $query2_str->bindValue(':percent',$percent);
+    $query2_str->bindValue(':date',$tDate);
+    $query2_str->execute();
+
     $link = "homePage.php&username=".$user1;
     header($link);
 
