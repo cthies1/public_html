@@ -2,20 +2,20 @@ body {
     background-color: #FAF7FF;
 }
 
-h1{
+h1 {
     color: #58488D; 
     text-align: center;
     font-size: 60px;
 }
 
-h2{
+h2 {
     color: #8973D2;
     text-align: center;
     font-size: 30px;
 
 }
 
-div{
+div {
     color: black; 
     font-size: 20px;
 }
@@ -26,7 +26,7 @@ div{
   transform: translate(-50%, 0%);
 }
 
-li{
+li {
     width: 300px;
     border: 2px solid #8973D2 ;
     padding: 30px;
@@ -35,7 +35,7 @@ li{
     color: #8973D2;
 }
 
-h3{
+h3 {
     color: #58488D; 
     text-align: center;
     font-size: 25px;
@@ -76,7 +76,6 @@ h3{
 
 .logo {
     width: 15%;
-    /* height: auto; */
     position: sticky;
     top: 10px;
     left: 10px;
