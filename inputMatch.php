@@ -11,13 +11,31 @@ $user2 = $_GET['user2'];
 $percent = $_GET['percent'];
 
 try{
+    $arr = getdate();
+    $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
+    $tDate = dateToString($tDate);
+
+    function dateToString($arr){
+        if($arr[2]==0){
+            return "00/00/0000";
+        }
+        return "{$arr[0]}/{$arr[1]}/{$arr[2]}";
+    }
     //open connection to the spoons database file
     $db_file = './assets/databases/spoons.db';
     $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
     
     //set errormode to use exceptions
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query_str = $db->prepare('insert into match values ()')
+    $query_str = $db->prepare('insert into match values (:user1, :user2, :percent, :date);');
+    $query_str->bindValue(':user1',$user1);
+    $query_str->bindValue(':user2',$user2);
+    $query_str->bindValue(':percent',$percent);
+    $query_str->bindValue(':date',$tDate);
+    $query_str->execute();
+
+    $link = "homePage.php&username=".$user1;
+    header($link);
 
 
 }
