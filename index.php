@@ -31,10 +31,12 @@
                     echo "<font color='red'>*5 failed login attempts</br>";
                 }
                 
+                if (isset($_SESSION["email"])) $email = $_GET["email"];
                 // if(isset($_GET["email"])) $email = $_GET["email"];
-                // else $email = "";
+                else $email = "";
+                if (isset($_SESSION["pass"])) $pass = $_GET["pass"];
                 // if(isset($_GET["pass"])) $pass = $_GET["pass"];
-                // else $pass = "";
+                else $pass = "";
 
                 $link = "login.php";
                 if(isset($_GET["numAttempts"])){
@@ -46,9 +48,9 @@
                 <div class="forms">
                     <h3>Login:</h3>
                     <form action="<?php echo $link ?>" method="post">
-                        <span class="text-box">Email: </span><input type="email" name="email" /></br></br>
-                        <span class="text-box">Password: </span><input type="text" name="pass" /></br></br>
-                        <div><input type="checkbox" id="rememberMe"> Keep me logged in</div></br>
+                        <span class="text-box">Email: </span><input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
+                        <span class="text-box">Password: </span><input type="text" name="pass" value="<?php echo $pass; ?>" /></br></br>
+                        <div><input type="checkbox" name="rememberMe"> Keep me logged in</div></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">

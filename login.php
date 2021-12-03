@@ -1,5 +1,17 @@
 <?php
     try {
+        session_start();
+        // if (isset($_SESSION["email"])){    //if they haven't logged out since signing in
+            
+        //     //autofill the email box
+
+        //     // <script type="text/javascript">
+
+        //     // </script>
+        // }
+        
+
+        
         $error = 0;
         
         if(null == ($_POST['email'])){  //email
@@ -64,7 +76,32 @@
                 }  
             } else {
                 echo "moving to home page...";
-                $str = "Location: homePage.php?username=".$_POST['email'];
+                $_SESSION["email"] = $email;
+                if (isset($_POST["rememberMe"])){
+  
+                // Username is stored as cookie for 10 years as
+                // 10years * 365days * 24hrs * 60mins * 60secs
+                setcookie("email", $email, time() +
+                                    (60 * 60));
+  
+                // Password is stored as cookie for 10 years as 
+                // 10years * 365days * 24hrs * 60mins * 60secs
+                setcookie("password", $password, time() +
+                                    (60 * 60));
+  
+                // After setting cookies the session variable will be set
+                
+  
+            } else {
+                if (isset($_COOKIE["email"])){
+                    setcookie("email", "");
+                }
+                if (isset($_COOKIE["password"])){
+                    setcookie("password", "");
+                }
+            }
+                //$str = "Location: homePage.php?username=".$_POST['email'];
+                $str = "Location: homePage.php";
                 header($str);
                 // echo "<table>";
                 // echo "<tr>";
