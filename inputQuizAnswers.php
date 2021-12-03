@@ -70,6 +70,17 @@
 
         $username = $_GET[username];
 
+        $check = $db->prepare('select * from results where userID is :username;');
+        $check->bindValue(':username',$username);
+        $check->execute();
+        $res = $check->fetchAll();
+        if($res){
+            $str = "Location: homePage.php?username=".$username;
+            header($str);
+            exit;
+        }
+
+
         // insert Question 1 answer
         $st1 = $db->prepare('INSERT INTO results VALUES (1, 1, :username, :q1a)');
         $q1 = $_POST['question-1-answers'];
