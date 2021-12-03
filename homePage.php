@@ -227,6 +227,7 @@
         }
         $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
         $matchLink = "calculateMatch.php?username=".$homeID;
+
         ?>
         <form action=<?php echo $spoonsLink;?> method = "post">
             <input type="submit" value="Spoon's quiz" /></br></br>
@@ -238,6 +239,9 @@
 
         <form action="login.php?error=0" method = "post">
             <input type="submit" value="log out" /></br></br>
+        </form>
+        <form action="userAnswers.php?quizID=1" method = "post">
+            <input type="submit" value="user report" /></br></br>
         </form>
     </body>
 

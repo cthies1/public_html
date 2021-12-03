@@ -66,7 +66,7 @@
             */
             //$query2_str->execute();
             $matchQuestions = $query2_str->fetchAll();
-            echo "size ".sizeof($matchQuestions);
+            //echo "size ".sizeof($matchQuestions);
 
            
 
