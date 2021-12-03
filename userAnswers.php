@@ -30,6 +30,14 @@
             $numUsers = $quer3->fetchAll();
             $numUsers = $numUsers[0]['numusers'];
 
+            $quer4 = $db->prepare('select * from QuizQuestions where QuizID=1');
+            $quer4->execute();
+            $qq = $quer4->fetchAll();
+            echo '<pre>'; 
+            print_r($qq); 
+            echo '</pre>';
+
+
             //echo '<pre>'; 
             //print_r($data); 
             //echo '</pre>';
