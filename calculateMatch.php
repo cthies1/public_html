@@ -90,7 +90,7 @@
         }
         catch(Exception $e){
             $err=1;
-            $errorLink = "Location: homePage.php?username=".$homeID."&emptyMatch".$err;
+            $errorLink = "Location: homePage.php?username=".$homeID."&emptyMatch=".$err;
             header($errorLink);
             exit;
         }
