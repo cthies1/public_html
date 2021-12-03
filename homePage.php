@@ -236,7 +236,7 @@
             <input type="submit" value="Calculate match" /></br></br>
         </form>
 
-        <form action="login.php" method = "post">
+        <form action="login.php&error=0" method = "post">
             <input type="submit" value="log out" /></br></br>
         </form>
     </body>
