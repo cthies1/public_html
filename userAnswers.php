@@ -38,13 +38,11 @@
             echo "</tr>";
             for($j = 0; $j<$numUsers; $j++){
             echo "<tr>";
-            for($i = 0; $i<=$numQ; $i++) { 
+            for($i = $j; $i<=($j+$numQ); $i++) { 
                 $tuple2 = $data[$i];         // <------ Line 24
                 
                 if($i==0){
-                    echo '<pre>'; 
-                    print_r($tuple2); 
-                    echo '</pre>';
+
                     echo "<td>$tuple2[UserID]</td>";
                 }
                 echo "<td>$tuple2[response]</td>";
