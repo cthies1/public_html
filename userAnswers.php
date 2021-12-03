@@ -41,7 +41,7 @@
             for($i = $j; $i<=($j+$numQ); $i++) { 
                 $tuple2 = $data[$i];         // <------ Line 24
                 
-                if($i==0){
+                if($i==$j){
 
                     echo "<td>$tuple2[UserID]</td>";
                 }
