@@ -47,7 +47,7 @@
                 echo $i."...";
                 if($i==(0 % ($numQ+1))){
                     echo "<tr>";
-                    echo $i."...";
+                    echo "<td>".$i."</td>";
                     echo "<td>$tuple2[UserID]</td>";
 
                 }        // <------ Line 24
