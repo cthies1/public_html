@@ -213,8 +213,11 @@
                 echo "<td>$tuple[lName]</td>";
                 echo "<td>$tuple[matchPercent]</td>";
                 echo "<td> $tuple[date]</td>";
-                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter="$homeID;
+                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$homeID;
                 echo "<td><a href=$reportLink>Update</a></td>";
+                if(isset($_GET['reported'])){
+                    echo " Thank you for your input! We will no longer show you this user.";
+                }
                 echo "</tr>"; 
              } 
              echo "</table>"; 
