@@ -4,6 +4,7 @@
         <title> Calculate Match </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+        <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
 
     <body>
