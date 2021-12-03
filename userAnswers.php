@@ -23,15 +23,16 @@
             $quer2->execute();
             $quests = $quer2->fetchAll();
             $numQ = sizeof($quests);
+            echo "numq = ".$numQ;
 
             $quer3 = $db->prepare('select count(*) as numusers from users');
             $quer3->execute();
             $numUsers = $quer3->fetchAll();
             $numUsers = $numUsers[0]['numusers'];
 
-            echo '<pre>'; 
-            print_r($data); 
-            echo '</pre>';
+            //echo '<pre>'; 
+            //print_r($data); 
+            //echo '</pre>';
 
             echo "<table>";
             echo "<tr>";
@@ -40,8 +41,7 @@
                     echo "<th>$tuple[Quest]</th>";
                 }
             echo "</tr>";
-            
-            
+                 
             for($i = 0; $i<sizeof($data); $i++) { 
                 $tuple2 = $data[$i]; 
                 if($i==0 % $numQ){
