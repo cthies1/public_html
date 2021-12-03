@@ -1,8 +1,8 @@
 <?php
     $user1 = $_GET['user1'];
     $user2 = $_GET['user2'];
-    $dFilt = $_GET['dFilt'];
-    $mFilt = $_GET['mFilt'];
+    $dFilt = $_GET['dfilt'];
+    $mFilt = $_GET['mfilt'];
     try{
         //open the sqlite database file
         $db_file = './assets/databases/spoons.db';
@@ -24,7 +24,7 @@
          $quer->bindValue(':user2',$user2);
          $quer->bindValue(':date',$tdate);
          $quer->execute();
-         $str = "Location: homePage.php?username=".$user1."&reported=1&dFilt=".$dFilt."&mFilt=".$mFilt;
+         $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;
           header($str);
            exit;
 

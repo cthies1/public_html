@@ -1,8 +1,8 @@
 <?php
     $user = $_GET['username'];
     $reporter = $_GET['reporter'];
-    $dFilt = $_GET['dFilt'];
-    $mFilt = $_GET['mFilt'];
+    $dFilt = $_GET['dfilt'];
+    $mFilt = $_GET['mfilt'];
     try{
         //open the sqlite database file
         $db_file = './assets/databases/spoons.db';
@@ -46,7 +46,7 @@
             $quer->bindValue(':date',$tdate);
             $quer->execute();
 
-            $str = "Location: homePage.php?username=".$reporter."&reported=1";
+            $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
             header($str);
             exit;
         }
@@ -54,7 +54,7 @@
             $quer = $db->prepare('insert into report values (:user, "mean",1);');
             $quer->bindValue(':user',$user);
             $quer->execute();
-            $str = "Location: homePage.php?username=".$reporter."&reported=1&dFilt=".$dFilt."&mFilt=".$mFilt;
+            $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
             header($str);
             exit;
 
