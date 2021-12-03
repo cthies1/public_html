@@ -1,5 +1,6 @@
 <?php
- session_start();
+session_start();
+
     try {
        
         // if (isset($_SESSION["email"])){    //if they haven't logged out since signing in

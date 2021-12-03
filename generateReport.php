@@ -1,4 +1,6 @@
 <?php
+session_start();
+
     $user = $_GET['username'];
     $reporter = $_GET['reporter'];
     $dFilt = $_GET['dfilt'];

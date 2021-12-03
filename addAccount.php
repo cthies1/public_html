@@ -1,4 +1,6 @@
 <?php
+session_start();
+
     try {
         $error = 0;
         //open the sqlite database file
