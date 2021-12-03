@@ -89,17 +89,23 @@
             die('Exception : '.$e->getMessage());
         }
         catch(Exception $e){
-            $errorLink = "Location: homePage.php?username=".$homeID;
+            $err=1;
+            $errorLink = "Location: homePage.php?username=".$homeID."&emptyMatch".$err;
             header($errorLink);
             exit;
         }
 
         $matchLink = "inputMatch.php?user1=".$homeID."&user2=".$matchID."&percent=".$matchNum;
+        $goHome = "homePage.php?username=".$homeID;
 
 
         ?>
         <form action=<?php echo $matchLink;?> method = "post">
             <input type="submit" value="input match?" /></br></br>
+        </form>
+
+        <form action=<?php echo $goHome;?> method = "post">
+            <input type="submit" value="return to home page" /></br></br>
         </form>
         
 

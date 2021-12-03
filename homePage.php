@@ -221,6 +221,10 @@
         catch(PDOException $e) {
             die('Exception : '.$e->getMessage());
         }
+
+        if(isset($_GET['emptyMatch'])){
+            echo "There are no new matches at this time. Try retaking the quiz to see if you get different results!";
+        }
         $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
         $matchLink = "calculateMatch.php?username=".$homeID;
         ?>
