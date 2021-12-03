@@ -42,14 +42,14 @@
             for($i = $k; $i<($k+$numQ); $i++) { 
                 $tuple2 = $data[$i];         // <------ Line 24
                 
-                if($i==$j){
+                if($i==$k){
 
                     echo "<td>$tuple2[UserID]</td>";
                 }
                 echo "<td>$tuple2[response]</td>";
                 
-             } 
-             $k = $k+$i;
+            }             
+             $k = $k+$i; 
              echo "</tr>"; 
             }
              echo "</table>"; 
