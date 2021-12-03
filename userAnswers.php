@@ -38,7 +38,7 @@
             echo "</tr>";
             for($j = 0; $j<$numUsers; $j++){
             echo "<tr>";
-            for($i = $j; $i<=($j+$numQ); $i++) { 
+            for($i = $j; $i<($j+$numQ); $i++) { 
                 $tuple2 = $data[$i];         // <------ Line 24
                 
                 if($i==$j){
