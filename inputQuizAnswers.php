@@ -75,9 +75,10 @@
         $check->execute();
         $res = $check->fetchAll();
         if($res){
-            $str = "Location: homePage.php?username=".$username;
-            header($str);
-            exit;
+            $remove = $db->prepare('delete from results where userID is :username');
+            $remove->bindValue(':username',$username);
+            $remove->execute();
+
         }
 
 
