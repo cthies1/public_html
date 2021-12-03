@@ -48,7 +48,6 @@ insert into results values (1,3,"ben@test.com","Acts of Service");
 insert into results values (1,4,"ben@test.com","I am not religious");
 Insert into compatible values(1,"Aries","Aquarius");
 Insert into compatible values(1,"Aquarius","Aries");
-Insert into compatible values(1,"Aquarius","Aries");
 Insert into compatible values(1,"Taurus","Cancer");
 Insert into compatible values(1,"Gemini","Leo");
 Insert into compatible values(1,"Cancer","Taurus");
