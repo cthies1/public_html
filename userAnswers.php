@@ -36,9 +36,10 @@
                     echo "<th>$tuple[Quest]</th>";
                 }
             echo "</tr>";
+            $k=0;
             for($j = 0; $j<$numUsers; $j++){
             echo "<tr>";
-            for($i = $j; $i<($j+$numQ); $i++) { 
+            for($i = $k; $i<($k+$numQ); $i++) { 
                 $tuple2 = $data[$i];         // <------ Line 24
                 
                 if($i==$j){
@@ -48,6 +49,7 @@
                 echo "<td>$tuple2[response]</td>";
                 
              } 
+             $k = $k+$i;
              echo "</tr>"; 
             }
              echo "</table>"; 
