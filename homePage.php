@@ -235,6 +235,10 @@
         <form action=<?php echo $matchLink;?> method = "post">
             <input type="submit" value="Calculate match" /></br></br>
         </form>
+
+        <form action="login.php" method = "post">
+            <input type="submit" value="log out" /></br></br>
+        </form>
     </body>
 
 </html>
