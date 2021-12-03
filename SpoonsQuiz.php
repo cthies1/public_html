@@ -90,7 +90,7 @@
                     <label for="question-2-answers-B">Big Spoon</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-2-answers" id="question-2-answers-C" value="Both" />
+                    <input type="radio" name="question-2-answers" id="question-2-answers-C" value="A little bit of both" />
                     <label for="question-2-answers-C">A little bit of both</label>
                 </div>
 
@@ -99,23 +99,23 @@
             <li>
                 <h3>What is your primary love language? </h3>
                 <div>
-                    <input type="radio" name="question-3-answers" id="question-3-answers-A" value="WofA" />
+                    <input type="radio" name="question-3-answers" id="question-3-answers-A" value="Words of Affirmation" />
                     <label for="question-3-answers-A">Words of Affirmation</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-3-answers" id="question-3-answers-B" value="PT" />
+                    <input type="radio" name="question-3-answers" id="question-3-answers-B" value="Physical Touch" />
                     <label for="question-3-answers-B">Physical Touch</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-3-answers" id="question-3-answers-C" value="RG" />
+                    <input type="radio" name="question-3-answers" id="question-3-answers-C" value="Receiving Gifts" />
                     <label for="question-3-answers-C">Receiving Gifts</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-3-answers" id="question-3-answers-D" value="QT" />
+                    <input type="radio" name="question-3-answers" id="question-3-answers-D" value="Quality Time" />
                     <label for="question-3-answers-D">Quality Time</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-3-answers" id="question-3-answers-E" value="AofS" />
+                    <input type="radio" name="question-3-answers" id="question-3-answers-E" value="Acts of Service" />
                     <label for="question-3-answers-E">Acts of Service</label>
                 </div>
             </li>
@@ -123,11 +123,11 @@
             <li>
                 <h3>Are you religious?</h3>
                 <div>
-                    <input type="radio" name="question-4-answers" id="question-4-answers-A" value="religious" />
+                    <input type="radio" name="question-4-answers" id="question-4-answers-A" value="Yes, I am religious" />
                     <label for="question-4-answers-A">Yes, I am religious</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-4-answers" id="question-4-answers-B" value="not religious" />
+                    <input type="radio" name="question-4-answers" id="question-4-answers-B" value="No, I am not religious" />
                     <label for="question-4-answers-B">No, I am not religious</label>
                 </div>
             </li>
@@ -183,27 +183,27 @@
             <li>
                 <h3>Where is your ideal place to live?</h3>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-A" value="Forest" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-A" value="The Forest" />
                     <label for="question-6-answers-A">The forest</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-B" value="City" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-B" value="The City" />
                     <label for="question-6-answers-B">The city</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-C" value="Mountians" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-C" value="The Mountians" />
                     <label for="question-6-answers-C">The mountians</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-D" value="Small Town" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-D" value="A Small Town" />
                     <label for="question-6-answers-D">A small town</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-E" value="Suburbs" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-E" value="The Suburbs" />
                     <label for="question-6-answers-E">The suburbs</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-F" value="Beach" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-F" value="The Beach" />
                     <label for="question-6-answers-F">The beach</label>
                 </div>
             </li>
@@ -227,7 +227,7 @@
             <li>
                 <h3>Which of the following is your biggest pet peeve?</h3>
                 <div>
-                    <input type="radio" name="question-8-answers" id="question-8-answers-A" value="C with M Open" />
+                    <input type="radio" name="question-8-answers" id="question-8-answers-A" value="Chewing with Mouth Open" />
                     <label for="question-8-answers-A">Chewing with Mouth Open</label>
                 </div>
                 <div>
@@ -239,7 +239,7 @@
                     <label for="question-8-answers-C">Being late</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-8-answers" id="question-8-answers-D" value="Slow Walker" />
+                    <input type="radio" name="question-8-answers" id="question-8-answers-D" value="Slow Walkers" />
                     <label for="question-8-answers-D">Slow walkers</label>
                 </div>
                 <div>
@@ -247,7 +247,7 @@
                     <label for="question-8-answers-E">Micro-Management</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-8-answers" id="question-8-answers-F" value="I P S" />
+                    <input type="radio" name="question-8-answers" id="question-8-answers-F" value="Ignoring Personal Space" />
                     <label for="question-8-answers-F">Ignoring personal space</label>
                 </div>
             </li>
