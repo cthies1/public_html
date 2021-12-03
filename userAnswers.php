@@ -44,13 +44,14 @@
                  
             for($i = 0; $i<sizeof($data); $i++) { 
                 $tuple2 = $data[$i]; 
-                if($i==0 % ($numQ+1)){
+                echo $i."...";
+                if($i==(0 % ($numQ+1))){
                     echo "<tr>";
                     echo "<td>$tuple2[UserID]</td>";
 
                 }        // <------ Line 24
                 echo "<td>$tuple2[response]</td>";
-                if($i==0 % ($numQ+1)){
+                if($i== (0 % ($numQ+1))){
                     echo "</tr>"; 
                 }
             }
