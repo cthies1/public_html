@@ -43,7 +43,12 @@
             echo " home id ".$homeID;
             echo " match id ".$matchID;
             echo " top match = ".$topmatch[0]['matched'];
-            $matchNum = ($topmatch[0]['matched']/14)*100;
+
+            $query3 = $db->prepare('select count(*) as countNum from QuizQuestions where quizID=1');
+            $query3->execute();
+            $numQ = $query3->fetchAll();
+            $qs = $numQ[0]['countNum'];
+            $matchNum = ($topmatch[0]['matched']/$qs)*100;
 
             //the following query gives a table containing the questions the two users are compatible with
             //in the format (question text, user response, match response)

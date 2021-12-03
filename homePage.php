@@ -26,14 +26,20 @@
         $db_file = './myDB/spoons.db';
         if(isset($_POST['dfilt'])){
             $dfilt = $_POST['dfilt'];
-            echo $dfilt;
+            //echo $dfilt;
+        }
+        elseif(isset($_GET['dfilt'])){
+            $dfilt = $_GET['dfilt'];
         }
         else{
             $dfilt = "show all";
         }
         if(isset($_POST['mfilt'])){
             $mfilt = $_POST['mfilt'];
-            echo $mfilt;
+            //echo $mfilt;
+        }
+        elseif(isset($_GET['mfilt'])){
+            $dfilt = $_GET['mfilt'];
         }
         else{
             $mfilt = "show all";
@@ -215,9 +221,6 @@
                 echo "<td> $tuple[date]</td>";
                 $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"];
                 echo "<td><a href=$reportLink>Update</a></td>";
-                if(isset($_GET['reported'])){
-                    echo " Thank you for your input! We will no longer show you this user.";
-                }
                 echo "</tr>"; 
              } 
              echo "</table>"; 
