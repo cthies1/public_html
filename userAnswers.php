@@ -45,7 +45,7 @@
                     echo '<pre>'; 
                     print_r($tuple2); 
                     echo '</pre>';
-                    echo "<td>$tuple2[userID]</td>";
+                    echo "<td>$tuple2[UserID]</td>";
                 }
                 echo "<td>$tuple2[response]</td>";
                 
