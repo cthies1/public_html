@@ -40,21 +40,19 @@
                     echo "<th>$tuple[Quest]</th>";
                 }
             echo "</tr>";
-            $k=0;
-            for($j = 0; $j<$numUsers; $j++){
-            echo "<tr>";
-            for($i = $k; $i<($k+$numQ); $i++) { 
-                $tuple2 = $data[$i];         // <------ Line 24
-                
-                if($i==$k){
-
+            
+            
+            for($i = 0; $i<sizeof($data); $i++) { 
+                $tuple2 = $data[$i]; 
+                if($i==0 % $numQ){
+                    echo "<tr>";
                     echo "<td>$tuple2[UserID]</td>";
-                }
+
+                }        // <------ Line 24
                 echo "<td>$tuple2[response]</td>";
-                
-            }             
-             $k = $k+$i; 
-             echo "</tr>"; 
+                if($i==0 % $numQ){
+                    echo "</tr>"; 
+                }
             }
              echo "</table>"; 
 
