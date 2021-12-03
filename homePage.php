@@ -192,7 +192,7 @@
 
             //return all matches, and store the result set
             $query_str = $db->prepare('with Matches as (select * from Match where User1 is :username)
-            select fname, lname, date, matchpercent 
+            select fname, lname, date, matchpercent, email
              from Matches , Users
              where (users.email is matches.user1 and matches.user1 is not :username)or (users.email is matches.user2 and matches.user2 is not :username) and (date >= :date) and matchPercent > :percent
              order by matchPercent desc;');  // <----- Line 19
@@ -205,7 +205,7 @@
             //store results in a table displaying the matches
             echo "<table>";
             echo "<tr>";
-                echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th>";
+                echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th>";
             echo "</tr>";
             foreach($result_set as $tuple) {          // <------ Line 24
                 echo "<tr>";
@@ -213,6 +213,8 @@
                 echo "<td>$tuple[lName]</td>";
                 echo "<td>$tuple[matchPercent]</td>";
                 echo "<td> $tuple[date]</td>";
+                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter="$homeID;
+                echo "<td><a href=$reportLink>Update</a></td>";
                 echo "</tr>"; 
              } 
              echo "</table>"; 
