@@ -42,9 +42,9 @@ session_start();
             //echo '</pre>';
 
 
-            echo '<pre>'; 
-            print_r($data); 
-            echo '</pre>';
+            //echo '<pre>'; 
+            //print_r($data); 
+            //echo '</pre>';
 
             echo "<table>";
             echo "<tr>";

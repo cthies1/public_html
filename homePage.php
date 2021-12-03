@@ -218,7 +218,7 @@ session_start();
             //store results in a table displaying the matches
             echo "<table>";
             echo "<tr>";
-                echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th>";
+                echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
             echo "</tr>";
             foreach($result_set as $tuple) {          // <------ Line 24
                 echo "<tr>";
@@ -226,8 +226,9 @@ session_start();
                 echo "<td>$tuple[lName]</td>";
                 echo "<td>$tuple[matchPercent]</td>";
                 echo "<td> $tuple[date]</td>";
-                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"];
-                echo "<td><a href=$reportLink>Update</a></td>";
+                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]"&dfilt=".$dfilt."&mfilt=".$mfilt;
+                echo "<td><a href=$reportLink>Report User</a></td>";
+                $unmatchLInk = "unMatch.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]"&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "</tr>"; 
              } 
              echo "</table>"; 
