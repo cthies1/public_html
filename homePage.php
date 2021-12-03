@@ -20,8 +20,8 @@
     <?php
 
         
-        $homeID = $_GET['username'];
-        echo("hello {$homeID}! Welcome back.");
+        //$homeID = $_GET['username'];
+        echo("hello {$_SESSION["email"]}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
         if(isset($_POST['dfilt'])){
@@ -39,7 +39,7 @@
             $mfilt = "show all";
         }
 
-        $link = "homePage.php?username=".$homeID;
+        $link = "homePage.php";
     ?>
 
         <form action=<?php echo $link;?> method ="post">
@@ -196,7 +196,7 @@
              from Matches , Users
              where (users.email is matches.user1 and matches.user1 is not :username)or (users.email is matches.user2 and matches.user2 is not :username) and (date >= :date) and matchPercent > :percent
              order by matchPercent desc;');  // <----- Line 19
-             $query_str->bindValue(':username',$homeID);
+             $query_str->bindValue(':username',$_SESSION["email"]);
              $query_str->bindValue(':date',$dateFilt);
              $query_str->bindValue(':percent',$matchFilt);
              $query_str->execute();
@@ -213,7 +213,7 @@
                 echo "<td>$tuple[lName]</td>";
                 echo "<td>$tuple[matchPercent]</td>";
                 echo "<td> $tuple[date]</td>";
-                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$homeID;
+                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"];
                 echo "<td><a href=$reportLink>Update</a></td>";
                 if(isset($_GET['reported'])){
                     echo " Thank you for your input! We will no longer show you this user.";
@@ -230,8 +230,8 @@
         if(isset($_GET['emptyMatch'])){
             echo "There are no new matches at this time. Try retaking the quiz to see if you get different results!";
         }
-        $spoonsLink = "SpoonsQuiz.php?username=".$homeID;
-        $matchLink = "calculateMatch.php?username=".$homeID;
+        $spoonsLink = "SpoonsQuiz.php?username=".$_SESSION["email"];
+        $matchLink = "calculateMatch.php?username=".$_SESSION["email"];
 
         ?>
         <form action=<?php echo $spoonsLink;?> method = "post">
