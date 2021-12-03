@@ -48,7 +48,7 @@ try{
     $query2_str->bindValue(':date',$tDate);
     $query2_str->execute();
 
-    $link = "homePage.php&username=".$user1;
+    $link = "Location: homePage.php&username=".$user1;
     header($link);
 
 

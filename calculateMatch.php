@@ -89,7 +89,7 @@
             die('Exception : '.$e->getMessage());
         }
         catch(Exception $e){
-            $errorLink = "homePage.php&username=".$homeID;
+            $errorLink = "Location: homePage.php&username=".$homeID;
             header($errorLink);
             exit;
         }
