@@ -18,7 +18,7 @@
             $query_str->execute();
             $data = $query_str->fetchAll();
 
-            $quer2 = $db->prepare('select Quest from question natural join QuizQuestions where QuizID=:qid order by Quest;');
+            $quer2 = $db->prepare('select Quest, userID from question natural join QuizQuestions where QuizID=:qid order by Quest;');
             $quer2->bindValue(':qid',$quizID);
             $quer2->execute();
             $quests = $quer2->fetchAll();
