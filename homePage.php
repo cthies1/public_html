@@ -223,9 +223,9 @@ session_start();
                 echo "<td>$tuple[lName]</td>";
                 echo "<td>$tuple[matchPercent]</td>";
                 echo "<td> $tuple[date]</td>";
-                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]"&dfilt=".$dfilt."&mfilt=".$mfilt;
+                $reportLink = "generateReport.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "<td><a href=$reportLink>Report User</a></td>";
-                $unmatchLInk = "unMatch.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]"&dfilt=".$dfilt."&mfilt=".$mfilt;
+                $unmatchLInk = "unMatch.php?username=".$tuple['email']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "</tr>"; 
              } 
              echo "</table>"; 
