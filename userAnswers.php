@@ -29,6 +29,10 @@
             $numUsers = $quer3->fetchAll();
             $numUsers = $numUsers[0]['numusers'];
 
+            echo '<pre>'; 
+            print_r($data); 
+            echo '</pre>';
+
             echo "<table>";
             echo "<tr>";
             echo "<th>User ID</th>";
