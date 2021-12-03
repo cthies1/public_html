@@ -20,6 +20,8 @@
 
     <?php
 
+        if(isset($_SESSION["email"])) echo $_SESSION["email"];
+        else echo "session broken";
         
         //$homeID = $_GET['username'];
         echo("hello {$_SESSION["email"]}! Welcome back.");

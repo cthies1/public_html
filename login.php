@@ -1,6 +1,7 @@
 <?php
+ session_start();
     try {
-        session_start();
+       
         // if (isset($_SESSION["email"])){    //if they haven't logged out since signing in
             
         //     //autofill the email box
