@@ -56,7 +56,6 @@ create table Report(
     numReports integer,
     foreign key(UserID) references Users(email)
         on update cascade
-        on delete cascade
 );
 
 create table Results(
