@@ -237,7 +237,7 @@
             <input type="submit" value="Calculate match" /></br></br>
         </form>
 
-        <form action="login.php?error=0" method = "post">
+        <form action="index.php" method = "post">
             <input type="submit" value="log out" /></br></br>
         </form>
         <form action="userAnswers.php?quizID=1" method = "post">
