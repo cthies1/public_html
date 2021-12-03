@@ -35,10 +35,10 @@ session_start();
                     echo "<font color='red'>*5 failed login attempts</br>";
                 }
                 
-                if (isset($_SESSION["email"])) $email = $_GET["email"];
+                if (isset($_SESSION["email"])) $email = $_SESSION["email"];
                 // if(isset($_GET["email"])) $email = $_GET["email"];
                 else $email = "";
-                if (isset($_SESSION["pass"])) $pass = $_GET["pass"];
+                if (isset($_COOKIE["password"])) $pass = $_COOKIE["password"];
                 // if(isset($_GET["pass"])) $pass = $_GET["pass"];
                 else $pass = "";
 
