@@ -8,7 +8,7 @@
 
     <body>
         <?php
-        $quizID = $_POST['quizID'];
+        $quizID = $_GET['quizID'];
         try{
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
