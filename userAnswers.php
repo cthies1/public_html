@@ -18,7 +18,7 @@
             $query_str->execute();
             $data = $query_str->fetchAll();
 
-            $quer2 = $db->prepare('select Quest, userID from question natural join QuizQuestions where QuizID=:qid order by Quest;');
+            $quer2 = $db->prepare('select Quest from question natural join QuizQuestions where QuizID=:qid order by Quest;');
             $quer2->bindValue(':qid',$quizID);
             $quer2->execute();
             $quests = $quer2->fetchAll();
@@ -42,6 +42,9 @@
                 $tuple2 = $data[$i];         // <------ Line 24
                 
                 if($i==0){
+                    echo '<pre>'; 
+                    print_r($tuple2); 
+                    echo '</pre>';
                     echo "<td>$tuple2[userID]</td>";
                 }
                 echo "<td>$tuple2[response]</td>";
