@@ -57,7 +57,7 @@
 
                 }       
                 echo "<td>$tuple2[response]</td>";
-                if(0==$i%($numQ+1)){
+                if(0==$i%($numQ)){
                     echo "</tr>"; 
                 }
             }
