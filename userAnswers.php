@@ -45,7 +45,7 @@
                 $tuple2 = $data[$i]; 
                 if(0==$i%($numQ+1)){
                     echo "<tr>";
-                    echo "<td>$tuple2[UserID]</td>";
+                    echo "<td>$tuple2[UserID] ".$i."</td>";
 
                 }       
                 echo "<td>$tuple2[response]</td>";
