@@ -3,7 +3,8 @@ body {
 }
 
 .page {
-    padding: 10px 150px;
+    margin: 5px 150px;
+    padding: 15px;
 }
 
 .logo {
