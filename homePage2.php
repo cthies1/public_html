@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +14,7 @@
     <body>
         <img class = "logo" src="./assets/images/logo.png" />
         <div class="page">
-            <h3>Welcome back [name]!</h3>
+            <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
             <form action="SpoonsQuiz.php" method = "POST">
                 <input class="button" type="submit" value="Retake the quiz" /></br></br>
             </form>
