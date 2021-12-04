@@ -54,7 +54,7 @@ session_start();
                     <option value="this year">this year</option>
                     <option value="show all" selected>show all</option>
                 </select>
-                <input class="button" type="submit" value="Filter" />
+                <input class="button2" type="submit" value="Filter" />
             </form>
 
             <form action=<?php echo $link; ?> method ="post">
@@ -66,7 +66,7 @@ session_start();
                     <option value="30%">30%</option>
                     <option value="show all" selected>show all</option>
                 </select>
-                <input class="button" type="submit" value="Filter" />
+                <input class="button2" type="submit" value="Filter" />
             </form>
 
 
