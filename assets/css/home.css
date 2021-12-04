@@ -2,6 +2,10 @@ body {
     background-color: #FAF7FF;
 }
 
+.page {
+    padding: 10px 50px;
+}
+
 .logo {
     width: 15%;
     height: auto;
