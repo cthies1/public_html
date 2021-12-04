@@ -32,9 +32,11 @@ session_start();
          $quer->bindValue(':user2',$user2);
          $quer->bindValue(':date',$tdate);
          $quer->execute();
+         echo "dfilt = ".$dfilt;
+         echo " mfilt = ".$mfilt;
          $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;
-          header($str);
-           exit;
+          //header($str);
+          // exit;
 
 
     }
