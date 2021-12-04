@@ -26,6 +26,12 @@ session_start();
          $quer->bindValue(':user2',$user2);
          $quer->bindValue(':date',$tdate);
          $quer->execute();
+
+         $quer = $db->prepare('insert into unMatch values (:user2, :user1, :date);');
+         $quer->bindValue(':user1',$user1);
+         $quer->bindValue(':user2',$user2);
+         $quer->bindValue(':date',$tdate);
+         $quer->execute();
          $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;
           header($str);
            exit;
