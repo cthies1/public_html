@@ -27,7 +27,7 @@ h4 {
     margin-top: 0px;
 }
 
-.button {
+/* .button {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -40,9 +40,9 @@ h4 {
 .button:hover {
     background-color: #8973D2;
     color: #FAF7FF;
-}
+} */
 
-.button2 {
+.button {
     /* position: absolute;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -52,7 +52,7 @@ h4 {
     border: 2px solid #8973D2;
 }
   
-.button2:hover {
+.button:hover {
     background-color: #8973D2;
     color: #FAF7FF;
 }
