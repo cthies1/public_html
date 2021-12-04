@@ -27,7 +27,7 @@ h4 {
     margin-top: 0px;
 }
 
-/* .button {
+.button {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -40,19 +40,22 @@ h4 {
 .button:hover {
     background-color: #8973D2;
     color: #FAF7FF;
-} */
+}
 
-.button {
-    /* position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+.forms {
+    position: absolute;
+    left: 100%;
+    /* transform: translate(-50%, -50%); */
+}
+
+.button2 {
     color: #8973D2;
     background-color: #FAF7FF;
     margin: auto;
     border: 2px solid #8973D2;
 }
   
-.button:hover {
+.button2:hover {
     background-color: #8973D2;
     color: #FAF7FF;
 }

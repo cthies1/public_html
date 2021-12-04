@@ -54,7 +54,7 @@ session_start();
                     <option value="this year">this year</option>
                     <option value="show all" selected>show all</option>
                 </select>
-                <input class="button" type="submit" value="Filter" />
+                <input class="button2" type="submit" value="Filter" />
             </form>
 
             <form action=<?php echo $link; ?> method ="post">
@@ -66,21 +66,23 @@ session_start();
                     <option value="30%">30%</option>
                     <option value="show all" selected>show all</option>
                 </select>
-                <input class="button" type="submit" value="Filter" />
+                <input class="button2" type="submit" value="Filter" />
             </form>
 
-            <form action="SpoonsQuiz.php" method = "POST">
-                <span><input class="button" type="submit" value="Retake the quiz" /></span>
-            </form>
-            <form action="calculateMatch.php" method = "POST">
-                <span><input class="button" type="submit" value="Calculate my best match" /></span>
-            </form>
-            <form action="index.php" method = "POST">
-                <span><input class="button" type="submit" value="Log Out" /></span>
-            </form>
-            <form action="userAnswers.php?quizID=1" method = "POST">
-                <span><input class="button" type="submit" value="User Report" /></span>
-            </form>
+            <div class="forms">
+                <form action="SpoonsQuiz.php" method = "POST">
+                    <input class="button" type="submit" value="Retake the quiz" /></br></br>
+                </form>
+                <form action="calculateMatch.php" method = "POST">
+                    <input class="button" type="submit" value="Calculate my best match" /></br></br>
+                </form>
+                <form action="index.php" method = "POST">
+                    <input class="button" type="submit" value="Log Out" /></br></br>
+                </form>
+                <form action="userAnswers.php?quizID=1" method = "POST">
+                    <input class="button" type="submit" value="User Report" /></br></br>
+                </form>
+            </div>
 
             <?php
                 /*
