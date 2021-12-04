@@ -228,7 +228,7 @@ session_start();
                 echo "<td> $tuple[date]</td>";
                 $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "<td><a href=$reportLink>Report User</a></td>";
-                $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=show+all&mfilt=".$mfilt;
                 echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
                 echo "</tr>"; 
              } 
