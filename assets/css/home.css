@@ -31,6 +31,7 @@ h4 {
     /* position: absolute;
     left: 50%;
     transform: translate(-50%, -50%); */
+    float: right;
     color: #8973D2;
     background-color: #FAF7FF;
     margin: auto;
