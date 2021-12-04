@@ -61,7 +61,7 @@ session_start();
 
                 }       
                 echo "<td>$tuple2[response]</td>";
-                if(0==$i%($numQ+1) && $i>0){
+                if(0==$i%($numQ) && $i>0){
                     echo "</tr>"; 
                 }
             }
