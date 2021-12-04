@@ -24,7 +24,7 @@ session_start();
          $quer = $db->prepare('insert into unMatch values (:user1, :user2, :date);');
          $quer->bindValue(':user1',$user1);
          $quer->bindValue(':user2',$user2);
-         $quer->bindValue(':date',$tdate);
+         $quer->bindValue(':date',$tDate);
          $quer->execute();
 
          $quer = $db->prepare('insert into unMatch values (:user2, :user1, :date);');
