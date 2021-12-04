@@ -69,9 +69,6 @@ session_start();
                 <input class="button2" type="submit" value="Filter" />
             </form>
 
-
-
-
             <form action="SpoonsQuiz.php" method = "POST">
                 <input class="button" type="submit" value="Retake the quiz" /></br></br>
             </form>
@@ -90,6 +87,16 @@ session_start();
                         <h4>__% Match</h4>
                         <p>email</p>
                         <p>age</p>
+                        <p>date matched</p>
+
+                        <form action="reportUser.php" method = "POST">
+                            <input class="button2" type="submit" name="report"> Report User</br>
+                        </form>
+
+                        <form action="unmatchUser.php" method = "POST">
+                            <input class="button2" type="submit" name="unmatch"> Unmatch User</br>
+                        </form>
+
                     </div>
                     
                 </div>
