@@ -90,11 +90,11 @@ session_start();
                         <p>date matched</p>
 
                         <form action="reportUser.php" method = "POST">
-                            <input class="button2" type="submit" name="report"> Report User</br>
+                            <input class="button2" type="submit" value="Report" /></br></br>
                         </form>
 
                         <form action="unmatchUser.php" method = "POST">
-                            <input class="button2" type="submit" name="unmatch"> Unmatch User</br>
+                            <input class="button2" type="submit" value="Unmatch" /></br></br>
                         </form>
 
                     </div>
