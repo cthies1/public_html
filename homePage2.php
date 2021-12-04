@@ -15,6 +15,51 @@ session_start();
         <img class = "logo" src="./assets/images/logo.png" />
         <div class="page">
             <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
+
+            <?php
+
+                //$homeID = $_GET['username'];
+                echo("Hello {$_SESSION["email"]}! Welcome back.");
+                //path to the SQLite database file
+                $db_file = './myDB/spoons.db';
+                if(isset($_POST['dfilt'])){
+                    $dfilt = $_POST['dfilt'];
+                    //echo $dfilt;
+                } else if(isset($_GET['dfilt'])){
+                    $dfilt = $_GET['dfilt'];
+                    if($dfilt==1){
+                        $dfilt = "show all";
+                    }
+                } else {
+                    $dfilt = "show all";
+                }
+                if(isset($_POST['mfilt'])){
+                    $mfilt = $_POST['mfilt'];
+                    //echo $mfilt;
+                } else if(isset($_GET['mfilt'])){
+                    $mfilt = $_GET['mfilt'];
+                    if($mfilt==1){
+                        $mfilt = "show all";
+                    }
+                } else {
+                    $mfilt = "show all";
+                }
+
+                $link = "homePage.php";
+            ?>
+
+            <form action=<?php echo $link;?> method ="post">
+                <span class="dropdown">Show only results from </span>
+                <select name="dfilt">
+                    <option value="today">today</option>
+                    <option value="this week">this week</option>
+                    <option value="this month">this month</option>
+                    <option value="this year">this year</option>
+                    <option value="show all" selected>show all</option>
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
+
             <form action="SpoonsQuiz.php" method = "POST">
                 <input class="button" type="submit" value="Retake the quiz" /></br></br>
             </form>
