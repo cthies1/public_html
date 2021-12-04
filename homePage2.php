@@ -17,9 +17,6 @@ session_start();
             <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
 
             <?php
-
-                //$homeID = $_GET['username'];
-                echo("Hello {$_SESSION["email"]}! Welcome back.");
                 //path to the SQLite database file
                 $db_file = './myDB/spoons.db';
                 if(isset($_POST['dfilt'])){
@@ -48,8 +45,8 @@ session_start();
                 $link = "homePage.php";
             ?>
 
-            <form action=<?php echo $link;?> method ="post">
-                <span class="dropdown">Show only results from </span>
+            <form action=<?php echo $link; ?> method="post">
+            <span class="dropdown">Show only results from </span>
                 <select name="dfilt">
                     <option value="today">today</option>
                     <option value="this week">this week</option>
@@ -57,8 +54,23 @@ session_start();
                     <option value="this year">this year</option>
                     <option value="show all" selected>show all</option>
                 </select>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Filter" />
             </form>
+
+            <form action=<?php echo $link; ?> method ="post">
+            <span class="dropdown">Show only matches greater than </span> 
+                <select name="mfilt">
+                    <option value="90%">90%</option>
+                    <option value="75%">75%</option>
+                    <option value="50%">50%</option>
+                    <option value="30%">30%</option>
+                    <option value="show all" selected>show all</option>
+                </select>
+                <input type="submit" value="Filter" />
+            </form>
+
+
+
 
             <form action="SpoonsQuiz.php" method = "POST">
                 <input class="button" type="submit" value="Retake the quiz" /></br></br>
