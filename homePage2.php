@@ -75,8 +75,11 @@ session_start();
             <form action="calculateMatch.php" method = "POST">
                 <input class="button" type="submit" value="Calculate my best match" /></br></br>
             </form>
-            <form action="index.php" method = "post">
+            <form action="index.php" method = "POST">
                 <input class="button" type="submit" value="Log Out" /></br></br>
+            </form>
+            <form action="userAnswers.php?quizID=1" method = "POST">
+                <input class="button" type="submit" value="User Report" /></br></br>
             </form>
 
             <?php
@@ -280,12 +283,6 @@ session_start();
             </div>
             
         </div>
-
-
-        
-        <form action="userAnswers.php?quizID=1" method = "post">
-            <input type="submit" value="user report" /></br></br>
-        </form>
         
     </body>
 
