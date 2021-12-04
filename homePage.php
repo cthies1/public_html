@@ -25,7 +25,7 @@ session_start();
     <?php
 
         //$homeID = $_GET['username'];
-        echo("Hello {$_SESSION["email"]}! Welcome back.");
+        echo("Hello {$_SESSION['email']}! Welcome back.");
         //path to the SQLite database file
         $db_file = './myDB/spoons.db';
         if(isset($_POST['dfilt'])){
