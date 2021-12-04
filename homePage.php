@@ -193,10 +193,8 @@ session_start();
                 }
                 return "{$arr[0]}/{$arr[1]}/{$arr[2]}";
             }
-        ?>
-
-        <?php
-        try{
+        
+        try {
             //open connection to the spoons database file
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
