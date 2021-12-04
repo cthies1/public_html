@@ -35,8 +35,8 @@ session_start();
          echo "dfilt = ".$dFilt;
          echo " mfilt = ".$mFilt;
          $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;
-          //header($str);
-          // exit;
+          header($str);
+           exit;
 
 
     }

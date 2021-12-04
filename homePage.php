@@ -34,6 +34,9 @@ session_start();
         }
         elseif(isset($_GET['dfilt'])){
             $dfilt = $_GET['dfilt'];
+            if($dfilt==1){
+                $dfilt = "show all";
+            }
         }
         else{
             $dfilt = "show all";
@@ -43,7 +46,11 @@ session_start();
             //echo $mfilt;
         }
         elseif(isset($_GET['mfilt'])){
-            $dfilt = $_GET['mfilt'];
+            $mfilt = $_GET['mfilt'];
+            if($mfilt==1){
+                $mfilt = "show all";
+            }
+
         }
         else{
             $mfilt = "show all";
@@ -212,8 +219,13 @@ session_start();
              $query_str->execute();
             $result_set = $query_str->fetchAll();
 
-            echo "dfilt = ".$dfilt;
-            echo " mfilt = ".$mfilt;
+
+            if(strcmp($dfilt,"show all")==0){
+                $dfilt=1;
+            }
+            if(strcmp($mfilt,"show all")==0){
+                $mfilt=1;
+            }
 
             //store results in a table displaying the matches
             echo "<table>";
@@ -228,7 +240,7 @@ session_start();
                 echo "<td> $tuple[date]</td>";
                 $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "<td><a href=$reportLink>Report User</a></td>";
-                $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=show+all&mfilt=".$mfilt;
+                $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                 echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
                 echo "</tr>"; 
              } 
