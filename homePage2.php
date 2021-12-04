@@ -70,7 +70,7 @@ session_start();
             </form>
 
             <form action="SpoonsQuiz.php" method = "POST">
-                <input class="button" type="submit" value="Retake the quiz" /></br></br>
+                <span><input class="button" type="submit" value="Retake the quiz" /></span>
             </form>
             <form action="calculateMatch.php" method = "POST">
                 <input class="button" type="submit" value="Calculate my best match" /></br></br>
