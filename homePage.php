@@ -301,7 +301,7 @@ session_start();
             echo "</tr>";
 
             $row = 0;
-            while($row < mysqli_num_rows($result)) {
+            while($row < 10) {
                 echo "<tr>";
                     echo "<td>".$result[$row]['fName']."</td>";
                     echo "<td>".$result[$row]['lName']."</td>";
