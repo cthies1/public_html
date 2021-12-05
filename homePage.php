@@ -289,6 +289,12 @@ session_start();
                 </form>
             </div> -->
             <?php
+            $stmt = $db->prepare('SELECT * from Users');
+            
+            $stmt->execute();
+
+            $result = $stmt->fetchAll();
+
             echo "<table>";
             echo "<tr>";
                 echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
