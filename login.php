@@ -13,10 +13,13 @@ session_start();
         // }
         
         if(isset($_POST['logout'])) {
+            // remove all cookies
+            setcookie("password", "", time() - 3600);
             // remove all session variables
             session_unset();
             // destroy the session
             session_destroy();
+           
             // return to index
             header("Location: index.php");
         } else {
@@ -90,8 +93,7 @@ session_start();
     
                     // Username is stored as cookie for 10 years as
                     // 10years * 365days * 24hrs * 60mins * 60secs
-                    setcookie("email", $email, time() +
-                                        (60 * 60));
+                    
     
                     // Password is stored as cookie for 10 years as 
                     // 10years * 365days * 24hrs * 60mins * 60secs
