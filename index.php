@@ -103,7 +103,7 @@ session_start();
             echo "</tr>";
 
             $row = 0;
-            while($row < $result2) {
+            while($row < 10) {
                 echo "<tr>";
                     echo "<td>".$result[$row]['fName']."</td>";
                     echo "<td>".$result[$row]['lName']."</td>";
