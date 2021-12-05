@@ -290,10 +290,13 @@ session_start();
             </div> -->
             <?php
             $stmt = $db->prepare('SELECT * from Users');
+            $stmt2 = $db->prepare('SELECT COUNT(*) from Users');
             
             $stmt->execute();
+            $stmt2->execute();
 
             $result = $stmt->fetchAll();
+            $result2 = $stmt2->fetchAll();
 
             echo "<table>";
             echo "<tr>";
@@ -301,7 +304,7 @@ session_start();
             echo "</tr>";
 
             $row = 0;
-            while($row < 10) {
+            while($row < $result2) {
                 echo "<tr>";
                     echo "<td>".$result[$row]['fName']."</td>";
                     echo "<td>".$result[$row]['lName']."</td>";
