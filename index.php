@@ -54,9 +54,9 @@ session_start();
                 <div class="forms">
                     <h3>Login:</h3>
                     <form action="<?php echo $link ?>" method="post">
-                        <span class="text-box">Email: </span>
+                        <div class="text-box">Email: </div>
                         <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
-                        <span class="text-box">Password: </span>
+                        <div class="text-box">Password: </div>
                         <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></br></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
