@@ -54,14 +54,16 @@ session_start();
                 <div class="forms">
                     <h3>Login:</h3>
                     <form action="<?php echo $link ?>" method="post">
-                        <span class="text-box">Email: </span><input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
-                        <span class="text-box">Password: </span><input type="password" name="pass" value="<?php echo $pass; ?>" id="input" />
+                        <span class="text-box">Email: </span>
+                        <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
+                        <span class="text-box">Password: </span>
+                        <input type="password" name="pass" value="<?php echo $pass; ?>" id="input" />
                         <!-- <span><input type="checkbox" onclick="myFunction()" /><i class="fas fa-eye"></i></span></br></br> -->
-                        <!-- <span><button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button></span></br></br> -->
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
-                    <button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button>
+                    <!-- <button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button> -->
                     <form action="createAccount.php" method = "post">
                         <input class="button" type="submit" value="Create Account" />
                     </form>
@@ -70,6 +72,19 @@ session_start();
         </div>
         
         <script>
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#id_password');
+            
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                // toggle the eye slash icon
+                this.classList.toggle('fa-eye-slash');
+            });
+        </script>
+
+        <!-- <script>
             function myFunction() {
                 var x = document.getElementById("input");
                 if (x.type === "password") {
@@ -78,7 +93,7 @@ session_start();
                     x.type = "password";
                 }
             }
-        </script>
+        </script> -->
         
     </body>
 

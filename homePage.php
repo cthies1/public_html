@@ -29,8 +29,10 @@ session_start();
                     <input class="button" type="submit" value="User Report" /></br></br>
                 </form>
             </div>
-
-            <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
+            <?php
+            $variable = $_SESSION["email"];
+            $variable = substr($variable, 0, strpos($variable, "@"));?>
+            <h3>Welcome back <?php echo $variable?>!</h3>
 
             <?php
                 //path to the SQLite database file
