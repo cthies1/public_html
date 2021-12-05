@@ -258,7 +258,7 @@ session_start();
 
             ?>
 
-            <div class="match">
+            <!-- <div class="match">
                 <form action="calculateMatch.php" method = "POST">
                     <input class="last" type="submit" value="<" /></br></br>
                 </form>
@@ -285,7 +285,7 @@ session_start();
                 <form action="calculateMatch.php" method = "POST">
                     <input class="next" type="submit" value=">" /></br></br>
                 </form>
-            </div>
+            </div> -->
             
         </div>
         
