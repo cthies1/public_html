@@ -14,22 +14,23 @@ session_start();
     <body>
         <img class = "logo" src="./assets/images/logo.png" />
         <div class="page">
-            <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
 
             <div class="forms">
                 <form action="SpoonsQuiz.php" method = "POST">
-                    <input class="button" type="submit" value="Retake the quiz" /></br></br>
+                    <input class="button" type="submit" value="Retake the quiz" /></br>
                 </form>
                 <form action="calculateMatch.php" method = "POST">
-                    <input class="button" type="submit" value="Calculate my best match" /></br></br>
+                    <input class="button" type="submit" value="Calculate my best match" /></br>
                 </form>
                 <form action="index.php" method = "POST">
-                    <input class="button" type="submit" value="Log Out" /></br></br>
+                    <input class="button" type="submit" value="Log Out" /></br>
                 </form>
                 <form action="userAnswers.php?quizID=1" method = "POST">
-                    <input class="button" type="submit" value="User Report" /></br></br>
+                    <input class="button" type="submit" value="User Report" /></br>
                 </form>
             </div>
+
+            <h3>Welcome back <?php echo $_SESSION["email"]?>!</h3>
 
             <?php
                 //path to the SQLite database file
