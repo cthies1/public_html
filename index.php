@@ -58,13 +58,10 @@ session_start();
                         <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span>
                         <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" />
-                        <!-- <input type="password" name="pass" autocomplete="current-password" required="" id="id_password"> -->
-                        <!-- <span><input type="checkbox" onclick="myFunction()" /><i class="fas fa-eye"></i></span></br></br> -->
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></br></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
-                    <!-- <button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button> -->
                     <form action="createAccount.php" method = "post">
                         <input class="button" type="submit" value="Create Account" />
                     </form>
