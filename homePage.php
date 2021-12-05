@@ -300,12 +300,12 @@ session_start();
                 echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
             echo "</tr>";
 
-            foreach($result as $tuple) {
+            for(int i = 0; i < mysqli_num_rows($result); i++) {
                 echo "<tr>";
-                    echo "<td>".$tuple[0]['fName']."</td>";
-                    echo "<td>".$tuple[0]['lName']."</td>";
-                    echo "<td>".$tuple[0]['Email']."</td>";
-                    echo "<td>".$tuple[0]['Password']."</td>";
+                    echo "<td>".$result[i]['fName']."</td>";
+                    echo "<td>".$result[i]['lName']."</td>";
+                    echo "<td>".$result[i]['Email']."</td>";
+                    echo "<td>".$result[i]['Password']."</td>";
                 echo "</tr>";
             }
             ?>
