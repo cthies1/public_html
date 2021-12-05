@@ -56,6 +56,9 @@ session_start();
             $result = $stmt->execute();
             //$db->exec($stmt);
 
+            //set session variables
+            $_SESSION["email"] = $email;
+
             //redirect user to another page
             $str = "Location: homePage.php";
             header($str);   
