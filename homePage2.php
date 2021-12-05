@@ -85,6 +85,8 @@ session_start();
                 <input class="button2" type="submit" value="Filter" />
             </form>
 
+            </br></br></br>
+
             <?php
                 /*
                     matchFilter returns the lower bound of the match percentage to 
