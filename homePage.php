@@ -22,8 +22,8 @@ session_start();
                 <form action="calculateMatch.php" method = "POST">
                     <input class="button" type="submit" value="Calculate my best match" /></br></br>
                 </form>
-                <form action="index.php" method = "POST">
-                    <input class="button" type="submit" value="Log Out" /></br></br>
+                <form action="login.php" method = "POST">
+                    <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
                 </form>
                 <form action="userAnswers.php?quizID=1" method = "POST">
                     <input class="button" type="submit" value="User Report" /></br></br>

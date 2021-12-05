@@ -12,7 +12,14 @@ session_start();
         //     // </script>
         // }
         
-
+        if(isset($_POST['logout'])) {
+            // remove all session variables
+            session_unset();
+            // destroy the session
+            session_destroy();
+            // return to index
+            header("Location: index.php");
+        }
         
         $error = 0;
         
