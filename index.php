@@ -10,6 +10,7 @@ session_start();
         <meta name="description" content="This is a user login page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
         <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="page">
@@ -56,10 +57,11 @@ session_start();
                         <span class="text-box">Email: </span><input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span><input type="password" name="pass" value="<?php echo $pass; ?>" id="input" />
                         <!-- <span><input type="checkbox" onclick="myFunction()" /><i class="fas fa-eye"></i></span></br></br> -->
-                        <span><button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button></span></br></br>
+                        <!-- <span><button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button></span></br></br> -->
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
+                    <button class="btn" onclick="myFunction()"><i class="fas fa-eye"></i></button>
                     <form action="createAccount.php" method = "post">
                         <input class="button" type="submit" value="Create Account" />
                     </form>
