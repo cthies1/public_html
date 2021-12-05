@@ -58,7 +58,7 @@ session_start();
                         <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span>
                         <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" />
-                        <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; cursor: pointer;"></i></br></br>
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
