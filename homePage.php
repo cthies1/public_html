@@ -288,33 +288,6 @@ session_start();
                     <input class="next" type="submit" value=">" /></br></br>
                 </form>
             </div> -->
-            <?php
-            $stmt = $db->prepare('SELECT * from Users');
-            $stmt2 = $db->prepare('SELECT COUNT(*) from Users');
-            
-            $stmt->execute();
-            $stmt2->execute();
-
-            $result = $stmt->fetchAll();
-            $result2 = $stmt2->fetchAll();
-            echo "Numrows: ".$result2;
-
-            echo "<table>";
-            echo "<tr>";
-                echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
-            echo "</tr>";
-
-            $row = 0;
-            while($row < $result2) {
-                echo "<tr>";
-                    echo "<td>".$result[$row]['fName']."</td>";
-                    echo "<td>".$result[$row]['lName']."</td>";
-                    echo "<td>".$result[$row]['Email']."</td>";
-                    echo "<td>".$result[$row]['Password']."</td>";
-                echo "</tr>";
-                $row = $row+1;
-            }
-            ?>
             
         </div>
         

@@ -82,30 +82,33 @@ session_start();
             });
         </script>
 
-        <!-- <script>
-            function myFunction() {
-                var x = document.getElementById("id_password");
-                if (x.type === "password") {
-                    x.type = "text";
-                } else {
-                    x.type = "password";
-                }
+        <?php
+            $stmt = $db->prepare('SELECT * from Users');
+            $stmt2 = $db->prepare('SELECT COUNT(*) from Users');
+            
+            $stmt->execute();
+            $stmt2->execute();
+
+            $result = $stmt->fetchAll();
+            $result2 = $stmt2->fetchAll();
+            echo "Numrows: ".$result2;
+
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
+            echo "</tr>";
+
+            $row = 0;
+            while($row < $result2) {
+                echo "<tr>";
+                    echo "<td>".$result[$row]['fName']."</td>";
+                    echo "<td>".$result[$row]['lName']."</td>";
+                    echo "<td>".$result[$row]['Email']."</td>";
+                    echo "<td>".$result[$row]['Password']."</td>";
+                echo "</tr>";
+                $row = $row+1;
             }
-        </script> -->
+        ?>
         
     </body>
-
-    <!-- <body>
-        <p>
-            <form action="login.php" method="post">
-                Email: <input type="text" name="username"/><br/>
-                Password: <input type="text" name="password"/><br/>
-
-                <input type="submit" value="Login"/>
-                <input type="submit" value="Create Account"/>
-            </form>
-
-        </p>
-        
-    </body> -->
 </html>
