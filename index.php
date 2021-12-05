@@ -86,7 +86,7 @@ session_start();
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);
-            
+
             $stmt = $db->prepare('SELECT * from Users');
             $stmt2 = $db->prepare('SELECT COUNT(*) from Users');
             
@@ -95,7 +95,7 @@ session_start();
 
             $result = $stmt->fetchAll();
             $result2 = $stmt2->fetchAll();
-            echo "Numrows: ".$result2;
+            echo "Numrows: ".$result2[0];
 
             echo "<table>";
             echo "<tr>";
