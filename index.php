@@ -55,7 +55,7 @@ session_start();
                     <form action="<?php echo $link ?>" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span><input type="password" name="pass" value="<?php echo $pass; ?>" id="input" /></br></br>
-                        <input type="checkbox" onclick="myFunction()" />Show Password
+                        <span><input type="checkbox" onclick="myFunction()" />Show Password</span></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
