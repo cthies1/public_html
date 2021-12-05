@@ -53,8 +53,8 @@ session_start();
                 ?>
                 <div class="forms">
                     <h3>Login:</h3>
-                    <form action="<?php echo $link ?>" method="post">
-                        <span class="text-box">Email: </span>
+                    <form action="<?php echo $link ?>" method="post" style="margin-right: -20px;">
+                        <div class="text-box">Email: </div>
                         <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span>
                         <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" />
