@@ -195,7 +195,7 @@ session_start();
                     <label for="question-6-answers-B">The city</label>
                 </div>
                 <div>
-                    <input type="radio" name="question-6-answers" id="question-6-answers-C" value="The Mountians" />
+                    <input type="radio" name="question-6-answers" id="question-6-answers-C" value="The Mountains" />
                     <label for="question-6-answers-C">The mountians</label>
                 </div>
                 <div>
