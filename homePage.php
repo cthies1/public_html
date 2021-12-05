@@ -297,6 +297,7 @@ session_start();
 
             $result = $stmt->fetchAll();
             $result2 = $stmt2->fetchAll();
+            echo "Numrows: ".$result2;
 
             echo "<table>";
             echo "<tr>";
