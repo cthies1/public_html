@@ -14,7 +14,6 @@ session_start();
     <body>
         <?php
 
-            $homeID = $_GET['username'];
             $matchID;
             $matchNum;
         try{
@@ -32,7 +31,7 @@ session_start();
             topCompat as (select count(*) as countMax,userID from compatibleUsers where userID not in (select email from users natural join match where users.email is match.user2) and userID not in (select email from users natural join unmatch where users.email is unmatch.user2) group by userID),
             matchID as (select userID, matched from (select max(countMax) as matched, userID from topCompat))
             select fname, lname,email,age, matched from Users natural join matchID where users.email is  matchID.userID;');
-            $query_str->bindValue(':username',$homeID);
+            $query_str->bindValue(':username',$_SESSION["email"]);
             $query_str->execute();
             $topmatch = $query_str->fetchAll();
             echo "total match \n";
@@ -45,7 +44,6 @@ session_start();
             }
 
             $matchID = $topmatch[0]['Email'];
-            echo " home id ".$homeID;
             echo " match id ".$matchID;
             echo " top match = ".$topmatch[0]['matched'];
 
@@ -63,7 +61,7 @@ session_start();
             matchQuestions as (
             select compatible.questionID,compatible.r1,compatible.r2 from compatible, u1,u2 where compatible.QuestionID is u1.QuestionID and compatible.QuestionID is u2.questionID and compatible.r1 is u1.response and compatible.r2 is u2.response)
             select Quest, r1, r2 from question natural join matchQuestions;');
-            $query2_str->bindValue(':username',$homeID);
+            $query2_str->bindValue(':username',$_SESSION["email"]);
             $query2_str->bindValue(':match',$matchID);
             $query2_str->execute();
             
@@ -100,13 +98,13 @@ session_start();
         }
         catch(Exception $e){
             $err=1;
-            $errorLink = "Location: homePage.php?username=".$homeID."&emptyMatch=".$err;
+            $errorLink = "Location: homePage.php?username=".$_SESSION["email"]."&emptyMatch=".$err;
             header($errorLink);
             exit;
         }
 
-        $matchLink = "inputMatch.php?user1=".$homeID."&user2=".$matchID."&percent=".$matchNum;
-        $goHome = "homePage.php?username=".$homeID;
+        $matchLink = "inputMatch.php?user1=".$_SESSION["email"]."&user2=".$matchID."&percent=".$matchNum;
+        $goHome = "homePage.php?username=".$_SESSION["email"];
 
 
         ?>

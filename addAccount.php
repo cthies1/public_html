@@ -57,7 +57,7 @@ session_start();
             //$db->exec($stmt);
 
             //redirect user to another page
-            $str = "Location: homePage.php?username=".$_POST['email'];
+            $str = "Location: homePage.php";
             header($str);   
 
         }

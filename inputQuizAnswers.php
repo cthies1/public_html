@@ -58,7 +58,7 @@ session_start();
         }
         // if error return to quiz with username and error
         if($error > 0) {
-            $str = "Location: SpoonsQuiz.php?username=".$_GET[username]."&error=".$error;
+            $str = "Location: SpoonsQuiz.php?username=".$_SESSION["email"]."&error=".$error;
             header($str);
         }
 
@@ -70,7 +70,7 @@ session_start();
         echo "database open ...    ";
         echo "printing statement:   ";
 
-        $username = $_GET[username];
+        $username = $_SESSION["email"];
 
         $check = $db->prepare('select * from results where userID is :username;');
         $check->bindValue(':username',$username);
@@ -179,7 +179,7 @@ session_start();
         $db = null;
 
         // send back to home page
-        $str = "Location: homePage.php?username=".$_GET[username];
+        $str = "Location: homePage.php?username=".$_SESSION["email"];
         header($str);
 
     }

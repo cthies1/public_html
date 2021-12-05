@@ -11,7 +11,7 @@ session_start();
 <body>
     <img class="logo" src="./assets/images/logo.png" />
     <?php
-        $homeID = $_GET['username'];
+        $homeID = $_SESSION["email"];
         $link = "inputQuizAnswers.php?username=".$homeID;
     ?>
 
