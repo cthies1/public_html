@@ -55,7 +55,8 @@ session_start();
                     <form action="<?php echo $link ?>" method="post">
                         <span class="text-box">Email: </span><input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
                         <span class="text-box">Password: </span><input type="password" name="pass" value="<?php echo $pass; ?>" /></br></br>
-                        <div><input type="checkbox" name="rememberMe"> Keep me logged in</div></br>
+                        <input type="checkbox" onclick="myFunction()" />Show Password
+                        <input type="checkbox" name="rememberMe" /> Keep me logged in</br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
                     <form action="createAccount.php" method = "post">
@@ -64,6 +65,17 @@ session_start();
                 </div>
             </p>
         </div>
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
         
     </body>
 
