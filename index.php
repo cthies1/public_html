@@ -10,7 +10,7 @@ session_start();
         <meta name="description" content="This is a user login page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
         <link rel="stylesheet" href="./assets/css/index.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     </head>
     <body>
         <div class="page">
@@ -59,7 +59,7 @@ session_start();
                         <span class="text-box">Password: </span>
                         <input type="password" name="pass" value="<?php echo $pass; ?>" id="input" />
                         <!-- <span><input type="checkbox" onclick="myFunction()" /><i class="fas fa-eye"></i></span></br></br> -->
-                        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></br></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
