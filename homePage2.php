@@ -17,16 +17,16 @@ session_start();
 
             <div class="forms">
                 <form action="SpoonsQuiz.php" method = "POST">
-                    <input class="button" type="submit" value="Retake the quiz" /></br>
+                    <input class="button" type="submit" value="Retake the quiz" /></br></br>
                 </form>
                 <form action="calculateMatch.php" method = "POST">
-                    <input class="button" type="submit" value="Calculate my best match" /></br>
+                    <input class="button" type="submit" value="Calculate my best match" /></br></br>
                 </form>
                 <form action="index.php" method = "POST">
-                    <input class="button" type="submit" value="Log Out" /></br>
+                    <input class="button" type="submit" value="Log Out" /></br></br>
                 </form>
                 <form action="userAnswers.php?quizID=1" method = "POST">
-                    <input class="button" type="submit" value="User Report" /></br>
+                    <input class="button" type="submit" value="User Report" /></br></br>
                 </form>
             </div>
 
