@@ -300,13 +300,15 @@ session_start();
                 echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
             echo "</tr>";
 
-            for(int i = 0; i < mysqli_num_rows($result); i++) {
+            $row = 0;
+            while($row < mysqli_num_rows($result)) {
                 echo "<tr>";
-                    echo "<td>".$result[i]['fName']."</td>";
-                    echo "<td>".$result[i]['lName']."</td>";
-                    echo "<td>".$result[i]['Email']."</td>";
-                    echo "<td>".$result[i]['Password']."</td>";
+                    echo "<td>".$result[$row]['fName']."</td>";
+                    echo "<td>".$result[$row]['lName']."</td>";
+                    echo "<td>".$result[$row]['Email']."</td>";
+                    echo "<td>".$result[$row]['Password']."</td>";
                 echo "</tr>";
+                $row = $row+1;
             }
             ?>
             
