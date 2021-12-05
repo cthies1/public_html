@@ -300,12 +300,14 @@ session_start();
                 echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
             echo "</tr>";
 
-            echo "<tr>";
-                echo "<td>".$result[0]['fName']."</td>";
-                echo "<td>".$result[0]['lName']."</td>";
-                echo "<td>".$result[0]['Email']."</td>";
-                echo "<td>".$result[0]['Password']."</td>";
-            echo "</tr>";
+            foreach($result as $tuple) {
+                echo "<tr>";
+                    echo "<td>".$tuple[0]['fName']."</td>";
+                    echo "<td>".$tuple[0]['lName']."</td>";
+                    echo "<td>".$tuple[0]['Email']."</td>";
+                    echo "<td>".$tuple[0]['Password']."</td>";
+                echo "</tr>";
+            }
             ?>
             
         </div>
