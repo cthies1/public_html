@@ -61,7 +61,7 @@ session_start();
 
             //redirect user to another page
             $str = "Location: homePage.php";
-            header($str);   
+            header($str);
 
         }
         //disconnect from database

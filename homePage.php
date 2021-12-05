@@ -288,6 +288,19 @@ session_start();
                     <input class="next" type="submit" value=">" /></br></br>
                 </form>
             </div> -->
+            <?php
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
+            echo "</tr>";
+
+            echo "<tr>";
+                echo "<td>".$result[0]['fName']."</td>";
+                echo "<td>".$result[0]['lName']."</td>";
+                echo "<td>".$result[0]['Email']."</td>";
+                echo "<td>".$result[0]['Password']."</td>";
+            echo "</tr>";
+            ?>
             
         </div>
         
