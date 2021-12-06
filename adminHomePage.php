@@ -12,20 +12,14 @@ session_start();
         <link rel="stylesheet" href="./assets/css/home.css" />
     </head>
     <body>
-        <?php
-            echo "Welcome Admin!";
-
-            ?>
-            <div class="forms">
+        <img class = "logo" src="./assets/images/logo.png" />
+        <div class="page">
+            <h3>Welcome Admin!</h3>
             <form action="userAnswers.php" method = "POST">
                 <input class="button" type="submit" name="userAnswers" value="Generate Report" /></br></br>
             </form>
             <form action="login.php" method = "POST">
-                    <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
-                </form>
-
+                <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
+            </form>
         </div>
-
-
-
     </body>
