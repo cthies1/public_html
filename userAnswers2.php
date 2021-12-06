@@ -20,7 +20,7 @@ session_start();
             // $quizID = $_GET['quizID'];
 
             $stmt = $db->prepare('SELECT UserID, QuestionID, response FROM Results ORDER BY userID, questionID;');
-            $stmt2 = $db->prepare('SELECT COUNT(*) AS numUsers FROM Users NATURAL JOIN Question;');
+            $stmt2 = $db->prepare('SELECT COUNT(DISTINCT *) AS numUsers FROM Users NATURAL JOIN Question;');
 
             $stmt3 = $db->prepare('SELECT * FROM Question ORDER BY questionID;');
             $stmt4 = $db->prepare('SELECT COUNT(*) AS numQs FROM Question;');
