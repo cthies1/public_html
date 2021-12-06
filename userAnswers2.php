@@ -53,6 +53,7 @@ session_start();
                     echo "<td>".$result[$row2]['response']."</td>";
                     $row2 = $row2+1;
                 }
+                echo "</tr>";
             }
         ?>
 
