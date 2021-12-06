@@ -17,14 +17,6 @@ session_start();
             <img src="./assets/images/logo.png" />
             <?php
                 $link = "checkIdentity.php?username=".$_SESSION["email"];
-                //if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
-                if(isset($_GET["answer"])) $pass = $_GET["answer"];
-                else $answer = "";
-                //$answer = "";
-                //if (isset($_COOKIE["new_password"])) $pass = $_COOKIE["new_password"];
-                if(isset($_GET["new_pass"])) $pass = $_GET["new_pass"];
-                else $new_pass = "";
-                //$new_password = "";
             ?>
             <p>
             <div class="forms">
@@ -47,7 +39,7 @@ session_start();
                         </div>
                         <br>
                         <span class="text-box">Password: </span>
-                        <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
+                        <input type="password" name="pass" value="<?php $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input class="button" type="submit" value="Reset Password" /></br></br>
                     </form>
