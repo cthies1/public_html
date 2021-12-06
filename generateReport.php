@@ -2,7 +2,7 @@
 session_start();
 
     $reporter = $_SESSION["email"];
-    $user = $_GET['user'];
+    $user = $_GET['username'];
     $dFilt = $_GET['dfilt'];
     $mFilt = $_GET['mfilt'];
     try{
@@ -39,7 +39,7 @@ session_start();
             //if they have 3 reports against them, remove them from the database
             if($numReports==3){
                 echo '3 reports against them \n';
-                $quer2 = $db->prepare('delete from users where userID is :username;');
+                $quer2 = $db->prepare('delete from users where email is :username;');
                 $quer2->bindValue(':username',$user);
                 $quer2->execute();
             }
