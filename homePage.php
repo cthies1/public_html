@@ -69,7 +69,7 @@ session_start();
             <form action=<?php echo $link; ?> method="post">
             <span class="dropdown">Show only results from </span>
                 <select name="dfilt">
-                    <option value="show all" >show all</option>
+                    <option value="show all" selected>show all</option>
                     <option value="today">today</option>
                     <option value="this week">this week</option>
                     <option value="this month">this month</option>
@@ -85,7 +85,7 @@ session_start();
                     <option value="75%">75%</option>
                     <option value="50%">50%</option>
                     <option value="30%">30%</option>
-                    <option value=<?php echo $mfilt; ?> selected><?php echo $mfilt; ?></option>
+                    <option value="show all" selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -240,7 +240,7 @@ session_start();
                     echo "<tr>";
                     echo "<td>$tuple[fName]</td>";
                     echo "<td>$tuple[lName]</td>";
-                    echo "<td>$tuple[email]</td>";
+                    echo "<td>$tuple[matchID]</td>";
                     echo "<td>$tuple[matchPercent]</td>";
                     echo "<td> $tuple[date]</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;

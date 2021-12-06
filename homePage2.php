@@ -240,7 +240,7 @@ session_start();
                     echo "<tr>";
                     echo "<td>".$tuple['fName']."</td>";
                     echo "<td>".$tuple['lName']."</td>";
-                    echo "<td>".$tuple['username']."</td>";
+                    echo "<td>".$tuple['matchID']."</td>";
                     echo "<td>".$tuple['matchPercent']."</td>";
                     echo "<td>".$tuple['date']."</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
