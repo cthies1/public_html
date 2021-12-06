@@ -1,0 +1,123 @@
+body {
+  background-color: #faf7ff;
+}
+
+.page {
+  margin: 5px 150px;
+  padding: 15px;
+}
+
+.logo {
+  width: 15%;
+  height: auto;
+  /* position: sticky; */
+  top: 10px;
+  left: 10px;
+}
+
+h3 {
+  color: #58488d;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+h4 {
+  color: #992f78;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.button {
+  /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  float: right;
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.forms {
+  float: right;
+}
+
+.button2 {
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button2:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.match_card {
+  border: 2px solid #8973d2;
+  padding: 30px;
+  max-width: 50%;
+}
+
+.profile_info {
+  /* border: 2px solid #8973D2; */
+  /* float: right; */
+  position: absolute;
+  left: 325px;
+  top: 70px;
+}
+
+.last {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+  border-radius: 100px;
+  font-size: large;
+}
+
+.last:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.next {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+  border-radius: 100px;
+  font-size: large;
+}
+
+.next:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.dropdown {
+  color: #8973d2;
+  font-size: 20px;
+}
+
+/* 
+  colors:
+  #FAF7FF - background
+  #58488D - dark purple
+  #8973D2 - light purple
+  #992F78 - dark pink
+   */

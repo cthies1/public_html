@@ -19,7 +19,7 @@ session_start();
                 <?php
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
-                    if($err >= 69){
+                    if($err == 69){
                         echo "<font color='red'>*You've been reported and blocked! </br>";
                         $err = $err-69;
                     }
