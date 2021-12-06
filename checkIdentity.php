@@ -53,8 +53,8 @@
         //disconnect from database
         $db = null;
         // send back to login page
-        //$str = "Location: index.php";
-        //header($str);
+        $str = "Location: index.php";
+        header($str);
     } catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
