@@ -60,7 +60,7 @@ session_start();
             $_SESSION["email"] = $email;
 
             //redirect user to another page
-            $str = "Location: homePage.php";
+            $str = "Location: SpoonsQuiz.php";
             header($str);
 
         }

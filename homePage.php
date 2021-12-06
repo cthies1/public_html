@@ -16,14 +16,14 @@ session_start();
         <div class="page">
 
             <div class="forms">
+                <form action="login.php" method = "POST">
+                    <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
+                </form>
                 <form action="SpoonsQuiz.php" method = "POST">
                     <input class="button" type="submit" value="Retake the quiz" /></br></br>
                 </form>
                 <form action="calculateMatch.php" method = "POST">
                     <input class="button" type="submit" value="Calculate my best match" /></br></br>
-                </form>
-                <form action="login.php" method = "POST">
-                    <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
                 </form>
                 <form action="userAnswers.php" method = "POST">
                     <input class="button" type="submit" value="User Answers" /></br></br>
