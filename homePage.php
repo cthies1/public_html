@@ -25,12 +25,6 @@ session_start();
                 <form action="calculateMatch.php" method = "POST">
                     <input class="button" type="submit" value="Calculate my best match" /></br></br>
                 </form>
-                <form action="userAnswers.php" method = "POST">
-                    <input class="button" type="submit" value="User Answers" /></br></br>
-                </form>
-                <form action="userReport.php" method = "POST">
-                    <input class="button" type="submit" value="User Report" /></br></br>
-                </form>
             </div>
             <?php
             $variable = $_SESSION["email"];

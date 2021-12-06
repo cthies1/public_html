@@ -115,6 +115,7 @@ session_start();
                         header($str);
                     }  
                 } else {
+                    
                     //echo "moving to home page...";
                     $_SESSION["email"] = $email;
                     if (isset($_POST["rememberMe"])){
