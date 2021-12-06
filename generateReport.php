@@ -2,7 +2,7 @@
 session_start();
 
     $reporter = $_SESSION["email"];
-    $user = $_GET['reporter'];
+    $user = $_GET['user'];
     $dFilt = $_GET['dfilt'];
     $mFilt = $_GET['mfilt'];
     try{
