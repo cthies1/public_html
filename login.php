@@ -23,7 +23,7 @@ session_start();
             // return to index
             header("Location: index.php");
         } else {
-            $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3');
+            $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3;');
         $email = $_POST['email'];
         $stmtRep->bindValue(':email',$_POST['email']);
         $stmtRep->execute();
