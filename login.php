@@ -107,6 +107,10 @@ session_start();
                             $numAttempts = $_GET["numAttempts"];
                             $numAttempts = $numAttempts+1;
                         }
+                        if($numAttempts >= 5){
+                            $str = "Location: resetPassword.php?username=".$_SESSION["email"];
+                            header($str);
+                        }
                         $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
                         header($str);
                     } else {
