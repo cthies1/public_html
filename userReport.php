@@ -15,6 +15,7 @@ session_start();
     <body>  
         <?php
             $user = $_SESSION['email'];
+            // $user = $GET['username'];
 
              //open connection to the spoons database file
             $db_file = './assets/databases/spoons.db';
@@ -107,7 +108,7 @@ session_start();
             $unmatches = $db->prepare('SELECT * from unMatch where user1 is :user1;');
             $unmatches->bindValue(':user1',$user);
             $unmatches->execute();
-            $unmatches = $matches->fetchAll();
+            $unmatches = $unmatches->fetchAll();
 
             echo "<table>";
             echo "<h3>";
