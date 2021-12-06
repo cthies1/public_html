@@ -12,7 +12,7 @@ session_start();
         <div class="page">
             <img src="./assets/images/logo.png" />
             <?php
-                $link = "checkIdentity.php?username=".$_POST["email"];
+                $link = "checkIdentity.php?username=".$_SESSION["email"];
                 //if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
                 // if(isset($_GET["answer"])) $pass = $_GET["answer"];
                 //else $answer = "";
