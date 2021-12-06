@@ -48,13 +48,12 @@ session_start();
              echo "<th>First Name</th><th>Last Name</th><th>Password</th><th>Age</th><th>Num. Matches</th><th>Num. Times Reported</th>";
              echo "</tr>";
                  echo "<tr>";
-                 echo "<td>".$userInfo[0]['fName']."</td><td>".$userInfo[0]['lName']."</td><td>".$userInfo[0]['Password']."</td><td>".$userInfo[0]['Age']."</td>";
+                 echo "<td>".$userInfo[0]['fName']."</td><td>".$userInfo[0]['lName']."</td><td>".$userInfo[0]['Password']."</td><td>".$userInfo[0]['Age']."</td><td>".$numMatches[0]['numMatches']."</td><td>".$numReports[0]['numReports']."</td>";
                  echo "</tr>"; 
-             } 
              echo "</table>"; 
 
 
-            $answers = $db->prepare('Select QuestionID, response from results where userID is :username order by QuestionID;');
+            $answers = $db->prepare('SELECT QuestionID, response from results where userID is :username order by QuestionID;');
             $stmt = $db->prepare('SELECT * FROM Question ORDER BY questionID;');
             $answers->bindValue(':username',$user);
             $answers->execute();
@@ -74,7 +73,7 @@ session_start();
             }
             foreach($answers as $tuple) {
                 echo "<tr>";
-                echo "<td>$tuple[response]</td>";
+                echo "<td>".$tuple[response]."</td>";
                 echo "</tr>"; 
             } 
             echo "</table>"; 
@@ -94,17 +93,35 @@ session_start();
             echo "</tr>";
             foreach($matches as $tuple) {
                 echo "<tr>";
-                echo "<td>$tuple[user2]</td>";
-                echo "<td>$tuple[matchPercent]</td>";
-                echo "<td>$tuple[date]</td>";
+                echo "<td>".$tuple['user2']."</td>";
+                echo "<td>".$tuple['matchPercent']."</td>";
+                echo "<td>".$tuple['date']."</td>";
                 echo "</tr>"; 
             } 
             echo "</table>"; 
 
 
             //user unmatches
+            $unmatches = $db->prepare('SELECT * from unMatch where user1 is :user1;');
+            $unmatches->bindValue(':user1',$user);
+            $unmatches->execute();
+            $unmatches = $matches->fetchAll();
 
-            //user reports
+            echo "<table>";
+            echo "<h3>";
+                echo $user." Unmatches";
+            echo"</h3>";
+            echo "<tr>";
+                echo "<th>User 2</th><th>Date</th>";
+            echo "</tr>";
+            foreach($unmatches as $tuple) {
+                echo "<tr>";
+                echo "<td>".$tuple['user2']."</td>";
+                echo "<td>".$tuple['date']."</td>";
+                echo "</tr>"; 
+            } 
+            echo "</table>"; 
+
 
         ?>
 
