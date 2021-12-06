@@ -21,8 +21,8 @@ session_start();
                     $err = $_GET["error"];
                     
                     if(err >= 100){
-                        echo "<font color='red'>*That is not what you re</br></br>";
-                        $err = $err-10;
+                        echo "<font color='red'>*That is not the correct anwser!</br></br>";
+                        $err = $err-100;
                     }
                     if($err >= 10){
                         echo "<font color='red'>*You must answer all questions!</br></br>";

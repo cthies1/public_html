@@ -45,7 +45,9 @@ session_start();
              $numMatches->execute();
              $numMatches = $numMatches->fetchAll();
 
-             
+             if(isset($numMatches[0])){
+                 $nm = $numMatches[0]
+             }
              $numReports = $db->prepare('SELECT  numReports from Report where userID is :user;');
              $numReports->bindValue(':user',$user);
              $numReports->execute();
