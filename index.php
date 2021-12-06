@@ -88,7 +88,7 @@ session_start();
             $db = new PDO('sqlite:' . $db_file);
 
             $stmt = $db->prepare('SELECT * from Users');
-            $stmt2 = $db->prepare('SELECT COUNT(*) from Users as num');
+            $stmt2 = $db->prepare('SELECT COUNT(*) as num from Users');
             
             $stmt->execute();
             $stmt2->execute();
