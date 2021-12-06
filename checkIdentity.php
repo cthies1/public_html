@@ -35,10 +35,11 @@
             if(isset($result[0])){
                 echo("helloe2");
                 // check that they verified their ID
-                if(strcmp($result[0], $_POST['question']) == 0){
+                echo($result[0][0]);
+                if(strcmp($result[0][0], $_POST['question']) == 0){
                     echo("helloe3");
                     // if so, change password
-                    $stmt = $db->prepare('UPDATE User SET (password = :pass) where (userId = userID)');
+                    $stmt = $db->prepare('UPDATE User SET (password like :pass) where (userId like userID)');
                     $password = $_POST['pass'];
                     $userID = $_SESSION["email"];
                     $stmt1->bindValue(':email',$userID);
