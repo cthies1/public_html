@@ -14,7 +14,7 @@ session_start();
 
     <body>  
         <?php
-            $goHome = "homePage.php?username=".$_SESSION["email"];
+            $goHome = "adminHomePage.php?username=".$_SESSION["email"];
         ?>
         <form action=<?php echo $goHome;?> method = "post">
             <input type="submit" value="Return to Home Page" /></br></br>
