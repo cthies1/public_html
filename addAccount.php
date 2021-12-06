@@ -19,6 +19,7 @@ session_start();
         $stmtRep->bindValue(':email',$_POST['email']);
         $stmtRep->execute();
         $resultRep = $stmtRep->fetchAll();
+        if(isset())
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;

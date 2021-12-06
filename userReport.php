@@ -9,7 +9,7 @@ session_start();
         <title>User Report</title>
         <meta name="description" content="This is a create account page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
     <body>  
