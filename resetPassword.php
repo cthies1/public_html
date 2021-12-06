@@ -34,8 +34,7 @@ session_start();
             <div class="forms">
                     <h3>Reset Password:</h3>
                     <form action="<?php echo $link ?>" method="post" style="width: 157px;">
-                        <h3>To reset your password we need to check your idenity first. </h3>
-                        <br>
+                    <span class="text-box">To reset your password, please anwser the security question: </span>
                         <span class="text-box">Are you a Big, Little, or a little bit of both: </span>
                         <div>
                                 <input type="radio" name="question" id="question-A" value="Little Spoon" />
