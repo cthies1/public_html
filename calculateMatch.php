@@ -28,16 +28,13 @@ session_start();
             //the first name, last name, and number of questions they were compatible on.
             $query_str = $db->prepare('with compatibleAnswers as (select QuestionID,r2 from Results  natural join Compatible where userID is :username  and compatible.r1 is results.response),
             compatibleUsers as (select userID from Results natural join compatibleAnswers where QuestionID is compatibleAnswers.QuestionID and results.response is compatibleAnswers.r2 and userID is not :username),
-            topCompat as (select count(*) as countMax,userID from compatibleUsers where userID not in (select email from users natural join match where users.email is match.user2) and userID not in (select email from users natural join unmatch where users.email is unmatch.user2) group by userID),
+            topCompat as (select count(*) as countMax,userID from compatibleUsers where userID not in (select email from users natural join match where users.email is match.user2 and :username is match.user1) and userID not in (select email from users natural join unmatch where users.email is unmatch.user2 and :username is unmatch.user1) group by userID),
             matchID as (select userID, matched from (select max(countMax) as matched, userID from topCompat))
             select fname, lname,email,age, matched from Users natural join matchID where users.email is  matchID.userID;');
             $query_str->bindValue(':username',$_SESSION["email"]);
             $query_str->execute();
             $topmatch = $query_str->fetchAll();
-            echo "total match \n";
-            echo '<pre>'; 
-            print_r($topmatch); 
-            echo '</pre>';
+
 
             if(sizeof($topmatch)==0){
                 throw new Exception("no compatible matches");
@@ -76,11 +73,11 @@ session_start();
             $matchQuestions = $query2_str->fetchAll();
             //echo "size ".sizeof($matchQuestions);
 
-           
+           echo "Congratulations! Your future potential love interest is ".$matchID
 
             echo "<table>";
             echo "<tr>";
-                echo "<th>Question</th><th>Your Response</th><th>Their Response</th>";
+                echo "<th>Question</th><thWhen You Said...</th><th>They Said...</th>";
             echo "</tr>";
             foreach($matchQuestions as $tuple) {          // <------ Line 24
                 echo "<tr>";
@@ -109,11 +106,11 @@ session_start();
 
         ?>
         <form action=<?php echo $matchLink;?> method = "post">
-            <input type="submit" value="input match?" /></br></br>
+            <input type="submit" value="Accept the Match" /></br></br>
         </form>
 
         <form action=<?php echo $goHome;?> method = "post">
-            <input type="submit" value="return to home page" /></br></br>
+            <input type="submit" value="Return to Home Page" /></br></br>
         </form>
 
         

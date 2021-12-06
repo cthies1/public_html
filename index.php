@@ -53,12 +53,12 @@ session_start();
                 ?>
                 <div class="forms">
                     <h3>Login:</h3>
-                    <form action="<?php echo $link ?>" method="post">
-                        <span class="text-box">Email: </span>
-                        <input type="email" name="email" value="<?php echo $email; ?>" /></br></br>
+                    <form action="<?php echo $link ?>" method="post" style="width: 157px;">
+                        <div class="text-box">Email: </div>
+                        <input type="email" name="email" value="<?php echo $email; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">Password: </span>
-                        <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" />
-                        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></br></br>
+                        <input type="password" name="pass" value="<?php echo $pass; ?>" required="" id="id_password" style="padding-top: 4px;" />
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input type="checkbox" name="rememberMe" /> Keep me logged in</br></br>
                         <input class="button" type="submit" value="Login" /></br></br>
                     </form>
@@ -82,30 +82,37 @@ session_start();
             });
         </script>
 
-        <!-- <script>
-            function myFunction() {
-                var x = document.getElementById("id_password");
-                if (x.type === "password") {
-                    x.type = "text";
-                } else {
-                    x.type = "password";
-                }
+        <?php
+            //open the sqlite database file
+            $db_file = './assets/databases/spoons.db';
+            $db = new PDO('sqlite:' . $db_file);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $db->prepare('SELECT * from Users');
+            $stmt2 = $db->prepare('SELECT COUNT(*) as num from Users');
+            
+            $stmt->execute();
+            $stmt2->execute();
+
+            $result = $stmt->fetchAll();
+            $result2 = $stmt2->fetchAll();
+
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
+            echo "</tr>";
+
+            $row = 0;
+            while($row < $result2[0]['num']) {
+                echo "<tr>";
+                    echo "<td>".$result[$row]['fName']."</td>";
+                    echo "<td>".$result[$row]['lName']."</td>";
+                    echo "<td>".$result[$row]['Email']."</td>";
+                    echo "<td>".$result[$row]['Password']."</td>";
+                echo "</tr>";
+                $row = $row+1;
             }
-        </script> -->
+        ?>
         
     </body>
-
-    <!-- <body>
-        <p>
-            <form action="login.php" method="post">
-                Email: <input type="text" name="username"/><br/>
-                Password: <input type="text" name="password"/><br/>
-
-                <input type="submit" value="Login"/>
-                <input type="submit" value="Create Account"/>
-            </form>
-
-        </p>
-        
-    </body> -->
 </html>
