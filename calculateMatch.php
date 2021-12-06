@@ -48,7 +48,7 @@ session_start();
             $query3->execute();
             $numQ = $query3->fetchAll();
             $qs = $numQ[0]['countNum'];
-            $matchNum = floor($topmatch[0]['matched']/$qs)*100;
+            $matchNum = ($topmatch[0]['matched']/$qs)*100;
 
             //the following query gives a table containing the questions the two users are compatible with
             //in the format (question text, user response, match response)

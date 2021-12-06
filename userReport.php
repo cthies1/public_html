@@ -97,7 +97,7 @@ session_start();
             foreach($matches as $tuple) {
                 echo "<tr>";
                 echo "<td>".$tuple['User2']."</td>";
-                echo "<td>".$tuple['matchPercent']."</td>";
+                echo "<td>".floor($tuple['matchPercent'])."</td>";
                 echo "<td>".$tuple['date']."</td>";
                 echo "</tr>"; 
             } 
