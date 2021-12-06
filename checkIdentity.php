@@ -7,13 +7,13 @@
             $error += 2;
         }
         //if(null = ($_POST()))
-        if($error > 0) {
+        /*if($error > 0) {
             $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
             header($str);
 
         } else {
-
-            $link = "checkIdentity.php?username=".$_SESSION["email"];
+*/
+            //$link = "checkIdentity.php?username=".$_SESSION["email"];
             $username = $_SESSION["email"];
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
@@ -34,22 +34,27 @@
             }
 
             //get anwser in db for big or little spoon question
-            /*$stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
+            $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
-            $stmt1->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':email',$_POST['email']);
 
             $stmt->execute();
             //get result
             $result = $stmt->fetchAll();
+            echo( $result);
             if(!isset($result[0])){
-                $
-                $st1 = $db->prepare('INSERT INTO results VALUES (1, 1, :username, :q1a)');
-                $q1 = $_POST['question-1-answers'];
-                $st1->bindValue(':username', $username);
-                $st1->bindValue(':q1a', $q1);
-                $result = $st1->execute();
-            }*/
-        }
+                // check that they verified their ID
+                if(strcpm($result[0], $_POST['question']) == 0){
+                    // if so, change password
+                    $stmt = $db->prepare('UPDATE User SET (password = :pass) where (userId = userID)');
+                    $password = $_POST['pass'];
+                    $userID = $_SESSION["email"];
+                    $stmt1->bindValue(':email',$userID);
+                    $stmt1->bindValue(':pass',$password);
+                    $stmt1->execute();
+                }
+            }
+        //}
     }
     catch(PDOException $e)
     {

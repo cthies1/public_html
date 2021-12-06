@@ -26,16 +26,16 @@ session_start();
                         <br>
                         <h3>Do you prefer to be a Big or Little spoon? </h3>
                             <div>
-                                <input type="radio" name="question-2-answers" id="question-2-answers-A" value="Little Spoon" />
-                                <label for="question-2-answers-A">Little Spoon</label>
+                                <input type="radio" name="question" id="question-A" value="Little Spoon" />
+                                <label for="question-A">Little Spoon</label>
                             </div>
                             <div>
-                                <input type="radio" name="question-2-answers" id="question-2-answers-B" value="Big Spoon" />
-                                <label for="question-2-answers-B">Big Spoon</label>
+                                <input type="radio" name="question" id="question-B" value="Big Spoon" />
+                                <label for="question-B">Big Spoon</label>
                             </div>
                             <div>
-                                <input type="radio" name="question-2-answers" id="question-2-answers-C" value="A little bit of both" />
-                                <label for="question-2-answers-C">A little bit of both</label>
+                                <input type="radio" name="question" id="question-C" value="A little bit of both" />
+                                <label for="question-C">A little bit of both</label>
                         </div>
                         <br>
                         <span class="text-box">New Password: </span>
