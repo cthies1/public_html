@@ -58,7 +58,7 @@ session_start();
         }
         // if error return to quiz with username and error
         if($error > 0) {
-            $str = "Location: SpoonsQuiz.php?username=".$_SESSION["email"]."&error=".$error;
+            $str = "Location: SpoonsQuiz.php?error=".$error;
             header($str);
         }
 
