@@ -108,6 +108,9 @@ session_start();
                             $numAttempts = $numAttempts+1;
                         }
                         if($numAttempts >= 5){
+                            if (isset($_COOKIE["email"])){
+                                setcookie("email", "");
+                            }
                             $str = "Location: resetPassword.php";
                             header($str);
                         }
