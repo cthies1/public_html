@@ -138,10 +138,10 @@ session_start();
                 echo "</tr>"; 
             } 
             echo "</table></br></br></br>"; 
-
+        ?>
+        <?php
             $goHome = "adminHomePage.php?username=".$_SESSION["email"];
         ?>
-
         <form action=<?php echo $goHome;?> method = "post">
             <input class="button" type="submit" value="Return to Home Page" /></br></br>
         </form>
