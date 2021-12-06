@@ -2,19 +2,21 @@
     session_start();
 
     try {
-
-        if(null == ($_POST['new_password'])){   //password
+        $error = 0;
+        // check if password was entered
+        if(null == ($_POST['pass'])){ 
             $error += 2;
         }
-        //if(null = ($_POST()))
-        /*if($error > 0) {
+        // Check if question was answered
+        if(null == ($_POST['question'])){  
+            $error += 10;
+        }
+        if($error > 0) {
             $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
             header($str);
-
         } else {
-*/
             //$link = "checkIdentity.php?username=".$_SESSION["email"];
-            $username = $_SESSION["email"];
+            $userID = $_SESSION["email"];
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);
@@ -22,8 +24,8 @@
 
             //check that email exists ONLY
             $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
-            $email = $_POST['email'];
-            $stmt1->bindValue(':email',$_POST['email']);
+            $email = $userID;
+            $stmt1->bindValue(':email',$email);
             
             $stmt1->execute();
             $result = $stmt1->fetchAll();
@@ -55,9 +57,8 @@
                     $stmt1->execute();
                 }
             }
-        //}
-    }
-    catch(PDOException $e)
+        }
+    } catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
     }
