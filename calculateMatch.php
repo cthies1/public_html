@@ -41,8 +41,8 @@ session_start();
             }
 
             $matchID = $topmatch[0]['Email'];
-            echo " match id ".$matchID;
-            echo " top match = ".$topmatch[0]['matched'];
+            //echo " match id ".$matchID;
+            //echo " top match = ".$topmatch[0]['matched'];
 
             $query3 = $db->prepare('select count(*) as countNum from QuizQuestions where quizID=1');
             $query3->execute();
@@ -76,6 +76,9 @@ session_start();
            echo "Congratulations! Your future potential love interest is ".$matchID;
 
             echo "<table>";
+            echo "<h3>";
+            echo "Compatible Responses";
+        echo"</h3>";
             echo "<tr>";
                 echo "<th>Question</th><thWhen You Said...</th><th>They Said...</th>";
             echo "</tr>";

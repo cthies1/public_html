@@ -61,6 +61,12 @@ session_start();
                 $mult = $mult+1;
             }
         ?>
+        <?php
+          $goHome = "homePage.php?username=".$_SESSION["email"];
+        ?>
+        <form action=<?php echo $goHome;?> method = "post">
+            <input type="submit" value="Return to Home Page" /></br></br>
+        </form>
 
     </body>
 
