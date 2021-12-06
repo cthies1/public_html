@@ -253,25 +253,24 @@ session_start();
                 // echo "</table>";
                 
                 foreach($result_set as $tuple) {
-                    if(isset()) {
-                        
+                    if(isset($tuple['fName'])) {
+                        echo "<div class='match_card'>";
+                            echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
+                            echo "<h4>".floor($tuple['matchPercent'])."% Match</h4>";
+                            echo "<p>Email: ".$tuple['matchID']."</p>";
+                            echo "<p>Age: ".$tuple['Age']."</p>";
+                            echo "<p>Date Matched: ".$tuple['date']."</p>";
+                            $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                            echo "<form action=".$reportLink." method = 'POST'>";
+                                echo "<input class='button2' type='submit' value='Report' /></br></br>";
+                            echo "</form>";
+                            $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                            echo "<form action=".$unmatchLink." method = 'POST'>";
+                                echo "<input class='button2' type='submit' value='Unmatch' />";
+                            echo "</form>";
+                        echo "</div>";
+                        echo "</br></br>";
                     }
-                    echo "<div class='match_card'>";
-                        echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
-                        echo "<h4>".floor($tuple['matchPercent'])."% Match</h4>";
-                        echo "<p>Email: ".$tuple['matchID']."</p>";
-                        echo "<p>Age: ".$tuple['Age']."</p>";
-                        echo "<p>Date Matched: ".$tuple['date']."</p>";
-                        $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                        echo "<form action=".$reportLink." method = 'POST'>";
-                            echo "<input class='button2' type='submit' value='Report' /></br></br>";
-                        echo "</form>";
-                        $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                        echo "<form action=".$unmatchLink." method = 'POST'>";
-                            echo "<input class='button2' type='submit' value='Unmatch' />";
-                        echo "</form>";
-                    echo "</div>";
-                    echo "</br></br>";
                 }
 
                 }
@@ -309,19 +308,3 @@ session_start();
     </body>
 
 </html>
-
-
-<!-- 
-    fname
-    lastname
-    email
-    percent
-    age
-    compatable questions
-
-
-    spoons quiz (already taken)
-    calculate match
-    next match
-    show celeb best match
- -->
