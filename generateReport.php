@@ -109,9 +109,9 @@ session_start();
             $quer->execute();
 
 
-            //$str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
-            //header($str);
-            //exit;
+            $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
+            header($str);
+            exit;
 
         }
 
