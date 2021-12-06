@@ -14,7 +14,7 @@ session_start();
 
     <body>  
         <?php
-            $user = $_GET['username'];
+            $user = $_SESSION['username'];
 
              //open connection to the spoons database file
             $db_file = './assets/databases/spoons.db';
