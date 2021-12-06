@@ -122,7 +122,6 @@ session_start();
                 $stmtAdd->bindValue(':pass',$_POST['pass']);
                 
                 $stmtAdd->execute();
-                    //echo "moving to home page...";
                     $_SESSION["email"] = $email;
                     if (isset($_POST["rememberMe"])){
     
