@@ -22,41 +22,35 @@
             $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            //check that email exists ONLY
-            $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
-            $email = $userID;
-            $stmt1->bindValue(':email',$email);
-            
-            $stmt1->execute();
-            $result = $stmt1->fetchAll();
-            echo implode(" ",$result);
-            /*if($result == null){
-                $error = 10000000;
-                $link = "Location: createAccount.php?error=".$error;
-                header($link);
-            }*/
-
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
-            $stmt->bindValue(':email', $userID);
+            $stmt->bindValue(':userID', $userID);
 
             $stmt->execute();
+
             //get result
             $result = $stmt->fetchAll();
-            echo( $result);
-            if(!isset($result[0])){
+            echo("helloe");
+            if(isset($result[0])){
+                echo("helloe2");
                 // check that they verified their ID
-                if(strcpm($result[0], $_POST['question']) == 0){
+                echo($result[0][0]);
+                if(strcmp($result[0][0], $_POST['question']) == 0){
+                    echo("helloe3");
                     // if so, change password
-                    $stmt = $db->prepare('UPDATE User SET (password = :pass) where (userId = userID)');
+                    $stmt = $db->prepare('UPDATE User SET (password like :pass) where (userId like userID)');
                     $password = $_POST['pass'];
                     $userID = $_SESSION["email"];
                     $stmt1->bindValue(':email',$userID);
                     $stmt1->bindValue(':pass',$password);
                     $stmt1->execute();
+
+                    $link = "index.php";
+                    header($link);
                 }
             }
+            echo("helloe");
         }
     } catch(PDOException $e)
     {
