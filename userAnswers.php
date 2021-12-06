@@ -58,7 +58,7 @@ session_start();
                     $row2 = $row2+1;
                 }
                 $reportLink = "userReport.php?user=".$result[$row2-1]['UserID'];
-                if(isset($result[$row2]['response'])) echo "<td><a href=$reportLink>Generate User Report</a></td>";
+                if(isset($result[$row2-1]['response'])) echo "<td><a href=$reportLink>Generate User Report</a></td>";
                 echo "</tr>";
                 $mult = $mult+1;
             }
