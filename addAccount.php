@@ -14,7 +14,7 @@ session_start();
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        $stmtRep = $db->prepare('SELECT * from Report where (userID = :email)');
+        $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3');
         $email = $_POST['email'];
         $stmtRep->bindValue(':email',$_POST['email']);
         $stmtRep->execute();
