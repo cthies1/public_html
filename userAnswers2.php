@@ -45,15 +45,15 @@ session_start();
                 }
             echo "</tr>";
 
-            $row2 = 0;
-            while($row2 < $result2[0]['numUsers']) {
-                echo "<tr>";
-                echo "<td>".$result[$row2]['userID']."</td>";
-                while($row2 < $result4[0]['numQs']) {
-                    echo "<td>".$result[$row2]['response']."</td>";
-                    $row2 = $row2+1;
-                }
-            }
+            // $row2 = 0;
+            // while($row2 < $result2[0]['numUsers']) {
+            //     echo "<tr>";
+            //     echo "<td>".$result[$row2]['userID']."</td>";
+            //     while($row2 < $result4[0]['numQs']) {
+            //         echo "<td>".$result[$row2]['response']."</td>";
+            //         $row2 = $row2+1;
+            //     }
+            // }
         ?>
 
     </body>
