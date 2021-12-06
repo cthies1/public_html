@@ -33,13 +33,15 @@ session_start();
         $stmtRep->bindValue(':email',$_POST['email']);
         $stmtRep->execute();
         $resultRep = $stmtRep->fetchAll();
+        $error = 0;
         if(isset($result[0])){
             $error += 69;
             $str = "Location: index.php?error=".$error;
                 header($str);
+                exit;
         }
         
-            $error = 0;
+           
             
             if(null == ($_POST['email'])){  //email
                 $error += 10;
