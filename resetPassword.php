@@ -40,7 +40,7 @@ session_start();
                     <span class="text-box">To reset your password, please anwser the security question.</span>
                     <br>
                     <br>
-                        <span class="text-box">Are you a Big, Little, or a little bit of both: </span>
+                        <span class="text-box">Are you a Big, Little, or a little bit of both Spoon: </span>
                         <div>
                                 <input type="radio" name="question" id="question-A" value="Little Spoon" />
                                 <label for="question-A">Little Spoon</label>
