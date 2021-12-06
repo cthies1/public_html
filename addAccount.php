@@ -14,11 +14,11 @@ session_start();
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        $stmtRep = $db->prepare('SELECT * from Users where (Email = :email)');
+        $stmtRep = $db->prepare('SELECT * from Report where (userID = :email)');
         $email = $_POST['email'];
         $stmtRep->bindValue(':email',$_POST['email']);
         $stmtRep->execute();
-        $result = $stmt->fetchAll();
+        $resultRep = $stmtRep->fetchAll();
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;
