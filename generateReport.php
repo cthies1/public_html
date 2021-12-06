@@ -28,6 +28,7 @@ session_start();
 
         //if the user already has a report generated against them
         if($check){
+            echo 'user already in system \n';
             $numReports = $check[0]['numReports']+1;
             $quer = $db->prepare('update report set numReports=:nR where userID is :username;');
             $quer->bindValue(':nR',$numReports);
@@ -35,11 +36,13 @@ session_start();
             $quer->execute();
             //if they have 3 reports against them, remove them from the database
             if($numReports==3){
+                echo '3 reports against them \n';
                 $quer2 = $db->prepare('delete from users where userID is :username;');
                 $quer2->bindValue(':username',$user);
                 $quer2->execute();
             }
             //unmatch the reporter from the person they reported
+            echo 'unmatching \n';
             $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
@@ -47,36 +50,36 @@ session_start();
             $quer->execute();
 
 
-            $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
-            header($str);
-            exit;
-            echo "getting past the exit!";
+           // $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
+            //header($str);
+            //exit;
+            //echo "getting past the exit!";
         }
         else{
             //insert a new person into the report table with a value of 1
+            echo 'adding new perp to the system \n';
             $quer = $db->prepare('insert into report values (:user, "mean",1);');
             $quer->bindValue(':user',$user);
             $quer->execute();
 
+            echo 'inserting match \n';
             $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tdate);
             $quer->execute();
 
-            $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
-            header($str);
-            exit;
+            //$str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
+            //header($str);
+            //exit;
 
         }
 
     }
     catch(PDOException $e)
     {
-        $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
-        header($str);
-        exit;
-       // die('Exception : '.$e->getMessage());
+
+       die('Exception : '.$e->getMessage());
     }
 
 ?>
