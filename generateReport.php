@@ -38,7 +38,7 @@ session_start();
             $quer->bindValue(':username',$user);
             $quer->execute();
             //if they have 3 reports against them, remove them from the database
-            if($numReports==3){
+            if($numReports=3){
                 echo '3 reports against them \n';
                 $quer2 = $db->prepare('delete from users where email is :username;');
                 $quer2->bindValue(':username',$user);
