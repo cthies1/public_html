@@ -14,13 +14,14 @@ session_start();
     <body>
         <img class = "logo" src="./assets/images/logo.png" />
         <div class="page">
+            <h3>Welcome Admin!</h3>
             <form action="login.php" method = "POST">
                 <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
             </form>
             <form action="userAnswers.php" method = "POST">
                 <input class="button" type="submit" name="userAnswers" value="Generate Report" /></br></br>
             </form>
-            <h3>Welcome Admin!</h3>
+            
         
 
         <?php
