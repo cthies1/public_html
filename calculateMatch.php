@@ -73,7 +73,7 @@ session_start();
             $matchQuestions = $query2_str->fetchAll();
             //echo "size ".sizeof($matchQuestions);
 
-           echo "Congratulations! Your future potential love interest is ".$matchID
+           echo "Congratulations! Your future potential love interest is ".$matchID;
 
             echo "<table>";
             echo "<tr>";
@@ -95,7 +95,7 @@ session_start();
         }
         catch(Exception $e){
             $err=1;
-            $errorLink = "Location: homePage.php?username=".$_SESSION["email"]."&emptyMatch=".$err;
+            $errorLink = "Location: homePage.php?emptyMatch=".$err;
             header($errorLink);
             exit;
         }
