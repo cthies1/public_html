@@ -65,10 +65,8 @@ session_start();
                 $stmt->execute();
 
                 $result = $stmt->fetchAll();
-                //if email exists, but password is wrong
                 
                 if(!isset($result[0])){
-                    //if email exists, but password is wrong
                 $stmtAdmin = $db->prepare('SELECT * from Admin where (Email = :email) and (Password = :pass)');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
@@ -117,7 +115,7 @@ session_start();
                         $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
                         header($str);
                     } else {
-                        echo "else 2";
+                        
                         $str = "Location: index.php?credentials=false";
                         header($str);
                     }  

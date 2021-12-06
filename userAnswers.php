@@ -12,6 +12,7 @@ session_start();
     </head>
 
     <body>
+        <img src="./assets/images/logo.png" />
         <?php
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
@@ -51,9 +52,9 @@ session_start();
             $mult = 1;
             while($row2 < $result2[0]['numResults']) {
                 echo "<tr>";
-                echo "<td>".$result[$row2]['UserID']."</td>";
+                if(isset($result[$row2]['UserID'])) echo "<td>".$result[$row2]['UserID']."</td>";
                 while($row2 < $result4[0]['numQs']*$mult) {
-                    echo "<td>".$result[$row2]['response']."</td>";
+                    if(isset($result[$row2]['response'])) echo "<td>".$result[$row2]['response']."</td>";
                     $row2 = $row2+1;
                 }
                 $reportLink = "userReport.php?user=".$result[$row2-1]['UserID'];
