@@ -22,9 +22,12 @@
             $userID = $_SESSION["email"];
             $stmt1->bindValue(':email',$_POST['email']);
 
-            //$stmt->execute();
-            // get result
-            //$result = $stmt->fetchAll();
+            $stmt->execute();
+            //get result
+            $result = $stmt->fetchAll();
+            if(!isset($result[0])){
+
+            }
         }
     }
     catch(PDOException $e)
