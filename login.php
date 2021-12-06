@@ -69,8 +69,36 @@ session_start();
                 
                 if(!isset($result[0])){
                     //if email exists, but password is wrong
+                $stmtAdmin = $db->prepare('SELECT * from Admin where (Email = :email) and (Password = :pass)');
+                $email = $_POST['email'];
+                $password = $_POST['pass'];
+                $stmtAdmin->bindValue(':email',$_POST['email']);
+                $stmtAdmin->bindValue(':pass',$_POST['pass']);
                 
-                    if(isset($result1[0])){
+                $stmtAdmin->execute();
+                $resultAdmin = $stmtAdmin->fetchAll();
+                if(isset($resultAdmin[0])){
+                    $_SESSION["email"] = $email;
+                    if (isset($_POST["rememberMe"])){
+                    setcookie("password", $password, time() +
+                                        (60 * 60));
+    
+                    
+    
+                    } else {
+                    if (isset($_COOKIE["email"])){
+                        setcookie("email", "");
+                    }
+                    if (isset($_COOKIE["password"])){
+                        setcookie("password", "");
+                    }
+                    }
+                    $str = "Location: adminHomePage.php";
+                    header($str);
+                    exit;
+                }
+                
+                    if(isset($result1[0])){//password was just wrong
                         if(!isset($_GET["numAttempts"])){
                             debug_to_console("inside if");
                             $numAttempts = 1;
@@ -87,7 +115,7 @@ session_start();
                         header($str);
                     }  
                 } else {
-                    echo "moving to home page...";
+                    //echo "moving to home page...";
                     $_SESSION["email"] = $email;
                     if (isset($_POST["rememberMe"])){
     

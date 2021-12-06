@@ -213,7 +213,7 @@ session_start();
 
                 //return all matches, and store the result set
                 $query_str = $db->prepare('with Matches as (SELECT * from Match where User1 is :username)
-                SELECT fname, lname, date, matchpercent, email as matchID
+                SELECT fname, lname, date, matchpercent, email as matchID, age
                 from Matches , Users
                 where (users.email is matches.user1 and matches.user1 is not :username) or (users.email is matches.user2 and matches.user2 is not :username) and matches.user2 not in (select user2 from unmatch where user1 is :username) and (date >= :date) and matchPercent > :percent
                 order by matchPercent desc;');  // <----- Line 19
@@ -243,6 +243,7 @@ session_start();
                     echo "<td>$tuple[matchID]</td>";
                     echo "<td>$tuple[matchPercent]</td>";
                     echo "<td> $tuple[date]</td>";
+                    echo "<td> $tuple[age]</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                     echo "<td><a href=$reportLink>Report User</a></td>";
                     $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
