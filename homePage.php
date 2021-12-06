@@ -223,6 +223,9 @@ session_start();
                 $query_str->execute();
                 $result_set = $query_str->fetchAll();
 
+                $query = $db->prepare('drop from unMatch where user2 is "janesmith@test.com";');
+                $query->execute();
+
 
                 if(strcmp($dfilt,"show all")==0){
                     $dfilt=1;
