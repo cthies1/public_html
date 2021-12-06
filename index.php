@@ -34,6 +34,8 @@ session_start();
                 }
                 if(isset($_GET["numAttempts"]) AND $_GET["numAttempts"] >= 5){
                     echo "<font color='red'>*5 failed login attempts</br>";
+                    $str = "Location: resetPassword.php";
+                    header($str);
                 }
                 
                 
