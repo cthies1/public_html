@@ -41,6 +41,7 @@ session_start();
                                 <input type="radio" name="question-2-answers" id="question-2-answers-C" value="A little bit of both" />
                                 <label for="question-2-answers-C">A little bit of both</label>
                             </div>
+                        <span class="text-box">Password: </span>
                         <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input class="button" type="submit" value="Reset Password" /></br></br>
