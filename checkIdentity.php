@@ -23,7 +23,7 @@
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //get anwser in db for big or little spoon question
-            $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
+            $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (Email = :userID)');
             $userID = $_SESSION["email"];
             $stmt->bindValue(':userID', $userID);
 
@@ -35,7 +35,7 @@
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
                     // if so, change password
-                    $stmt = $db->prepare('UPDATE Users SET password = :pass where (userId like userID)');
+                    $stmt = $db->prepare('UPDATE Users SET password = :pass where (Email like userID)');
                     $password = $_POST['pass'];
                     $userID = $_SESSION["email"];
                     $stmt1->bindValue(':email',$userID);
