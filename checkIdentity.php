@@ -37,6 +37,8 @@
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
                     echo("helloe3");
+                    $password = $_POST['pass'];
+                    echo($password);
                     // if so, change password
                     $stmt = $db->prepare('UPDATE User SET (password = :pass) where (userId like userID)');
                     $password = $_POST['pass'];
