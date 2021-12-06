@@ -5,6 +5,10 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <title>Reset Password Page</title>
+        <meta name="description" content="This is a user login page." />
+        <meta name="author" content="Chloe, Bee, Anna, Diggy" />
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     </head>
