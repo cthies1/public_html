@@ -19,6 +19,10 @@ session_start();
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
                     
+                    if($err >= 10000000){
+                        echo "<font color='red'>*There is no user with that email, please make an account </br>";
+                        $err = $err-10000000;
+                    }
                     if($err >= 1000000){
                         echo "<font color='red'>*Must enter email </br>";
                         $err = $err-1000000;
