@@ -29,7 +29,7 @@
             
             $stmt1->execute();
             $result = $stmt1->fetchAll();
-            echo($result);
+            echo implode(" ",$result);
             /*if($result == null){
                 $error = 10000000;
                 $link = "Location: createAccount.php?error=".$error;
@@ -39,7 +39,7 @@
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
-            $stmt->bindValue(':email',$_POST['email']);
+            $stmt->bindValue(':email', $userID);
 
             $stmt->execute();
             //get result
