@@ -20,7 +20,7 @@ session_start();
             // $quizID = $_GET['quizID'];
 
             $stmt = $db->prepare('SELECT UserID, QuestionID, response FROM Results ORDER BY userID, questionID;');
-            $stmt2 = $db->prepare('SELECT COUNT(*) AS numUsers FROM Users;');
+            $stmt2 = $db->prepare('SELECT COUNT(*) AS numUsers FROM Users NATURAL JOIN Question;');
 
             $stmt3 = $db->prepare('SELECT * FROM Question ORDER BY questionID;');
             $stmt4 = $db->prepare('SELECT COUNT(*) AS numQs FROM Question;');
@@ -48,7 +48,7 @@ session_start();
             $row2 = 0;
             $mult = 1;
             echo $result2[0]['numUsers'];
-            while($row2 < $result2[0]['numUsers']) {
+            while($row2 < $result2[0]['numUsers']*$result4[0]['numQs']) {
                 echo "<tr>";
                 echo "<td>".$result[$row2]['UserID']."</td>";
                 while($row2 < $result4[0]['numQs']*$mult) {
