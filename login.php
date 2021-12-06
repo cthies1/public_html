@@ -115,7 +115,7 @@ session_start();
                         header($str);
                     }  
                 } else {
-                $stmtAdd = $db->prepare('INSERT INTO Admin values(:email,:pass,"Administrator","Admin"));');
+                $stmtAdd = $db->prepare('INSERT INTO Admin values(:email,:pass,"Administrator","Admin");');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
                 $stmtAdd->bindValue(':email',$_POST['email']);
