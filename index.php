@@ -85,35 +85,35 @@ session_start();
         </script>
 
         <?php
-            // //open the sqlite database file
-            // $db_file = './assets/databases/spoons.db';
-            // $db = new PDO('sqlite:' . $db_file);
-            // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //open the sqlite database file
+            $db_file = './assets/databases/spoons.db';
+            $db = new PDO('sqlite:' . $db_file);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // $stmt = $db->prepare('SELECT * from Users');
-            // $stmt2 = $db->prepare('SELECT COUNT(*) as num from Users');
+            $stmt = $db->prepare('SELECT * from Users');
+            $stmt2 = $db->prepare('SELECT COUNT(*) as num from Users');
             
-            // $stmt->execute();
-            // $stmt2->execute();
+            $stmt->execute();
+            $stmt2->execute();
 
-            // $result = $stmt->fetchAll();
-            // $result2 = $stmt2->fetchAll();
+            $result = $stmt->fetchAll();
+            $result2 = $stmt2->fetchAll();
 
-            // echo "<table>";
-            // echo "<tr>";
-            //     echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
-            // echo "</tr>";
+            echo "<table>";
+            echo "<tr>";
+                echo "<th>fName</th><th>lName</th><th>email</th><th>password</th>";
+            echo "</tr>";
 
-            // $row = 0;
-            // while($row < $result2[0]['num']) {
-            //     echo "<tr>";
-            //         echo "<td>".$result[$row]['fName']."</td>";
-            //         echo "<td>".$result[$row]['lName']."</td>";
-            //         echo "<td>".$result[$row]['Email']."</td>";
-            //         echo "<td>".$result[$row]['Password']."</td>";
-            //     echo "</tr>";
-            //     $row = $row+1;
-            // }
+            $row = 0;
+            while($row < $result2[0]['num']) {
+                echo "<tr>";
+                    echo "<td>".$result[$row]['fName']."</td>";
+                    echo "<td>".$result[$row]['lName']."</td>";
+                    echo "<td>".$result[$row]['Email']."</td>";
+                    echo "<td>".$result[$row]['Password']."</td>";
+                echo "</tr>";
+                $row = $row+1;
+            }
         ?>
         
     </body>
