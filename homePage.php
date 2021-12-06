@@ -73,7 +73,7 @@ session_start();
                     <option value="this week">this week</option>
                     <option value="this month">this month</option>
                     <option value="this year">this year</option>
-                    <option value=<?php $dfilt; ?> selected>show all</option>
+                    <option value="show all"selected>--</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -85,7 +85,7 @@ session_start();
                     <option value="75%">75%</option>
                     <option value="50%">50%</option>
                     <option value="30%">30%</option>
-                    <option value=<?php $mfilt; ?> selected>show all</option>
+                    <option value="show all" selected>--</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
