@@ -19,7 +19,6 @@ session_start();
                 $link = "checkIdentity.php?username=".$_SESSION["email"];
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
-                    
                     if(err >= 100){
                         echo "<font color='red'>*That is not the correct anwser!</br></br>";
                         $err = $err-100;

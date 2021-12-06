@@ -23,6 +23,16 @@ session_start();
             // return to index
             header("Location: index.php");
         } else {
+            $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3');
+        $email = $_POST['email'];
+        $stmtRep->bindValue(':email',$_POST['email']);
+        $stmtRep->execute();
+        $resultRep = $stmtRep->fetchAll();
+        if(isset($result[0])){
+            $error += 69;
+            $str = "Location: createAccount.php?error=".$error;
+            header($str);
+        }
         
             $error = 0;
             
@@ -67,7 +77,7 @@ session_start();
                 $result = $stmt->fetchAll();
                 
                 if(!isset($result[0])){
-                    
+
                 $stmtAdmin = $db->prepare('SELECT * from Admin where (Email = :email) and (Password = :pass)');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
