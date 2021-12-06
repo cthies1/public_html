@@ -23,19 +23,13 @@
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //check that email exists ONLY
-            $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
+            /*$stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
             $email = $userID;
             $stmt1->bindValue(':email',$email);
             
             $stmt1->execute();
             $result = $stmt1->fetchAll();
-            echo implode(" ",$result);
-            /*if($result == null){
-                $error = 10000000;
-                $link = "Location: createAccount.php?error=".$error;
-                header($link);
-            }*/
-
+            */
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
