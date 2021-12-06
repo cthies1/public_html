@@ -115,7 +115,7 @@ session_start();
                         header($str);
                     }  
                 } else {
-                    $stmtAdd = $db->prepare('INSERT * from Admin where (Email = :email) and (Password = :pass)');
+                    $stmtAdd = $db->prepare('INSERT INTO Admin where (Email = :email) and (Password = :pass)');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
                 $stmtAdd->bindValue(':email',$_POST['email']);
