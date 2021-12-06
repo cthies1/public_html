@@ -62,12 +62,32 @@ session_start();
             $quer->bindValue(':user',$user);
             $quer->execute();
 
-            echo 'inserting match \n';
+            /*
+            echo 'dropping match \n';
+            $quer = $db->prepare('delete from match where user1 is :reporter and user2 is :user;');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
+            $quer->execute();
+
+            $quer = $db->prepare('delete from match where user1 is :user and user2 is :reporter;');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
+            $quer->execute();
+            */
+
+            echo "inserting unmatch ";
             $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tdate);
             $quer->execute();
+
+            $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
+            $quer->bindValue(':date',$tdate);
+            $quer->execute();
+
 
             //$str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
             //header($str);
