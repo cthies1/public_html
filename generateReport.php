@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-    $user = $_SESSION["email"];
-    $reporter = $_GET['reporter'];
+    $reporter = $_SESSION["email"];
+    $user = $_GET['reporter'];
     $dFilt = $_GET['dfilt'];
     $mFilt = $_GET['mfilt'];
     try{
