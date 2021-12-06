@@ -115,11 +115,7 @@ session_start();
                         header($str);
                     }  
                 } else {
-                $stmtAdd = $db->prepare('INSERT INTO Admin values( "admin@test.com","test","Administrator","Admin");');
-                $email = $_POST['email'];
-                $password = $_POST['pass'];
-                
-                $stmtAdd->execute();
+
                     $_SESSION["email"] = $email;
                     if (isset($_POST["rememberMe"])){
     
