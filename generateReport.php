@@ -79,13 +79,18 @@ session_start();
             $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
-            $quer->bindValue(':date',$tdate);
+            $quer->bindValue(':date',$tDate);
             $quer->execute();
 
             $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
-            $quer->bindValue(':date',$tdate);
+            $quer->bindValue(':date',$tDate);
+            $quer->execute();
+
+            $quer = $db->prepare('delete from match where user1 is :reporter and user2 is :user;');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
             $quer->execute();
 
 
