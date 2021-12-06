@@ -234,7 +234,7 @@ session_start();
                 //store results in a table displaying the matches
                 echo "<table>";
                 echo "<tr>";
-                    echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
+                    echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Age</th><th>Report user?</th><th>Unmatch user?</th>";
                 echo "</tr>";
                 foreach($result_set as $tuple) {          // <------ Line 24
                     echo "<tr>";
