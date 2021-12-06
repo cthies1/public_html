@@ -34,7 +34,7 @@ session_start();
         $stmtRep->execute();
         $resultRep = $stmtRep->fetchAll();
         $error = 0;
-        if(isset($result[0])){
+        if(isset($resultRep[0])){
             $error += 69;
             $str = "Location: index.php?error=".$error;
                 header($str);
