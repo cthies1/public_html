@@ -6,8 +6,9 @@
         if(null == ($_POST['new_password'])){   //password
             $error += 2;
         }
+        //if(null = ($_POST()))
         if($error > 0) {
-            $str = "Location: resetPassword.php?error=".$error;
+            $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
             header($str);
 
         } else {
