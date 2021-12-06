@@ -12,67 +12,51 @@ session_start();
 
     <body>
         <?php
-        $quizID = $_GET['quizID'];
-        try{
+            //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
-            $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
+            $db = new PDO('sqlite:' . $db_file);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $query_str = $db->prepare('Select  userID,response from results natural join Question natural join QuizQuestions where QuizID=:qid order by userID, Quest;');
-            $query_str->bindValue(':qid',$quizID);
-            $query_str->execute();
-            $data = $query_str->fetchAll();
 
-            $quer2 = $db->prepare('select Quest from question natural join QuizQuestions where QuizID=:qid order by Quest;');
-            $quer2->bindValue(':qid',$quizID);
-            $quer2->execute();
-            $quests = $quer2->fetchAll();
-            $numQ = sizeof($quests);
-            echo "numq = ".$numQ;
+            // $quizID = $_GET['quizID'];
 
-            $quer3 = $db->prepare('select count(*) as numusers from users');
-            $quer3->execute();
-            $numUsers = $quer3->fetchAll();
-            $numUsers = $numUsers[0]['numusers'];
+            $stmt = $db->prepare('SELECT UserID, QuestionID, response FROM Results ORDER BY userID, questionID;');
+            $stmt2 = $db->prepare('SELECT COUNT(*) AS numResults FROM Results;');
 
-            $quer4 = $db->prepare('select * from QuizQuestions where QuizID=1');
-            $quer4->execute();
-            $qq = $quer4->fetchAll();
-            //echo '<pre>'; 
-            //print_r($qq); 
-            //echo '</pre>';
+            $stmt3 = $db->prepare('SELECT * FROM Question ORDER BY questionID;');
+            $stmt4 = $db->prepare('SELECT COUNT(*) AS numQs FROM Question;');
+            
+            $stmt->execute();
+            $stmt2->execute();
+            $stmt3->execute();
+            $stmt4->execute();
 
-
-            //echo '<pre>'; 
-            //print_r($data); 
-            //echo '</pre>';
+            $result = $stmt->fetchAll();
+            $result2 = $stmt2->fetchAll();
+            $result3 = $stmt3->fetchAll();
+            $result4 = $stmt4->fetchAll();
 
             echo "<table>";
             echo "<tr>";
-            echo "<th>User ID</th>";
-                foreach($quests as $tuple){
-                    echo "<th>$tuple[Quest]</th>";
+                echo "<th>userID</th>";
+                $row = 0;
+                while($row < $result4[0]['numQs']) {
+                    echo "<th>".$result3[$row]['Quest']."</th>";
+                    $row = $row+1;
                 }
-            echo "</tr>";             
-            for($i = 0; $i<sizeof($data); $i++) { 
-                $tuple2 = $data[$i]; 
-                if(0==$i%($numQ+1)){
-                    echo "<tr>";
-                    echo "<td>$tuple2[UserID] ".$i."</td>";
+            echo "</tr>";
 
-                }       
-                echo "<td>$tuple2[response]</td>";
-                if(0==$i%($numQ) && $i>0){
-                    echo "</tr>"; 
+            $row2 = 0;
+            $mult = 1;
+            while($row2 < $result2[0]['numResults']) {
+                echo "<tr>";
+                echo "<td>".$result[$row2]['UserID']."</td>";
+                while($row2 < $result4[0]['numQs']*$mult) {
+                    echo "<td>".$result[$row2]['response']."</td>";
+                    $row2 = $row2+1;
                 }
+                echo "</tr>";
+                $mult = $mult+1;
             }
-             echo "</table>"; 
-
-        }
-        catch(PDOException $e) {
-            echo "error";
-            die('Exception : '.$e->getMessage());
-        }
-
         ?>
 
     </body>
