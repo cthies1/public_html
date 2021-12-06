@@ -27,7 +27,6 @@ session_start();
                     <h3>Reset Password:</h3>
                     <form action="<?php echo $link ?>" method="post" style="width: 157px;">
                         <h3>To reset your password we need to check your idenity first. </h3>
-                        <div class="text">To reset your password we need to check your idenity first. </div>
                         <br>
                         <div class="text-box">Are you a Big Spoon, Little Spoon, or A little bit of both?: </div>
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
