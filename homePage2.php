@@ -231,26 +231,26 @@ session_start();
                     $mfilt=1;
                 }
 
-                //store results in a table displaying the matches
-                echo "<table>";
-                echo "<tr>";
-                    echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
-                echo "</tr>";
-                foreach($result_set as $tuple) {          // <------ Line 24
-                    echo "<tr>";
-                    echo "<td>".$tuple['fName']."</td>";
-                    echo "<td>".$tuple['lName']."</td>";
-                    echo "<td>".$tuple['matchID']."</td>";
-                    echo "<td>".$tuple['matchPercent']."</td>";
-                    echo "<td>".$tuple['date']."</td>";
-                    // echo "<td>".$tuple['age']."</td>";
-                    $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                    echo "<td><a href=$reportLink>Report User</a></td>";
-                    $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                    echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
-                    echo "</tr>"; 
-                } 
-                echo "</table>";
+                // //store results in a table displaying the matches
+                // echo "<table>";
+                // echo "<tr>";
+                //     echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
+                // echo "</tr>";
+                // foreach($result_set as $tuple) {          // <------ Line 24
+                //     echo "<tr>";
+                //     echo "<td>".$tuple['fName']."</td>";
+                //     echo "<td>".$tuple['lName']."</td>";
+                //     echo "<td>".$tuple['matchID']."</td>";
+                //     echo "<td>".$tuple['matchPercent']."</td>";
+                //     echo "<td>".$tuple['date']."</td>";
+                //     // echo "<td>".$tuple['age']."</td>";
+                //     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                //     echo "<td><a href=$reportLink>Report User</a></td>";
+                //     $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                //     echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
+                //     echo "</tr>"; 
+                // } 
+                // echo "</table>";
                 
                 foreach($result_set as $tuple) {
                     echo "<div class='match_card'>";
@@ -259,10 +259,12 @@ session_start();
                         echo "<p>Email:".$tuple['matchID']."</p>";
                         // echo "<p>Age:".$tuple['age']."</p>";
                         echo "<p>Date Matched:".$tuple['date']."</p>";
-                        echo "<form action='reportUser.php' method = 'POST'>";
+                        $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                        echo "<form action=".$reportLink." method = 'POST'>";
                             echo "<input class='button2' type='submit' value='Report' /></br></br>";
                         echo "</form>";
-                        echo "<form action='unmatchUser.php' method = 'POST'>";
+                        $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
+                        echo "<form action=".$unmatchLink." method = 'POST'>";
                             echo "<input class='button2' type='submit' value='Unmatch' /></br></br>";
                         echo "</form>";
                     echo "</div>";
