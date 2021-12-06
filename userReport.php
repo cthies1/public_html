@@ -51,7 +51,7 @@ session_start();
                  echo "<tr>";
                  echo "<td>".$userInfo[0]['fName']."</td><td>".$userInfo[0]['lName']."</td><td>".$userInfo[0]['Password']."</td><td>".$userInfo[0]['Age']."</td><td>".$numMatches[0]['numMatches']."</td><td>".$numReports[0]['numReports']."</td>";
                  echo "</tr>"; 
-             echo "</table>"; 
+             echo "</table></br></br></br>"; 
 
 
             $answers = $db->prepare('SELECT QuestionID, response from results where userID is :username order by QuestionID;');
@@ -79,7 +79,7 @@ session_start();
                 
             } 
             echo "</tr>"; 
-            echo "</table>"; 
+            echo "</table></br></br></br>"; 
 
             //user matches
             $matches = $db->prepare('SELECT * from match where user1 is :user1 order by matchPercent desc;');
@@ -101,7 +101,7 @@ session_start();
                 echo "<td>".$tuple['date']."</td>";
                 echo "</tr>"; 
             } 
-            echo "</table>"; 
+            echo "</table></br></br></br>"; 
 
 
             //user unmatches
@@ -123,7 +123,7 @@ session_start();
                 echo "<td>".$tuple['date']."</td>";
                 echo "</tr>"; 
             } 
-            echo "</table>"; 
+            echo "</table></br></br></br>"; 
 
 
         ?>
