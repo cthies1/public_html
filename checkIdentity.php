@@ -35,7 +35,7 @@
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
-            $stmt->bindValue(':email', $userID);
+            $stmt->bindValue(':userID', $userID);
 
             $stmt->execute();
 
