@@ -31,7 +31,7 @@ session_start();
         //if the user already has a report generated against them
         if($check){
             echo 'user already in system \n';
-            $numReports = $check[0]['numReports']
+            $numReports = $check[0]['numReports'];
             $numReports = $numReports+1;
             $quer = $db->prepare('update report set numReports=:nR where userID is :username;');
             $quer->bindValue(':nR',$numReports);
