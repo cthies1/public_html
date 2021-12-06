@@ -212,8 +212,8 @@ session_start();
                 $matchFilt = matchFilter($mfilt);
 
                 //return all matches, and store the result set
-                $query_str = $db->prepare('with Matches as (select * from Match where User1 is :username)
-                select fname, lname, date, matchpercent, email as matchID
+                $query_str = $db->prepare('with Matches as (SELECT * from Match where User1 is :username)
+                SELECT fname, lname, date, matchpercent, email as matchID
                 from Matches , Users
                 where (users.email is matches.user1 and matches.user1 is not :username) or (users.email is matches.user2 and matches.user2 is not :username) and matches.user2 not in (select user2 from unmatch where user1 is :username) and (date >= :date) and matchPercent > :percent
                 order by matchPercent desc;');  // <----- Line 19
@@ -258,8 +258,8 @@ session_start();
                 if(isset($_GET['emptyMatch'])){
                 echo "There are no new matches at this time. Try retaking the quiz to see if you get different results!";
                 }
-                $spoonsLink = "SpoonsQuiz.php?username=".$_SESSION["email"];
-                $matchLink = "calculateMatch.php?username=".$_SESSION["email"];
+                $spoonsLink = "SpoonsQuiz.php";
+                $matchLink = "calculateMatch.php";
 
             ?>
 
