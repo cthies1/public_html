@@ -58,7 +58,7 @@ session_start();
             $quer->bindValue(':user',$user);
             $quer->execute();
 
-            $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
+            $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tdate);
