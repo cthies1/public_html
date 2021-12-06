@@ -46,14 +46,16 @@ session_start();
             echo "</tr>";
 
             $row2 = 0;
+            $mult = 1;
             while($row2 < $result2[0]['numUsers']) {
                 echo "<tr>";
                 echo "<td>".$result[$row2]['UserID']."</td>";
-                while($row2 < $result4[0]['numQs']) {
+                while($row2 < $result4[0]['numQs']*$mult) {
                     echo "<td>".$result[$row2]['response']."</td>";
                     $row2 = $row2+1;
                 }
                 echo "</tr>";
+                $mult = $mult+1;
             }
         ?>
 
