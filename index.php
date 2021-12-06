@@ -86,6 +86,7 @@ session_start();
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
             $db = new PDO('sqlite:' . $db_file);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $db->prepare('SELECT * from Users');
             $stmt2 = $db->prepare('SELECT COUNT(*) as num from Users');
