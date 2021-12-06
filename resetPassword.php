@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="./assets/css/home.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     </head>
     <body>
@@ -29,19 +29,26 @@ session_start();
                         <h3>To reset your password we need to check your idenity first. </h3>
                         <br>
                         <div class="text-box">Are you a Big Spoon, Little Spoon, or A little bit of both?: </div>
-                        <span class="dropdown">Show only results from </span>
-                        <select name="dfilt">
-                            <option value="today">today</option>
-                            <option value="this week">this week</option>
-                            <option value="this month">this month</option>
-                            <option value="this year">this year</option>
-                            <option value="show all"selected>--</option>
-                        </select>
-                <input class="button2" type="submit" value="Filter" />
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">New Password: </span>
-                        <input type="radio" name="question-2-answers" id="question-2-answers-C" value="A little bit of both" />
-                    <label for="question-2-answers-C">A little bit of both</label>
+                        
+                        <li>
+                            <h3>Do you prefer to be a Big or Little spoon? </h3>
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-A" value="Little Spoon" />
+                                <label for="question-2-answers-A">Little Spoon</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-B" value="Big Spoon" />
+                                <label for="question-2-answers-B">Big Spoon</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-C" value="A little bit of both" />
+                                <label for="question-2-answers-C">A little bit of both</label>
+                            </div>
+
+                        </li>
+
                         <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input class="button" type="submit" value="Reset Password" /></br></br>
