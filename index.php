@@ -95,7 +95,6 @@ session_start();
 
             $result = $stmt->fetchAll();
             $result2 = $stmt2->fetchAll();
-            echo "Numrows: ".$result2[0]['num'];
 
             echo "<table>";
             echo "<tr>";
@@ -103,7 +102,7 @@ session_start();
             echo "</tr>";
 
             $row = 0;
-            while($row < 10) {
+            while($row < $result2[0]['num']) {
                 echo "<tr>";
                     echo "<td>".$result[$row]['fName']."</td>";
                     echo "<td>".$result[$row]['lName']."</td>";
