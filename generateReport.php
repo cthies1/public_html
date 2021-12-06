@@ -64,9 +64,9 @@ session_start();
             $quer->execute();
 
 
-           // $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
-            //header($str);
-            //exit;
+            $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
+            header($str);
+            exit;
             //echo "getting past the exit!";
         }
         else{
