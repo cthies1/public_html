@@ -85,7 +85,7 @@ session_start();
                     <option value="75%">75%</option>
                     <option value="50%">50%</option>
                     <option value="30%">30%</option>
-                    <option value=<?php $mfilt; ?> selected>show all</option>
+                    <option value=<?php echo $mfilt; ?> selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
