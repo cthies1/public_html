@@ -108,7 +108,10 @@ session_start();
                             $numAttempts = $numAttempts+1;
                         }
                         if($numAttempts >= 5){
-                            $str = "Location: resetPassword.php?username=".$email;
+                            if (isset($_COOKIE["email"])){
+                                setcookie("email", "");
+                            }
+                            $str = "Location: resetPassword.php";
                             header($str);
                         }
                         $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
