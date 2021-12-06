@@ -215,7 +215,7 @@ session_start();
                 $query_str = $db->prepare('with Matches as (SELECT * from Match where User1 is :username)
                 SELECT fname, lname, date, matchpercent, email as matchID, age
                 from Matches , Users
-                where (users.email is matches.user1 and matches.user1 is not :username) or (users.email is matches.user2 and matches.user2 is not :username) and matches.user2 not in (select user2 from unmatch where user1 is :username) and (date >= :date) and matchPercent > :percent
+                where (users.email is matches.user1 and matches.user1 is not :username) or (users.email is matches.user2 and matches.user2 is not :username) and matches.user2 not in (select user2 from unmatch where user1 is :username)  and matches.user1 not in (select user1 from unmatch where user2 is :username) and (date >= :date) and matchPercent > :percent
                 order by matchPercent desc;');  // <----- Line 19
                 $query_str->bindValue(':username',$_SESSION["email"]);
                 $query_str->bindValue(':date',$dateFilt);
