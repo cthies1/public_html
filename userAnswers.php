@@ -12,7 +12,7 @@ session_start();
     </head>
 
     <body>
-        <img src="./assets/images/logo.png" />
+        <img class="logo" src="./assets/images/logo.png" />
         <?php
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';

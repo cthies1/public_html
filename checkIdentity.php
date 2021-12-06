@@ -31,6 +31,7 @@
 
             //get result
             $result = $stmt->fetchAll();
+            echo($result[0])
             if(isset($result[0])){
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
