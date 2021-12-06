@@ -12,7 +12,13 @@ session_start();
         <div class="page">
             <img src="./assets/images/logo.png" />
             <?php
-                $link = "checkIdenity.php"
+                $link = "checkIdentity.php?username=".$_SESSION["email"];
+                if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
+                // if(isset($_GET["answer"])) $pass = $_GET["answer"];
+                else $answer = "";
+                if (isset($_COOKIE["new_password"])) $pass = $_COOKIE["new_password"];
+                // if(isset($_GET["new_pass"])) $pass = $_GET["new_pass"];
+                else $new_pass = "";
             ?>
             <p>
             <div class="forms">
@@ -23,7 +29,7 @@ session_start();
                         <div class="text-box">Are you a Big, Little, or a little bit of Both Spoon?: </div>
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">New Password: </span>
-                        <input type="password" name="pass" value="<?php echo $password; ?>" required="" id="id_password" style="padding-top: 4px;" />
+                        <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="id_password" style="padding-top: 4px;" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input class="button" type="submit" value="Reset Password" /></br></br>
                     </form>
@@ -31,10 +37,4 @@ session_start();
             </p>
         </div>
     </body>
-
-    <?php
-        
-
-        //Select response From Results Where QuizID = 1 and QuestionID = 2 and  UserID = 'johnsmith@test.com'
-    ?>
 </html>
