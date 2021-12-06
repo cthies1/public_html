@@ -25,12 +25,6 @@ session_start();
                 <form action="calculateMatch.php" method = "POST">
                     <input class="button" type="submit" value="Calculate my best match" /></br></br>
                 </form>
-                <!-- <form action="userAnswers.php" method = "POST">
-                    <input class="button" type="submit" value="User Answers" /></br></br>
-                </form>
-                <form action="userReport.php" method = "POST">
-                    <input class="button" type="submit" value="User Report" /></br></br>
-                </form> -->
             </div>
             <?php
             $variable = $_SESSION["email"];
@@ -69,11 +63,11 @@ session_start();
             <form action=<?php echo $link; ?> method="post">
             <span class="dropdown">Show only results from </span>
                 <select name="dfilt">
+                    <option value="show all" selected>show all</option>
                     <option value="today">today</option>
                     <option value="this week">this week</option>
                     <option value="this month">this month</option>
                     <option value="this year">this year</option>
-                    <option value=<?php $dfilt; ?> selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -85,7 +79,7 @@ session_start();
                     <option value="75%">75%</option>
                     <option value="50%">50%</option>
                     <option value="30%">30%</option>
-                    <option value=<?php $mfilt; ?> selected>show all</option>
+                    <option value="show all" selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -231,45 +225,26 @@ session_start();
                     $mfilt=1;
                 }
 
-                // //store results in a table displaying the matches
-                // echo "<table>";
-                // echo "<tr>";
-                //     echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Age</th><th>Report user?</th><th>Unmatch user?</th>";
-                // echo "</tr>";
-                // foreach($result_set as $tuple) {
-                //     echo "<tr>";
-                //     echo "<td>".$tuple['fName']."</td>";
-                //     echo "<td>".$tuple['lName']."</td>";
-                //     echo "<td>".$tuple['matchID']."</td>";
-                //     echo "<td>".$tuple['matchPercent']."</td>";
-                //     echo "<td>".$tuple['date']."</td>";
-                //     // echo "<td>".$tuple['Age']."</td>";
-                //     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                //     echo "<td><a href=$reportLink>Report User</a></td>";
-                //     $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                //     echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
-                //     echo "</tr>"; 
-                // } 
-                // echo "</table>";
-                
+                //store results in a table displaying the matches
+                echo "<table>";
+                echo "<tr>";
+                    echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Age</th><th>Report user?</th><th>Unmatch user?</th>";
+                echo "</tr>";
                 foreach($result_set as $tuple) {
-                    echo "<div class='match_card'>";
-                        echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
-                        echo "<h4>".floor($tuple['matchPercent'])."% Match</h4>";
-                        echo "<p>Email: ".$tuple['matchID']."</p>";
-                        echo "<p>Age: ".$tuple['Age']."</p>";
-                        echo "<p>Date Matched: ".$tuple['date']."</p>";
+                    echo "<tr>";
+                        echo "<td>$tuple[fName]</td>";
+                        echo "<td>$tuple[lName]</td>";
+                        echo "<td>$tuple[matchID]</td>";
+                        echo "<td>$tuple[matchPercent]</td>";
+                        echo "<td> $tuple[date]</td>";
+                        echo "<td> $tuple[Age]</td>";
                         $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                        echo "<form action=".$reportLink." method = 'POST'>";
-                            echo "<input class='button2' type='submit' value='Report' /></br></br>";
-                        echo "</form>";
+                        echo "<td><a href=$reportLink>Report User</a></td>";
                         $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
-                        echo "<form action=".$unmatchLink." method = 'POST'>";
-                            echo "<input class='button2' type='submit' value='Unmatch' />";
-                        echo "</form>";
-                    echo "</div>";
-                    echo "</br></br>";
-                }
+                        echo "<td><a href=$unmatchLink>Unmatch User</a></td>";
+                    echo "</tr>"; 
+                } 
+                echo "</table>"; 
 
                 }
                 catch(PDOException $e) {
@@ -284,21 +259,33 @@ session_start();
 
             ?>
 
-            <!-- <div class="match_card">
-                <h3>fName lName</h3>
-                <h4>_% Match</h4>
-                <p>Email: </p>
-                <p>Age: </p>
-                <p>Date Matched: _</p>
-
-                <form action="reportUser.php" method = "POST">
-                    <input class="button2" type="submit" value="Report" /></br></br>
+            <!-- <div class="match">
+                <form action="calculateMatch.php" method = "POST">
+                    <input class="last" type="submit" value="<" /></br></br>
                 </form>
+                <div class="match_card">
+                    <img class="profile_pic" src="https://via.placeholder.com/250x300">
+                    <div class="profile_info">
+                        <h3>fName lName</h3>
+                        <h4>__% Match</h4>
+                        <p>email</p>
+                        <p>age</p>
+                        <p>date matched</p>
 
-                <form action="unmatchUser.php" method = "POST">
-                    <input class="button2" type="submit" value="Unmatch" /></br></br>
+                        <form action="reportUser.php" method = "POST">
+                            <input class="button2" type="submit" value="Report" /></br></br>
+                        </form>
+
+                        <form action="unmatchUser.php" method = "POST">
+                            <input class="button2" type="submit" value="Unmatch" /></br></br>
+                        </form>
+
+                    </div>
+                    
+                </div>
+                <form action="calculateMatch.php" method = "POST">
+                    <input class="next" type="submit" value=">" /></br></br>
                 </form>
-                
             </div> -->
             
         </div>
@@ -306,3 +293,19 @@ session_start();
     </body>
 
 </html>
+
+
+<!-- 
+    fname
+    lastname
+    email
+    percent
+    age
+    compatable questions
+
+
+    spoons quiz (already taken)
+    calculate match
+    next match
+    show celeb best match
+ -->

@@ -10,7 +10,7 @@ body {
 .logo {
   width: 15%;
   height: auto;
-  position: sticky;
+  /* position: sticky; */
   top: 10px;
   left: 10px;
 }
