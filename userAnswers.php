@@ -8,6 +8,7 @@ session_start();
         <title> User Answers </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+        <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
     <body>

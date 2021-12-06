@@ -41,7 +41,7 @@ session_start();
              $numMatches->execute();
              $numMatches = $numMatches->fetchAll();
 
-             $numReports = $db->prepare('SELECT count(*) as numReports from Report where userID is :user;');
+             $numReports = $db->prepare('SELECT  numReports from Report where userID is :user;');
              $numReports->bindValue(':user',$user);
              $numReports->execute();
              $numReports = $numReports->fetchAll();
