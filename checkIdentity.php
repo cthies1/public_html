@@ -32,7 +32,7 @@
             //get result
             $result = $stmt->fetchAll();
             echo($result[0][0]);
-            echo
+            echo("/n");
             echo($_POST['question']);
             if(isset($result[0])){
                 // check that they verified their ID
