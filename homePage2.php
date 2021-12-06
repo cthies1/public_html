@@ -238,11 +238,11 @@ session_start();
                 echo "</tr>";
                 foreach($result_set as $tuple) {          // <------ Line 24
                     echo "<tr>";
-                    echo "<td>$tuple[fName]</td>";
-                    echo "<td>$tuple[lName]</td>";
-                    echo "<td>$tuple[email]</td>";
-                    echo "<td>$tuple[matchPercent]</td>";
-                    echo "<td> $tuple[date]</td>";
+                    echo "<td>".$tuple['fName']."</td>";
+                    echo "<td>".$tuple['lName']."</td>";
+                    echo "<td>".$tuple['email']."</td>";
+                    echo "<td>".$tuple['matchPercent']."</td>";
+                    echo "<td>".$tuple['date']."</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                     echo "<td><a href=$reportLink>Report User</a></td>";
                     $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
@@ -264,25 +264,21 @@ session_start();
 
             ?>
 
-            <div class="match">
-                <div class="match_card">
-                    <h3>fName lName</h3>
-                    <h4>_% Match</h4>
-                    <p>Email: </p>
-                    <p>Age: </p>
-                    <p>Date Matched: _</p>
+            <div class="match_card">
+                <h3>fName lName</h3>
+                <h4>_% Match</h4>
+                <p>Email: </p>
+                <p>Age: </p>
+                <p>Date Matched: _</p>
 
-                    <form action="reportUser.php" method = "POST">
-                        <input class="button2" type="submit" value="Report" /></br></br>
-                    </form>
+                <form action="reportUser.php" method = "POST">
+                    <input class="button2" type="submit" value="Report" /></br></br>
+                </form>
 
-                    <form action="unmatchUser.php" method = "POST">
-                        <input class="button2" type="submit" value="Unmatch" /></br></br>
-                    </form>
-
-                    </div>
-                    
-                </div>
+                <form action="unmatchUser.php" method = "POST">
+                    <input class="button2" type="submit" value="Unmatch" /></br></br>
+                </form>
+                
             </div>
             
         </div>
