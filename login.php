@@ -108,6 +108,7 @@ session_start();
                             $numAttempts = $numAttempts+1;
                         }
                         if($numAttempts >= 5){
+                            $_SESSION["email"] = $email;
                             if (isset($_COOKIE["email"])){
                                 setcookie("email", "");
                             }

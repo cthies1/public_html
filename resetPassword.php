@@ -32,8 +32,7 @@ session_start();
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">New Password: </span>
                         <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
-                        <!--<i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
-                        -->
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
                         <input class="button" type="submit" value="Reset Password" /></br></br>
                     </form>
                 </div>
