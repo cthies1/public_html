@@ -20,7 +20,7 @@ session_start();
         $stmtRep->execute();
         $resultRep = $stmtRep->fetchAll();
         if(isset($result[0])){
-            
+            $error += 69;
         }
         
         if(null == ($_POST['email'])){  //email
