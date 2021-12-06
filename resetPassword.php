@@ -33,6 +33,6 @@
     <?php
         
 
-        Select response From Results Where QuizID = 1 and QuestionID = 2 and  UserID = 'johnsmith@test.com'
+        //Select response From Results Where QuizID = 1 and QuestionID = 2 and  UserID = 'johnsmith@test.com'
     ?>
 </html>
