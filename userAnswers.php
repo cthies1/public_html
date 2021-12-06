@@ -43,6 +43,7 @@ session_start();
                     echo "<th>".$result3[$row]['Quest']."</th>";
                     $row = $row+1;
                 }
+                echo "<th>
             echo "</tr>";
 
             $row2 = 0;
@@ -54,6 +55,8 @@ session_start();
                     echo "<td>".$result[$row2]['response']."</td>";
                     $row2 = $row2+1;
                 }
+                $reportLink = "userReport.php?user=".$result[$row2]['UserID'];
+                echo "<td><a href=$reportLink>"Generate User Report</a></td>";
                 echo "</tr>";
                 $mult = $mult+1;
             }

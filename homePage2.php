@@ -265,7 +265,7 @@ session_start();
                         echo "</form>";
                         $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                         echo "<form action=".$unmatchLink." method = 'POST'>";
-                            echo "<input class='button2' type='submit' value='Unmatch' /></br></br>";
+                            echo "<input class='button2' type='submit' value='Unmatch' />";
                         echo "</form>";
                     echo "</div>";
                     echo "</br></br>";
