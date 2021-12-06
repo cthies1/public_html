@@ -47,6 +47,7 @@ session_start();
 
             $row2 = 0;
             $mult = 1;
+            echo $result2[0]['numUsers'];
             while($row2 < $result2[0]['numUsers']) {
                 echo "<tr>";
                 echo "<td>".$result[$row2]['UserID']."</td>";
