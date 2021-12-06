@@ -17,7 +17,7 @@ session_start();
 
             ?>
             <div class="forms">
-            <form action="userAnswers" method = "POST">
+            <form action="userAnswers.php" method = "POST">
                 <input class="button" type="submit" name="userAnswers" value="Generate Report" /></br></br>
             </form>
 

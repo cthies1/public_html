@@ -255,7 +255,7 @@ session_start();
                 foreach($result_set as $tuple) {
                     echo "<div class='match_card'>";
                         echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
-                        echo "<h4>".$tuple['matchPercent']."% Match</h4>";
+                        echo "<h4>".floor($tuple['matchPercent'])."% Match</h4>";
                         echo "<p>Email:".$tuple['matchID']."</p>";
                         // echo "<p>Age:".$tuple['age']."</p>";
                         echo "<p>Date Matched:".$tuple['date']."</p>";
@@ -266,6 +266,7 @@ session_start();
                             echo "<input class='button2' type='submit' value='Unmatch' /></br></br>";
                         echo "</form>";
                     echo "</div>";
+                    echo "</br></br>";
                 }
 
                 }
