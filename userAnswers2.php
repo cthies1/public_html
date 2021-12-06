@@ -32,8 +32,8 @@ session_start();
 
             $result = $stmt->fetchAll();
             $result2 = $stmt2->fetchAll();
-            $result3 = $stmt2->fetchAll();
-            $result4 = $stmt2->fetchAll();
+            $result3 = $stmt3->fetchAll();
+            $result4 = $stmt4->fetchAll();
 
             echo "<table>";
             echo "<tr>";
