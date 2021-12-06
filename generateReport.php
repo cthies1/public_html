@@ -73,7 +73,10 @@ session_start();
     }
     catch(PDOException $e)
     {
-        die('Exception : '.$e->getMessage());
+        $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
+        header($str);
+        exit;
+       // die('Exception : '.$e->getMessage());
     }
 
 ?>
