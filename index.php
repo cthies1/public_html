@@ -19,7 +19,10 @@ session_start();
                 <?php
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
-                    
+                    if($err >= 69){
+                        echo "<font color='red'>*You've been reported and blocked! </br>";
+                        $err = $err-69;
+                    }
                     if($err >= 10){
                         echo "<font color='red'>*Must enter email </br>";
                         $err = $err-10;
@@ -28,6 +31,7 @@ session_start();
                         echo "<font color='red'>*Must enter password </br>";
                         $err = $err-2;
                     }
+
                 }
                 if(isset($_GET["credentials"])){
                     echo "<font color='red'>*Incorrect email or password</br>";

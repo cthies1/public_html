@@ -49,6 +49,25 @@ td {
   border: 2px solid #8973d2;
 }
 
+.button2 {
+  /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
 .button:hover {
   background-color: #8973d2;
   color: #faf7ff;

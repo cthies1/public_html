@@ -30,8 +30,8 @@ session_start();
         $resultRep = $stmtRep->fetchAll();
         if(isset($result[0])){
             $error += 69;
-            $str = "Location: createAccount.php?error=".$error;
-            header($str);
+            $str = "Location: index.php?error=".$error;
+                header($str);
         }
         
             $error = 0;
