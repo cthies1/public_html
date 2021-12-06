@@ -43,6 +43,10 @@ session_start();
                         echo "<font color='red'>*Must enter last name </br>";
                         $err = $err-500;
                     }
+                    if($err >= 69){
+                        echo "<font color='red'>*You have been blocked from the site! </br>";
+                        $err = $err-69;
+                    }
                     if($err >= 60){
                         echo "<font color='red'>*Must enter age </br>";
                         $err = $err-60;

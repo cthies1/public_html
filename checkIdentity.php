@@ -46,6 +46,10 @@
 
                     //disconnect from database
                     $db = null;
+                } else {
+                    $error = 100;
+                    $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
+                    header($str);
                 }
             }
         }
