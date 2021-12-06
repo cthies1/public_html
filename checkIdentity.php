@@ -35,7 +35,7 @@
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
                     // if so, change password
-                    $stmt = $db->prepare('UPDATE Users SET password = :pass where (Email like userID)');
+                    $stmt = $db->prepare('UPDATE Users SET password = :pass where (Email like :email)');
                     $password = $_POST['pass'];
                     $userID = $_SESSION["email"];
                     $stmt1->bindValue(':email',$userID);
