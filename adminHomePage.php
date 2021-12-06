@@ -9,7 +9,7 @@ session_start();
         <title>Admin Home Page</title>
         <meta name="description" content="This is a home page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
-        <link rel="stylesheet" href="./assets/css/home.css" />
+        <link rel="stylesheet" href="./assets/css/admin.css" />
     </head>
     <body>
         <img class = "logo" src="./assets/images/logo.png" />
