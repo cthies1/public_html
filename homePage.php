@@ -25,7 +25,7 @@ session_start();
                 <form action="login.php" method = "POST">
                     <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
                 </form>
-                <form action="userAnswers.php?quizID=1" method = "POST">
+                <form action="userAnswers.php" method = "POST">
                     <input class="button" type="submit" value="User Report" /></br></br>
                 </form>
             </div>
