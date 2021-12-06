@@ -12,13 +12,15 @@ session_start();
         <div class="page">
             <img src="./assets/images/logo.png" />
             <?php
-                $link = "checkIdentity.php?username=".$_SESSION["email"];
-                if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
+                $link = "checkIdentity.php?username=".$_POST["email"];
+                //if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
                 // if(isset($_GET["answer"])) $pass = $_GET["answer"];
-                else $answer = "";
-                if (isset($_COOKIE["new_password"])) $pass = $_COOKIE["new_password"];
+                //else $answer = "";
+                $answer = "";
+                //if (isset($_COOKIE["new_password"])) $pass = $_COOKIE["new_password"];
                 // if(isset($_GET["new_pass"])) $pass = $_GET["new_pass"];
-                else $new_pass = "";
+                //else $new_pass = "";
+                $new_password = "";
             ?>
             <p>
             <div class="forms">
