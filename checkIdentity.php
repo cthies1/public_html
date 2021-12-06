@@ -23,7 +23,7 @@
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //get anwser in db for big or little spoon question
-            $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (Email = :userID)');
+            $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (UserID = :userID)');
             $userID = $_SESSION["email"];
             $stmt->bindValue(':userID', $userID);
 
