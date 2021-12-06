@@ -12,7 +12,8 @@ session_start();
         <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
-    <body>  
+    <body> 
+        <img class="logo" src="./assets/images/logo.png" />
         <?php
             $goHome = "adminHomePage.php?username=".$_SESSION["email"];
         ?>
