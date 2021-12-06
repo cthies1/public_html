@@ -69,11 +69,11 @@ session_start();
             <form action=<?php echo $link; ?> method="post">
             <span class="dropdown">Show only results from </span>
                 <select name="dfilt">
-                    <option value="show all" >show all</option>
                     <option value="today">today</option>
                     <option value="this week">this week</option>
                     <option value="this month">this month</option>
                     <option value="this year">this year</option>
+                    <option value=<?php $dfilt; ?> selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -264,34 +264,26 @@ session_start();
 
             ?>
 
-            <!-- <div class="match">
-                <form action="calculateMatch.php" method = "POST">
-                    <input class="last" type="submit" value="<" /></br></br>
-                </form>
+            <div class="match">
                 <div class="match_card">
-                    <img class="profile_pic" src="https://via.placeholder.com/250x300">
-                    <div class="profile_info">
-                        <h3>fName lName</h3>
-                        <h4>__% Match</h4>
-                        <p>email</p>
-                        <p>age</p>
-                        <p>date matched</p>
+                    <h3>fName lName</h3>
+                    <h4>_% Match</h4>
+                    <p>Email: </p>
+                    <p>Age: </p>
+                    <p>Date Matched: _</p>
 
-                        <form action="reportUser.php" method = "POST">
-                            <input class="button2" type="submit" value="Report" /></br></br>
-                        </form>
+                    <form action="reportUser.php" method = "POST">
+                        <input class="button2" type="submit" value="Report" /></br></br>
+                    </form>
 
-                        <form action="unmatchUser.php" method = "POST">
-                            <input class="button2" type="submit" value="Unmatch" /></br></br>
-                        </form>
+                    <form action="unmatchUser.php" method = "POST">
+                        <input class="button2" type="submit" value="Unmatch" /></br></br>
+                    </form>
 
                     </div>
                     
                 </div>
-                <form action="calculateMatch.php" method = "POST">
-                    <input class="next" type="submit" value=">" /></br></br>
-                </form>
-            </div> -->
+            </div>
             
         </div>
         
