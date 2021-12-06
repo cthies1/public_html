@@ -36,6 +36,8 @@
             $stmt->bindValue(':email', $userID);
 
             $stmt->execute();
+
+            echo("helloe");
             //get result
             $result = $stmt->fetchAll();
             echo( $result);
