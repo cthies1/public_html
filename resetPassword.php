@@ -28,11 +28,12 @@ session_start();
                     <form action="<?php echo $link ?>" method="post" style="width: 157px;">
                         <div class="text-box">To reset your password we need to check your idenity first. </div>
                         <br>
-                        <div class="text-box">Are you a Big Spoon, Little Spoon, or a little bit of Both?: </div>
+                        <div class="text-box">Are you a Big Spoon, Little Spoon, or A little bit of both?: </div>
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">New Password: </span>
-                        <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="id_password" style="padding-top: 4px;" />
-                        <i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
+                        <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="new_password" style="padding-top: 4px;" />
+                        <!--<i class="far fa-eye" id="togglePassword" style="margin-left: -28px; color: #8973D2; cursor: pointer;"></i></br></br>
+                        -->
                         <input class="button" type="submit" value="Reset Password" /></br></br>
                     </form>
                 </div>
