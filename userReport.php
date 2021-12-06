@@ -48,10 +48,10 @@ session_start();
              $numReports->execute();
              $numReports = $numReports->fetchAll();
              if(isset($numReports[0])){
-                $nm = $numReports[0]['numReports'];
+                $nr = $numReports[0]['numReports'];
             }
             else{
-                $nm = 0;
+                $nr = 0;
             }
 
 
@@ -140,7 +140,7 @@ session_start();
             echo "</table></br></br></br>"; 
 
             $goHome = "adminHomePage.php?username=".$_SESSION["email"];
-            ?>
+        ?>
 
         <form action=<?php echo $goHome;?> method = "post">
             <input class="button" type="submit" value="Return to Home Page" /></br></br>
@@ -148,6 +148,5 @@ session_start();
         <form action="userAnswers.php" method = "post">
             <input class="button" type="submit" value="Back to User Answers" /></br></br>
         </form>
-
 
     </body>
