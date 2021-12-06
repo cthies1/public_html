@@ -115,7 +115,13 @@ session_start();
                         header($str);
                     }  
                 } else {
-                    
+                    $stmtAdd = $db->prepare('INSERT * from Admin where (Email = :email) and (Password = :pass)');
+                $email = $_POST['email'];
+                $password = $_POST['pass'];
+                $stmtAdd->bindValue(':email',$_POST['email']);
+                $stmtAdd->bindValue(':pass',$_POST['pass']);
+                
+                $stmtAdd->execute();
                     //echo "moving to home page...";
                     $_SESSION["email"] = $email;
                     if (isset($_POST["rememberMe"])){
