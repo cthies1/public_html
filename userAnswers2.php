@@ -40,7 +40,7 @@ session_start();
                 echo "<th>userID</th>";
                 $row = 0;
                 while($row < $result4[0]['numQs']) {
-                    echo "<th>".$result3[$row]['Question']."</th>";
+                    echo "<th>".$result3[$row]['Quest']."</th>";
                     $row = $row+1;
                 }
             echo "</tr>";
