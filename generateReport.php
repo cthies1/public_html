@@ -26,6 +26,8 @@ session_start();
         $tDate = array($arr['mon'],$arr['mday'],$arr['year']);
         $tDate = dateToString($tDate);
 
+        echo "REPORTER = ".$reporter." USER = ".$user;
+
         //if the user already has a report generated against them
         if($check){
             echo 'user already in system \n';
@@ -42,11 +44,23 @@ session_start();
                 $quer2->execute();
             }
             //unmatch the reporter from the person they reported
-            echo 'unmatching \n';
+            echo 'unmatching: user then reporter ';
+            $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
+            $quer->bindValue(':date',$tDate);
+            $quer->execute();
+
+            echo 'unmatching: reporter then user ';
             $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tDate);
+            $quer->execute();
+
+            $quer = $db->prepare('delete from match where user1 is :reporter and user2 is :user;');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
             $quer->execute();
 
 
@@ -57,7 +71,7 @@ session_start();
         }
         else{
             //insert a new person into the report table with a value of 1
-            echo 'adding new perp to the system \n';
+            echo 'adding new perp to the system ';
             $quer = $db->prepare('insert into report values (:user, "mean",1);');
             $quer->bindValue(':user',$user);
             $quer->execute();
@@ -75,13 +89,14 @@ session_start();
             $quer->execute();
             */
 
-            echo "inserting unmatch ";
+            echo "inserting unmatch user then reporter";
             $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tDate);
             $quer->execute();
 
+            echo "inserting unmatch reporter then user";
             $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
@@ -103,6 +118,8 @@ session_start();
     }
     catch(PDOException $e)
     {
+
+        echo "user 1 = ".$reporter." user 2 = ".$user;
 
        die('Exception : '.$e->getMessage());
     }
