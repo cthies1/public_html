@@ -22,9 +22,12 @@ th {
   text-align: left;
 }
 
-table, th, td {
-  border:1px solid black;
+table,
+th,
+td {
+  border: 1px solid #8973d2;
   border-collapse: collapse;
+  padding: 5px;
 }
 
 .button {
