@@ -69,13 +69,15 @@ session_start();
             echo "<tr>";
             foreach($stmt as $quest) {
                 echo "<th>".$quest['Quest']."</th>";
-                echo "</tr>";
             }
+            echo "</tr>";
+            echo "<tr>";
             foreach($answers as $tuple) {
-                echo "<tr>";
+               
                 echo "<td>".$tuple['response']."</td>";
-                echo "</tr>"; 
+                
             } 
+            echo "</tr>"; 
             echo "</table>"; 
 
             //user matches
