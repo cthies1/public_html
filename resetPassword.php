@@ -14,13 +14,13 @@ session_start();
             <?php
                 $link = "checkIdentity.php?username=".$_SESSION["email"];
                 //if (isset($_COOKIE["answer"])) $pass = $_COOKIE["answer"];
-                // if(isset($_GET["answer"])) $pass = $_GET["answer"];
-                //else $answer = "";
-                $answer = "";
+                if(isset($_GET["answer"])) $pass = $_GET["answer"];
+                else $answer = "";
+                //$answer = "";
                 //if (isset($_COOKIE["new_password"])) $pass = $_COOKIE["new_password"];
-                // if(isset($_GET["new_pass"])) $pass = $_GET["new_pass"];
-                //else $new_pass = "";
-                $new_password = "";
+                if(isset($_GET["new_pass"])) $pass = $_GET["new_pass"];
+                else $new_pass = "";
+                //$new_password = "";
             ?>
             <p>
             <div class="forms">
@@ -28,7 +28,7 @@ session_start();
                     <form action="<?php echo $link ?>" method="post" style="width: 157px;">
                         <div class="text-box">To reset your password we need to check your idenity first. </div>
                         <br>
-                        <div class="text-box">Are you a Big, Little, or a little bit of Both Spoon?: </div>
+                        <div class="text-box">Are you a Big Spoon, Little Spoon, or a little bit of Both?: </div>
                         <input type="text-box" name="question" value="<?php echo $answer; ?>" style="padding-top: 4px;" /></br></br>
                         <span class="text-box">New Password: </span>
                         <input type="password" name="pass" value="<?php echo $new_password; ?>" required="" id="id_password" style="padding-top: 4px;" />
