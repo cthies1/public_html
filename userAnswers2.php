@@ -19,7 +19,7 @@ session_start();
 
             // $quizID = $_GET['quizID'];
 
-            $stmt = $db->prepare('SELECT userID, questionID, response FROM Results ORDER BY userID, questionID;');
+            $stmt = $db->prepare('SELECT UserID, QuestionID, response FROM Results ORDER BY userID, questionID;');
             $stmt2 = $db->prepare('SELECT COUNT(*) AS numUsers FROM Users;');
 
             $stmt3 = $db->prepare('SELECT * FROM Question ORDER BY questionID;');
@@ -45,15 +45,15 @@ session_start();
                 }
             echo "</tr>";
 
-            // $row2 = 0;
-            // while($row2 < $result2[0]['numUsers']) {
-            //     echo "<tr>";
-            //     echo "<td>".$result[$row2]['userID']."</td>";
-            //     while($row2 < $result4[0]['numQs']) {
-            //         echo "<td>".$result[$row2]['response']."</td>";
-            //         $row2 = $row2+1;
-            //     }
-            // }
+            $row2 = 0;
+            while($row2 < $result2[0]['numUsers']) {
+                echo "<tr>";
+                echo "<td>".$result[$row2]['UserID']."</td>";
+                while($row2 < $result4[0]['numQs']) {
+                    echo "<td>".$result[$row2]['response']."</td>";
+                    $row2 = $row2+1;
+                }
+            }
         ?>
 
     </body>
