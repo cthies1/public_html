@@ -2,6 +2,11 @@
 session_start();
 
     try {
+
+                        //open the sqlite database file
+                        $db_file = './assets/databases/spoons.db';
+                        $db = new PDO('sqlite:' . $db_file);
+                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
         // if (isset($_SESSION["email"])){    //if they haven't logged out since signing in
             
@@ -52,10 +57,7 @@ session_start();
 
                 echo "Time to check credentials ";
 
-                //open the sqlite database file
-                $db_file = './assets/databases/spoons.db';
-                $db = new PDO('sqlite:' . $db_file);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
                 //check that email exists ONLY
                 $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
