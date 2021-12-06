@@ -73,7 +73,7 @@ session_start();
             }
             foreach($answers as $tuple) {
                 echo "<tr>";
-                echo "<td>".$tuple[response]."</td>";
+                echo "<td>".$tuple['response']."</td>";
                 echo "</tr>"; 
             } 
             echo "</table>"; 
