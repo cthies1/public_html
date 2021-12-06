@@ -13,6 +13,12 @@ session_start();
         $stmt->bindValue(':email',$_POST['email']);
         $stmt->execute();
         $result = $stmt->fetchAll();
+
+        $stmtRep = $db->prepare('SELECT * from Users where (Email = :email)');
+        $email = $_POST['email'];
+        $stmtRep->bindValue(':email',$_POST['email']);
+        $stmtRep->execute();
+        $result = $stmt->fetchAll();
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;

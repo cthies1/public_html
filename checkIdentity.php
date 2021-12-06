@@ -31,7 +31,7 @@
 
             //get result
             $result = $stmt->fetchAll();
-            echo($result[0])
+            echo($result[0][0]);
             if(isset($result[0])){
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
@@ -49,8 +49,8 @@
             }
         }
         // send back to login page
-        $str = "Location: index.php";
-        header($str);
+        //$str = "Location: index.php";
+        //header($str);
     } catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
