@@ -32,6 +32,8 @@ session_start();
          $quer->bindValue(':user2',$user2);
          $quer->bindValue(':date',$tDate);
          $quer->execute();
+
+         $quer = $db->prepare('delete from Match where User1 is :user1 and User2 is :user2;')
          echo "dfilt = ".$dFilt;
          echo " mfilt = ".$mFilt;
          $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;

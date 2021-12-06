@@ -82,7 +82,7 @@ session_start();
             echo "</table>"; 
 
             //user matches
-            $matches = $db->prepare('SELECT * from match where user1 is :user1 order by matchPercent;');
+            $matches = $db->prepare('SELECT * from match where user1 is :user1 order by matchPercent desc;');
             $matches->bindValue(':user1',$user);
             $matches->execute();
             $matches = $matches->fetchAll();
