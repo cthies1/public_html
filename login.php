@@ -67,6 +67,7 @@ session_start();
                 $result = $stmt->fetchAll();
                 
                 if(!isset($result[0])){
+                    
                 $stmtAdmin = $db->prepare('SELECT * from Admin where (Email = :email) and (Password = :pass)');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
