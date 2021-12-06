@@ -243,7 +243,7 @@ session_start();
                     echo "<td>".$tuple['matchID']."</td>";
                     echo "<td>".$tuple['matchPercent']."</td>";
                     echo "<td>".$tuple['date']."</td>";
-                    echo "<td>".$tuple['age']."</td>";
+                    // echo "<td>".$tuple['age']."</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
                     echo "<td><a href=$reportLink>Report User</a></td>";
                     $unmatchLink = "unMatch.php?user2=".$tuple['matchID']."&user1=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
@@ -254,17 +254,18 @@ session_start();
                 
                 foreach($result_set as $tuple) {
                     echo "<div class='match_card'>";
-                    echo "<h3>".$tuple['fName'].$tuple['lName']."</h3>";
-                    echo "<h4>".$tuple['matchPercent']."% Match</h4>";
-                    echo "<p>Email:".$tuple['matchID']."</p>";
-                    echo "<p>Age:".$tuple['age']."</p>";
-                    echo "<p>Date Matched:".$tuple['date']."</p>";
-                    echo "<form action='reportUser.php' method = 'POST'>";
-                        echo "<input class='button2' type='submit' value='Report' /></br></br>";
-                    echo "</form>";
-                    echo "<form action='unmatchUser.php' method = 'POST'>";
-                        echo "<input class='button2' type='submit' value='Unmatch' /></br></br>";
-                    echo "</form>";
+                        echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
+                        echo "<h4>".$tuple['matchPercent']."% Match</h4>";
+                        echo "<p>Email:".$tuple['matchID']."</p>";
+                        // echo "<p>Age:".$tuple['age']."</p>";
+                        echo "<p>Date Matched:".$tuple['date']."</p>";
+                        echo "<form action='reportUser.php' method = 'POST'>";
+                            echo "<input class='button2' type='submit' value='Report' /></br></br>";
+                        echo "</form>";
+                        echo "<form action='unmatchUser.php' method = 'POST'>";
+                            echo "<input class='button2' type='submit' value='Unmatch' /></br></br>";
+                        echo "</form>";
+                    echo "</div>";
                 }
 
                 }
