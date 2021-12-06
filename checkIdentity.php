@@ -30,8 +30,6 @@
             $stmt1->execute();
             $result = $stmt1->fetchAll();
             */
-
-            echo("helloe");
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
             $userID = $_SESSION["email"];
@@ -39,10 +37,9 @@
 
             $stmt->execute();
 
-            echo("helloe");
             //get result
             $result = $stmt->fetchAll();
-            echo( $result);
+            //echo( $result);
             if(!isset($result[0])){
                 // check that they verified their ID
                 if(strcpm($result[0], $_POST['question']) == 0){
