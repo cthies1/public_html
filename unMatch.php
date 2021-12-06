@@ -45,7 +45,8 @@ session_start();
     }
     catch(PDOException $e)
     {
-        die('Exception : '.$e->getMessage());
+        $str = "Location: homePage.php?username=".$user1."&dfilt=".$dFilt."&mfilt=".$mFilt;
+        header($str);
     }
 
 ?>

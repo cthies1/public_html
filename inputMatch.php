@@ -58,8 +58,8 @@ try{
 
 }
 catch(PDOException $e) {
-    echo "error";
-    die('Exception : '.$e->getMessage());
+    $link = "Location: homePage.php?username=".$user1;
+    header($link);
 }
 
 ?>
