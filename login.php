@@ -100,7 +100,6 @@ session_start();
                 
                     if(isset($result1[0])){//password was just wrong
                         if(!isset($_GET["numAttempts"])){
-                            debug_to_console("inside if");
                             $numAttempts = 1;
                             
                         } else {
