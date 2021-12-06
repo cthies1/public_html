@@ -8,7 +8,7 @@ session_start();
         <title> Calculate Match </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
     <body>
@@ -80,7 +80,7 @@ session_start();
             echo "Compatible Responses";
         echo"</h3>";
             echo "<tr>";
-                echo "<th>Question</th><thWhen You Said...</th><th>They Said...</th>";
+                echo "<th>Question</th><th>When You Said...</th><th>They Said...</th>";
             echo "</tr>";
             foreach($matchQuestions as $tuple) {          // <------ Line 24
                 echo "<tr>";
