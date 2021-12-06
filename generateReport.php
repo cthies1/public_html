@@ -42,11 +42,6 @@ session_start();
             $quer->bindValue(':date',$tdate);
             $quer->execute();
 
-            $quer = $db->prepare('insert into unmatch values (:user, :reporter, :date);');
-            $quer->bindValue(':reporter',$reporter);
-            $quer->bindValue(':user',$username);
-            $quer->bindValue(':date',$tdate);
-            $quer->execute();
 
             $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
             header($str);
