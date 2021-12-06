@@ -21,7 +21,7 @@ session_start();
                 <input class="button" type="submit" name="userAnswers" value="Generate Report" /></br></br>
             </form>
             <h3>Welcome Admin!</h3>
-        </div>
+        
 
         <?php
           $db_file = './assets/databases/spoons.db';
@@ -62,4 +62,5 @@ session_start();
         echo "</table></br></br></br>"; 
 
         ?>
+        </div>
     </body>

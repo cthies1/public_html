@@ -40,9 +40,9 @@ session_start();
                 $quer2->execute();
             }
             //unmatch the reporter from the person they reported
-            $quer = $db->prepare('insert into unmatch values (:reporter, :user,:date);');
+            $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
-            $quer->bindValue(':user',$username);
+            $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tdate);
             $quer->execute();
 
@@ -56,6 +56,13 @@ session_start();
             $quer = $db->prepare('insert into report values (:user, "mean",1);');
             $quer->bindValue(':user',$user);
             $quer->execute();
+
+            $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
+            $quer->bindValue(':reporter',$reporter);
+            $quer->bindValue(':user',$user);
+            $quer->bindValue(':date',$tdate);
+            $quer->execute();
+            
             $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
             header($str);
             exit;
