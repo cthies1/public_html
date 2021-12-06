@@ -14,15 +14,7 @@ session_start();
 
     <body> 
         <img class="logo" src="./assets/images/logo.png" />
-        <?php
-            $goHome = "adminHomePage.php?username=".$_SESSION["email"];
-        ?>
-        <form action=<?php echo $goHome;?> method = "post">
-            <input class="button" type="submit" value="Return to Home Page" /></br></br>
-        </form>
-        <form action="userAnswers.php" method = "post">
-            <input class="button" type="submit" value="Back to User Answers" /></br></br>
-        </form>
+        
         <?php
             $user = $_GET['user'];
             // $user = $GET['username'];
@@ -46,12 +38,21 @@ session_start();
              $numMatches = $numMatches->fetchAll();
 
              if(isset($numMatches[0])){
-                 $nm = $numMatches[0]
+                 $nm = $numMatches[0]['numMatches'];
+             }
+             else{
+                 $nm = 0;
              }
              $numReports = $db->prepare('SELECT  numReports from Report where userID is :user;');
              $numReports->bindValue(':user',$user);
              $numReports->execute();
              $numReports = $numReports->fetchAll();
+             if(isset($numReports[0])){
+                $nm = $numReports[0]['numReports'];
+            }
+            else{
+                $nm = 0;
+            }
 
 
              echo "<table>";
@@ -138,8 +139,15 @@ session_start();
             } 
             echo "</table></br></br></br>"; 
 
+            $goHome = "adminHomePage.php?username=".$_SESSION["email"];
+            ?>
 
-        ?>
+        <form action=<?php echo $goHome;?> method = "post">
+            <input class="button" type="submit" value="Return to Home Page" /></br></br>
+        </form>
+        <form action="userAnswers.php" method = "post">
+            <input class="button" type="submit" value="Back to User Answers" /></br></br>
+        </form>
 
 
     </body>

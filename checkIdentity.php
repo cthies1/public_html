@@ -43,9 +43,6 @@
                     $stmt1->bindValue(':email',$userID);
                     $stmt1->bindValue(':pass',$password);
                     $stmt1->execute();
-
-                    //disconnect from database
-                    $db = null;
                 } else {
                     $error = 100;
                     $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
@@ -53,9 +50,11 @@
                 }
             }
         }
+        //disconnect from database
+        $db = null;
         // send back to login page
-        //$str = "Location: index.php";
-        //header($str);
+        $str = "Location: index.php";
+        header($str);
     } catch(PDOException $e)
     {
         die('Exception : '.$e->getMessage());
