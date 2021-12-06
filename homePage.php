@@ -73,7 +73,7 @@ session_start();
                     <option value="this week">this week</option>
                     <option value="this month">this month</option>
                     <option value="this year">this year</option>
-                    <option value="show all" selected>show all</option>
+                    <option value=<?php $dfilt; ?> selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -85,7 +85,7 @@ session_start();
                     <option value="75%">75%</option>
                     <option value="50%">50%</option>
                     <option value="30%">30%</option>
-                    <option value="show all" selected>show all</option>
+                    <option value=<?php $mfilt; ?> selected>show all</option>
                 </select>
                 <input class="button2" type="submit" value="Filter" />
             </form>
@@ -234,12 +234,13 @@ session_start();
                 //store results in a table displaying the matches
                 echo "<table>";
                 echo "<tr>";
-                    echo "<th>First Name</th><th>Last Name</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
+                    echo "<th>First Name</th><th>Last Name</th><th>Email</th><th>Match Percent</th><th>Date Matched</th><th>Report user?</th><th>Unmatch user?</th>";
                 echo "</tr>";
                 foreach($result_set as $tuple) {          // <------ Line 24
                     echo "<tr>";
                     echo "<td>$tuple[fName]</td>";
                     echo "<td>$tuple[lName]</td>";
+                    echo "<td>$tuple[email]</td>";
                     echo "<td>$tuple[matchPercent]</td>";
                     echo "<td> $tuple[date]</td>";
                     $reportLink = "generateReport.php?username=".$tuple['matchID']."&reporter=".$_SESSION["email"]."&dfilt=".$dfilt."&mfilt=".$mfilt;
