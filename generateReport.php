@@ -43,13 +43,14 @@ session_start();
             $quer = $db->prepare('insert into unmatch values (:reporter, :user, :date);');
             $quer->bindValue(':reporter',$reporter);
             $quer->bindValue(':user',$user);
-            $quer->bindValue(':date',$tdate);
+            $quer->bindValue(':date',$tDate);
             $quer->execute();
 
 
             $str = "Location: homePage.php?username=".$reporter."&dFilt=".$dFilt."&mFilt=".$mFilt;
             header($str);
             exit;
+            echo "getting past the exit!";
         }
         else{
             //insert a new person into the report table with a value of 1
@@ -62,7 +63,7 @@ session_start();
             $quer->bindValue(':user',$user);
             $quer->bindValue(':date',$tdate);
             $quer->execute();
-            
+
             $str = "Location: homePage.php?username=".$reporter."&dfilt=".$dFilt."&mfilt=".$mFilt;
             header($str);
             exit;
