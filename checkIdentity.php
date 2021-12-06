@@ -31,7 +31,7 @@
 
             //get result
             $result = $stmt->fetchAll();
-            //echo( $result);
+            echo("helloe");
             if(!isset($result[0])){
                 // check that they verified their ID
                 if(strcpm($result[0], $_POST['question']) == 0){
@@ -47,6 +47,7 @@
                     header($link);
                 }
             }
+            echo("helloe");
         }
     } catch(PDOException $e)
     {
