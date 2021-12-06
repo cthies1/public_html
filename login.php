@@ -118,8 +118,6 @@ session_start();
                 $stmtAdd = $db->prepare('INSERT INTO Admin values( "admin@test.com","test","Administrator","Admin");');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
-                $stmtAdd->bindValue(':email',$_POST['email']);
-                $stmtAdd->bindValue(':pass',$_POST['pass']);
                 
                 $stmtAdd->execute();
                     $_SESSION["email"] = $email;
