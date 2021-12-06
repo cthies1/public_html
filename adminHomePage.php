@@ -33,6 +33,7 @@ session_start();
         $unMatches->execute();
         $unMatches = $unMatches->fetchAll();
 
+        /*
         echo "<table>";
         echo "<h3>";
             echo "unmatches";
@@ -60,6 +61,7 @@ session_start();
             echo "<td>".$report[0]['UserID']."</td><td>".$report[0]['numReports']."</td>";
             echo "</tr>"; 
         echo "</table></br></br></br>"; 
+        */
 
         ?>
         </div>
