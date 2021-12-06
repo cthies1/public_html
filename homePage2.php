@@ -253,6 +253,9 @@ session_start();
                 // echo "</table>";
                 
                 foreach($result_set as $tuple) {
+                    if(isset()) {
+                        
+                    }
                     echo "<div class='match_card'>";
                         echo "<h3>".$tuple['fName']." ".$tuple['lName']."</h3>";
                         echo "<h4>".floor($tuple['matchPercent'])."% Match</h4>";
