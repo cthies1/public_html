@@ -27,11 +27,12 @@
             
             $stmt1->execute();
             $result = $stmt1->fetchAll();
-            if($result == null){
+            echo($result);
+            /*if($result == null){
                 $error = 10000000;
                 $link = "Location: createAccount.php?error=".$error;
                 header($link);
-            }
+            }*/
 
             //get anwser in db for big or little spoon question
             $stmt = $db->prepare('SELECT response FROM Results WHERE QuizID = 1 and QuestionID = 2 and (userID = :userID)');
