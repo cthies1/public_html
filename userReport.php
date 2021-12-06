@@ -146,7 +146,7 @@ session_start();
             <input class="button" type="submit" value="Return to Home Page" /></br></br>
         </form>
         <form action="userAnswers.php" method = "post">
-            <input class="button" type="submit" value="Back to User Answers" /></br></br>
+            <input class="button2" type="submit" value="Back to User Answers" /></br></br>
         </form>
 
     </body>
