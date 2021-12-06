@@ -35,7 +35,7 @@ session_start();
             $quer->execute();
             //if they have 3 reports against them, remove them from the database
             if($numReports==3){
-                $quer2 = $db->prepare('delete from user where userID is :username;');
+                $quer2 = $db->prepare('delete from users where userID is :username;');
                 $quer2->bindValue(':username',$user);
                 $quer2->execute();
             }
