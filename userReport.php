@@ -20,8 +20,8 @@ session_start();
         <form action=<?php echo $goHome;?> method = "post">
             <input class="button" type="submit" value="Return to Home Page" /></br></br>
         </form>
-        <form action=<?php echo $goHome;?> method = "post">
-            <input class="button" type="submit" value="B" /></br></br>
+        <form action="userAnswers.php" method = "post">
+            <input class="button" type="submit" value="Back to User Answers" /></br></br>
         </form>
         <?php
             $user = $_GET['user'];
@@ -45,6 +45,7 @@ session_start();
              $numMatches->execute();
              $numMatches = $numMatches->fetchAll();
 
+             
              $numReports = $db->prepare('SELECT  numReports from Report where userID is :user;');
              $numReports->bindValue(':user',$user);
              $numReports->execute();
