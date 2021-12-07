@@ -1,0 +1,103 @@
+body {
+  background-color: #faf7ff;
+}
+
+.page {
+  margin: 5px 150px;
+  padding: 15px;
+}
+
+.logo {
+  width: 15%;
+  height: auto;
+  /* position: sticky; */
+  top: 10px;
+  left: 10px;
+}
+
+h3 {
+  color: #58488d;
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+h4 {
+  color: #992F78;
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+th {
+  color: #58488d;
+  margin-top: 0px;
+  text-align: left;
+}
+
+table,
+th,
+td {
+  border: 1px solid #8973d2;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.button {
+  /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button2 {
+  /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  float: right;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button3 {
+  /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  color: #8973d2;
+  background-color: #faf7ff;
+  margin: auto;
+  border: 2px solid #8973d2;
+}
+
+.button:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.button2:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+.button3:hover {
+  background-color: #8973d2;
+  color: #faf7ff;
+}
+
+/* 
+  colors:
+  #FAF7FF - background
+  #58488D - dark purple
+  #8973D2 - light purple
+  #992F78 - dark pink
+   */

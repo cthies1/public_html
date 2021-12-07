@@ -2,6 +2,11 @@
 session_start();
 
     try {
+
+                        //open the sqlite database file
+                        $db_file = './assets/databases/spoons.db';
+                        $db = new PDO('sqlite:' . $db_file);
+                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
         // if (isset($_SESSION["email"])){    //if they haven't logged out since signing in
             
@@ -23,8 +28,20 @@ session_start();
             // return to index
             header("Location: index.php");
         } else {
+            $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3;');
+        $email = $_POST['email'];
+        $stmtRep->bindValue(':email',$_POST['email']);
+        $stmtRep->execute();
+        $resultRep = $stmtRep->fetchAll();
+        $error = 0;
+        if(isset($resultRep[0])){
+            $error += 69;
+            $str = "Location: index.php?error=".$error;
+                header($str);
+                exit;
+        }
         
-            $error = 0;
+           
             
             if(null == ($_POST['email'])){  //email
                 $error += 10;
@@ -42,10 +59,7 @@ session_start();
 
                 echo "Time to check credentials ";
 
-                //open the sqlite database file
-                $db_file = './assets/databases/spoons.db';
-                $db = new PDO('sqlite:' . $db_file);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
                 //check that email exists ONLY
                 $stmt1 = $db->prepare('SELECT * from Users where (Email = :email)');
@@ -65,10 +79,9 @@ session_start();
                 $stmt->execute();
 
                 $result = $stmt->fetchAll();
-                //if email exists, but password is wrong
                 
                 if(!isset($result[0])){
-                    //if email exists, but password is wrong
+
                 $stmtAdmin = $db->prepare('SELECT * from Admin where (Email = :email) and (Password = :pass)');
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
@@ -100,7 +113,6 @@ session_start();
                 
                     if(isset($result1[0])){//password was just wrong
                         if(!isset($_GET["numAttempts"])){
-                            debug_to_console("inside if");
                             $numAttempts = 1;
                             
                         } else {
@@ -118,7 +130,7 @@ session_start();
                         $str = "Location: index.php?credentials=false&numAttempts=".$numAttempts;
                         header($str);
                     } else {
-                        echo "else 2";
+                        
                         $str = "Location: index.php?credentials=false";
                         header($str);
                     }  

@@ -9,18 +9,19 @@ session_start();
         <title>Admin Home Page</title>
         <meta name="description" content="This is a home page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
-        <link rel="stylesheet" href="./assets/css/home.css" />
+        <link rel="stylesheet" href="./assets/css/admin.css" />
     </head>
     <body>
         <img class = "logo" src="./assets/images/logo.png" />
         <div class="page">
+            <h3>Welcome Admin!</h3>
             <form action="login.php" method = "POST">
                 <input class="button" type="submit" name="logout" value="Log Out" /></br></br>
             </form>
             <form action="userAnswers.php" method = "POST">
                 <input class="button" type="submit" name="userAnswers" value="Generate Report" /></br></br>
             </form>
-            <h3>Welcome Admin!</h3>
+            
         
 
         <?php

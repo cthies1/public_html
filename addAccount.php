@@ -13,6 +13,17 @@ session_start();
         $stmt->bindValue(':email',$_POST['email']);
         $stmt->execute();
         $result = $stmt->fetchAll();
+
+        $stmtRep = $db->prepare('SELECT * from Report where (userID = :email) and numReports>=3');
+        $email = $_POST['email'];
+        $stmtRep->bindValue(':email',$_POST['email']);
+        $stmtRep->execute();
+        $resultRep = $stmtRep->fetchAll();
+        if(isset($result[0])){
+            $error += 69;
+            $str = "Location: createAccount.php?error=".$error;
+            header($str);
+        }
         
         if(null == ($_POST['email'])){  //email
             $error += 1000000;

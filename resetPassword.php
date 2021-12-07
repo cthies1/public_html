@@ -19,7 +19,10 @@ session_start();
                 $link = "checkIdentity.php?username=".$_SESSION["email"];
                 if(isset($_GET["error"])){
                     $err = $_GET["error"];
-                    
+                    if(err >= 100){
+                        echo "<font color='red'>*That is not the correct anwser!</br></br>";
+                        $err = $err-100;
+                    }
                     if($err >= 10){
                         echo "<font color='red'>*You must answer all questions!</br></br>";
                         $err = $err-10;
@@ -34,10 +37,11 @@ session_start();
             <div class="forms">
                     <h3>Reset Password:</h3>
                     <form action="<?php echo $link ?>" method="post" style="width: 157px;">
-                        <h3>To reset your password we need to check your idenity first. </h3>
-                        <br>
-                        <h3>Do you prefer to be a Big or Little spoon? </h3>
-                            <div>
+                    <span class="text-box">To reset your password, please anwser the security question.</span>
+                    <br>
+                    <br>
+                        <span class="text-box">Are you a Big, Little, or a little bit of both Spoon: </span>
+                        <div>
                                 <input type="radio" name="question" id="question-A" value="Little Spoon" />
                                 <label for="question-A">Little Spoon</label>
                             </div>

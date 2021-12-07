@@ -31,6 +31,8 @@
 
             //get result
             $result = $stmt->fetchAll();
+            echo($result[0][0]);
+            echo($_POST['question']);
             if(isset($result[0])){
                 // check that they verified their ID
                 if(strcmp($result[0][0], $_POST['question']) == 0){
@@ -41,12 +43,15 @@
                     $stmt1->bindValue(':email',$userID);
                     $stmt1->bindValue(':pass',$password);
                     $stmt1->execute();
-
-                    //disconnect from database
-                    $db = null;
+                } else {
+                    $error = 100;
+                    $str = "Location: resetPassword.php?username=".$_SESSION["email"]."?error=".$error;
+                    header($str);
                 }
             }
         }
+        //disconnect from database
+        $db = null;
         // send back to login page
         $str = "Location: index.php";
         header($str);

@@ -9,16 +9,12 @@ session_start();
         <title>User Report</title>
         <meta name="description" content="This is a create account page." />
         <meta name="author" content="Chloe, Bee, Anna, Diggy" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
-    <body>  
-        <?php
-            $goHome = "adminHomePage.php?username=".$_SESSION["email"];
-        ?>
-        <form action=<?php echo $goHome;?> method = "post">
-            <input type="submit" value="Return to Home Page" /></br></br>
-        </form>
+    <body> 
+        <img class="logo" src="./assets/images/logo.png" />
+        
         <?php
             $user = $_GET['user'];
             // $user = $GET['username'];
@@ -41,10 +37,22 @@ session_start();
              $numMatches->execute();
              $numMatches = $numMatches->fetchAll();
 
-             $numReports = $db->prepare('SELECT count(*) as numReports from Report where userID is :user;');
+             if(isset($numMatches[0])){
+                 $nm = $numMatches[0]['numMatches'];
+             }
+             else{
+                 $nm = 0;
+             }
+             $numReports = $db->prepare('SELECT  numReports from Report where userID is :user;');
              $numReports->bindValue(':user',$user);
              $numReports->execute();
              $numReports = $numReports->fetchAll();
+             if(isset($numReports[0])){
+                $nr = $numReports[0]['numReports'];
+            }
+            else{
+                $nr = 0;
+            }
 
 
              echo "<table>";
@@ -135,9 +143,15 @@ session_start();
                 echo "</tr>"; 
             } 
             echo "</table></br></br></br>"; 
-
-
         ?>
-
+        <?php
+            $goHome = "adminHomePage.php?username=".$_SESSION["email"];
+        ?>
+        <form action=<?php echo $goHome;?> method = "post">
+            <input class="button" type="submit" value="Return to Home Page" /></br></br>
+        </form>
+        <form action="userAnswers.php" method = "post">
+            <input class="button2" type="submit" value="Back to User Answers" /></br></br>
+        </form>
 
     </body>

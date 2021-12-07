@@ -8,9 +8,12 @@ session_start();
         <title> User Answers </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+        <link rel="stylesheet" href="./assets/css/report.css" />
     </head>
 
     <body>
+        <img class="logo" src="./assets/images/logo.png" />
+        <h3>User Answers</h3>
         <?php
             //open the sqlite database file
             $db_file = './assets/databases/spoons.db';
@@ -50,13 +53,13 @@ session_start();
             $mult = 1;
             while($row2 < $result2[0]['numResults']) {
                 echo "<tr>";
-                echo "<td>".$result[$row2]['UserID']."</td>";
+                if(isset($result[$row2]['UserID'])) echo "<td>".$result[$row2]['UserID']."</td>";
                 while($row2 < $result4[0]['numQs']*$mult) {
-                    echo "<td>".$result[$row2]['response']."</td>";
+                    if(isset($result[$row2]['response'])) echo "<td>".$result[$row2]['response']."</td>";
                     $row2 = $row2+1;
                 }
                 $reportLink = "userReport.php?user=".$result[$row2-1]['UserID'];
-                echo "<td><a href=$reportLink>Generate User Report</a></td>";
+                if(isset($result[$row2-1]['response'])) echo "<td><a href=$reportLink>Generate User Report</a></td>";
                 echo "</tr>";
                 $mult = $mult+1;
             }
@@ -65,7 +68,7 @@ session_start();
           $goHome = "adminHomePage.php?username=".$_SESSION["email"];
         ?>
         <form action=<?php echo $goHome;?> method = "post">
-            <input type="submit" value="Return to Home Page" /></br></br>
+            <input class="button" type="submit" value="Return to Home Page" /></br></br>
         </form>
 
     </body>
