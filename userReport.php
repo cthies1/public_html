@@ -64,11 +64,11 @@ session_start();
              echo "</tr>";
                  echo "<tr>";
                  if(!isset($userinfo[0])){
-                     echo "<td> This user has been blocked from the db. </td>";
+                     echo $userinfo[0];
                  }
-                 else{
+                 //else{
                     echo "<td>".$userInfo[0]['fName']."</td><td>".$userInfo[0]['lName']."</td><td>".$userInfo[0]['Password']."</td><td>".$userInfo[0]['Age']."</td><td>".$nm."</td><td>".$nr."</td>";
-                 }
+                 //}
                  echo "</tr>"; 
              echo "</table></br></br></br>"; 
 
