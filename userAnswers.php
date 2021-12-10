@@ -78,13 +78,13 @@ session_start();
             echo "</tr>";
                 foreach($quer as $tuple){
                     echo "<tr>";
-                        echo "<td>".$tuple['userID']."</td><td>".$tuple['numReports']."</td>";
+                        echo "<td>".$tuple['UserID']."</td><td>".$tuple['numReports']."</td>";
                     echo "</tr>";
                 }
             echo "</table>";
 
             $quer = $db->prepare("select userID from report where userID not in (select email from users);");
-            $quer = $db->execute();
+            $quer->execute();
             $quer = $quer->fetchAll();
 
             echo "<table>";
@@ -96,7 +96,7 @@ session_start();
             echo "</tr>";
                 foreach($quer as $tuple){
                     echo "<tr>";
-                        echo "<td>".$tuple['userID']."</td>";
+                        echo "<td>".$tuple['UserID']."</td>";
                     echo "</tr>";
                 }
             echo "</table>";

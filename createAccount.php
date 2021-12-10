@@ -58,16 +58,7 @@ session_start();
                     
                 }
                 
-                // if(isset($_GET["email"])) $email = $_GET["email"];
-                // else $email = "";
-                // if(isset($_GET["pass"])) $pass = $_GET["pass"];
-                // else $pass = "";
-                // if(isset($_GET["fName"])) $fName = $_GET["fName"];
-                // else $fName = "";
-                // if(isset($_GET["lName"])) $pass = $_GET["lName"];
-                // else $lName = "";
-                // if(isset($_GET["age"])) $age = $_GET["age"];
-                // else $age = "";
+
 
                 echo "<font color='black'>";
                 ?>
