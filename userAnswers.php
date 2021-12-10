@@ -83,10 +83,10 @@ session_start();
                 }
             echo "</table>";
 
-            $quer = $db->prepare('delete from users where username is "bbridge@test.com"; ');
+            $quer = $db->prepare('delete from users where email is "bbridge@test.com"; ');
             $quer->execute();
 
-            $quer = $db->prepare('delete from users where username is "avanboven@test.com"; ');
+            $quer = $db->prepare('delete from users where email is "avanboven@test.com"; ');
             $quer->execute();
 
             $quer = $db->prepare("select userID from report where userID not in (select email from users);");
