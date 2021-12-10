@@ -63,6 +63,45 @@ session_start();
                 echo "</tr>";
                 $mult = $mult+1;
             }
+            echo "</table>";
+
+            $quer = $db->prepare('select * from report;');
+            $quer->execute();
+            $quer = $quer->fetchAll();
+
+            echo "<table>";
+            echo "<h3>";
+            echo "Reported Users";
+        echo"</h3>";
+            echo "<tr>";
+                echo "<th>userID</th><th>num. Times Reported</th>";
+            echo "</tr>";
+                foreach($quer as $tuple){
+                    echo "<tr>";
+                        echo "<td>".$tuple['userID']."</td><td>".$tuple['numReports']."</td>";
+                    echo "</tr>";
+                }
+            echo "</table>";
+
+            $quer = $db->prepare("select userID from report where userID not in (select email from users);");
+            $quer = $db->execute();
+            $quer = $quer->fetchAll();
+
+            echo "<table>";
+            echo "<h3>";
+            echo "Blocked Emails";
+        echo"</h3>";
+            echo "<tr>";
+                echo "<th>userID</th>";
+            echo "</tr>";
+                foreach($quer as $tuple){
+                    echo "<tr>";
+                        echo "<td>".$tuple['userID']."</td>";
+                    echo "</tr>";
+                }
+            echo "</table>";
+
+
         ?>
         <?php
           $goHome = "adminHomePage.php?username=".$_SESSION["email"];
