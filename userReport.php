@@ -63,9 +63,9 @@ session_start();
              echo "<th>First Name</th><th>Last Name</th><th>Password</th><th>Age</th><th>Num. Matches</th><th>Num. Times Reported</th>";
              echo "</tr>";
                  echo "<tr>";
-                 if(!isset($userinfo[0])){
-                     echo "<td> This user has been blocked from the db. </td>";
-                 }
+                 //if(!isset($userinfo[0])){
+                 //    echo "<td> This user has been blocked from the db. </td>";
+                 //}
                  else{
                     echo "<td>".$userInfo[0]['fName']."</td><td>".$userInfo[0]['lName']."</td><td>".$userInfo[0]['Password']."</td><td>".$userInfo[0]['Age']."</td><td>".$numMatches[0]['numMatches']."</td><td>".$numReports[0]['numReports']."</td>";
                  }

@@ -83,8 +83,8 @@ session_start();
                 }
             echo "</table>";
 
-            //$quer = $db->prepare("select userID from report where userID not in (select email from users);");
-            $quer = $db->prepare('select email as UserID from users where email is "bbridge@test.com" ;');
+            $quer = $db->prepare("select userID from report where userID not in (select email from users);");
+            //$quer = $db->prepare('select email as UserID from users where email is "bbridge@test.com" ;');
             $quer->execute();
             $quer = $quer->fetchAll();
 
